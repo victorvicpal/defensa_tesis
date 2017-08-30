@@ -28,14 +28,31 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-image="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Salamanca_vector_seal.svg/200px-University_of_Salamanca_vector_seal.svg.png" data-background-size="300px" data-background-repeat="no repeat">
-					<h3 style="color: #8A0707">Modelo de predicción subespacial: </h3>
+					<h3 style="color: #FF5555">Modelo de predicción subespacial: </h3>
 					<h4 style="color: white">Regresión Multivariante Gaussiana Subespacial</h4>
 					<p style="text-align: right; padding-right: 1em"> <a href="https://github.com/victorvicpal" style="color: white">Víctor Vicente Palacios</a></p>
 					<p style="text-align: right; padding-right: 1em"><small>12 de Septiembre 2017</small></p>
 				</section>
+				<section align="left">
+				<h3 style="color: #FF5555;text-align:left"> Contenido </h3>
+				<ul>
+				<li><p class="fragment highlight-current-red">Introducción</p>
+					<ul>
+						<li><p class="fragment highlight-current-red">Objetivos</p>
+					</ul>
+				<li><p class="fragment highlight-current-red">Marco Teórico</p>
+					<ul>
+						<li><p class="fragment highlight-current-red">Técnicas Factoriales</p>
+						<li><p class="fragment highlight-current-red">Procesos Gaussianos</p>
+					</ul>
+				<li><p class="fragment highlight-current-red">Algoritmo MGSR</p>
+				<li><p class="fragment highlight-current-red">Aplicaciones</p>
+				<li><p class="fragment highlight-current-red">Software</p>
+				</ul>
+				</section>
 				<section>
 					<section>
-					<h3 style="color: #8A0707;text-align:left"> Introducción </h3>
+					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
 					<ul>
 					<li>To what extend do food security policies cause price spikes?</li>
 					<li>Food reserves to cope with the crisis?
@@ -46,12 +63,43 @@
 					</li>
 					</ul>
 					</section>
+					<section data-markdown>
+						<textarea data-template>
+						## Título
+						- Uno
+						- Dos
+							- Dos Uno
+						</textarea>
+					</section>
 					<section>
-					Slide 2 b
+					<img data-src="img/Portada-Tesis-Victor02.png">
 					</section>
 				</section>
 				<section>
-				Slide 3
+				<h3>Código del programa</h3>
+					<pre><code data-trim data-noescape>
+					CV <- CrossVariogram(
+							coord=as.data.frame(PC_versicolor$scores[,1:2],
+							values=as.data.frame(versicolor_st),
+							n=12)
+					</code></pre>
+				</section>
+				<section>
+				<p>Fórmula matemática</p>
+				\begin{equation}
+				X=U \Lambda V^\intercal=\sum_{t=1}^T \lambda_{t}r_{t}c_{t}
+				\end{equation}
+				</section>
+				<section>
+					<p class="fragment grow">grow</p>
+				    	<p class="fragment shrink">shrink</p>
+    					<p class="fragment fade-out">fade-out</p>
+    					<p class="fragment fade-up">fade-up (also down, left and right!)</p>
+    					<p class="fragment current-visible">visible only once</p>
+    					<p class="fragment highlight-current-blue">blue only once</p>
+    					<p class="fragment highlight-red">highlight-red</p>
+    					<p class="fragment highlight-green">highlight-green</p>
+    					<p class="fragment highlight-blue">highlight-blue</p>
 				</section>
 			</div>
 		</div>
@@ -64,8 +112,14 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				math: {
+					mathjax:
+				'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+				},
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/math/math.js', async: true},
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
