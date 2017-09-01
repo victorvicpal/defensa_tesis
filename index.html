@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Modelo de predicción subespacial: Regresión Multivariante Gaussiana Subespacial</title>
-
+		
 		<meta name="description" content="Defensa Tesis">
 		<meta name="author" content="Víctor Vicente Palacios">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -33,28 +33,56 @@
 					<p style="text-align: right; padding-right: 1em"> <a href="https://github.com/victorvicpal" style="color: white">Víctor Vicente Palacios</a></p>
 					<p style="text-align: right; padding-right: 1em"><small>12 de Septiembre 2017</small></p>
 				</section>
-				<section align="left">
+				<section align="left" data-background-image="img/UsalCentenario.png" data-background-position="64% 50%" data-background-size="270px" data-background-repeat="no repeat">
 				<h3 style="color: #FF5555;text-align:left"> Contenido </h3>
 				<ul>
 				<li><p class="fragment highlight-current-red">Introducción</p>
 				<li><p class="fragment highlight-current-red">Marco Teórico</p>
-					<ul>
-						<li><p class="fragment highlight-current-red">Técnicas Factoriales</p>
-						<li><p class="fragment highlight-current-red">Procesos Gaussianos</p>
-					</ul>
 				<li><p class="fragment highlight-current-red">Algoritmo MGSR</p>
 				<li><p class="fragment highlight-current-red">Aplicaciones</p>
 				<li><p class="fragment highlight-current-red">Software</p>
 				</ul>
 				</section>
 				<section>
-					<section align="top">
+					<section align="left">
 					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
-					<img data-src="img/regression2.png" style="width: 60%; height: 60%"/>
 					</section>
 					<section>
 					<h3> Imágenes </h3>
 					<img data-src="img/Portada-Tesis-Victor02.png" style="width: 50%; height: 50%">
+					</section>
+				</section>
+				<section align="left">
+					<section>
+					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
+					<ul>
+					<li>Técnicas Factoriales</li>
+						<ul>
+						<li>Análisis de Componentes Principales
+						<li>Análisis de Correspondencias
+						<li>Biplot
+						</ul>
+					<li>Procesos Gaussianos</li>
+						<ul>
+						<li>Kriging
+						<li>Cokriging
+						</ul>
+					</ul>
+					</section>
+					<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Técnicas Factoriales</h3>
+					<h4 style="text-align:left">ACP (Karl Pearson, 1901)</p></h4>
+					<figure style="float:right">
+                                                <img data-src="img/pearson.png" style="width: 60%; height: 60%">
+                                        </figure>
+					<p style="font-size: 26px">Sean $X=[X_{1},...,X_{p}]$  y  $S=var(X)$  su matrix de covarianzas</p>
+					<p style="font-size: 26px">La descomposición espectral de  $S$  es  $S=T \Lambda T^{'}$
+					donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
+					y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
+					<p style="font-size: 26px">Las componentes principales de $X$ son las nuevas variables</p>
+					\begin{equation}
+					Y_{j}=X t_{j} \text{ , } j=1,...,p
+					\end{equation}
 					</section>
 				</section>
 				<section>
