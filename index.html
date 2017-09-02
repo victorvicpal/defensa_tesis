@@ -56,7 +56,7 @@
 					<section>
 					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
 					<ul>
-					<li>Técnicas Factoriales</li>
+					<li>Reducción Dimensional</li>
 						<ul>
 						<li>Análisis de Componentes Principales
 						<li>Análisis de Correspondencias
@@ -70,7 +70,7 @@
 					</ul>
 					</section>
 					<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Técnicas Factoriales</h3>
+					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
 					<h4 style="text-align:left">ACP <span style="font-size:26px">(Karl Pearson, 1901)</span></h4>
 					<figure style="float:right">
                                                 <img data-src="img/pearson.png" style="width: 60%; height: 60%">
@@ -83,6 +83,25 @@
 					\begin{equation}
 					Y_{j}=X t_{j} \text{ , } j=1,...,p
 					\end{equation}
+					</section>
+					<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h4 style="text-align:left">ACP</h4>
+					<pre><code data-trim data-noescape>
+                                        library(ggfortify)
+                                        autoplot(prcomp(iris[c[1:4])), data=iris, colour = 'Species')
+                                        </code></pre>
+					<div align="right">
+					<figure style="float:right">
+						<img data-src="img/PCA.png" style="width: 80%; height: 80%; background-color:white">
+					</figure>
+					</div>
+					<div align="left">
+					<p style="font-size:28px;text-align:left;top:10;bottom:0">
+					Dos simples líneas de código nos permiten realizar un análisis exploratorio y descriptivo
+					de nuestros datos de manera rápida y efectiva
+					</p>
+					</div>
 					</section>
 				</section>
 				<section>
