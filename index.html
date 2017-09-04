@@ -52,16 +52,52 @@
 			<!--INTRODUCCION+OBJETIVOS-->
 			<section>
 				<!--INTRODUCCION-->
+				<!--Regresión clásica-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
+					<h4 style="text-align:left">Regresión Clásica</h4>
+					<p style="font-size: 28px"> Conjunto de variables: <span style="color: #FF5555;font-size: 38px">$v_{1}$,...,$v_{n}$</span> </p>
+					<p style="font-size: 28px"> p. ej. Quiero hallar <span style="color: #FF5555;font-size: 38px">$v_{1}$</span> en función del resto tal que <span style="color: #FF5555;font-size: 38px">$v_{1}=f(v_{2}$,...,$v_{n})$</span></p>
+					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar <span style="color: #FF5555;font-size: 38px">$v_{2}$</span> en función del resto?</p>
+					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #FF5555;font-size: 38px">$v_{2}=f^{'}(v_{1}$,$v_{3}$,...,$v_{n})$</span></p>
+					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #FF5555;font-size: 38px">$f \neq f^{'}$</span></p>
 				</section>
-				<!--OBJETIVOS-->
+				<!--INTRODUCCION-->
+				<!--Regresión multivariante-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left"> Objetivos </h3>
+					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
+					<h4 style="text-align:left">Regresión Multivariante</h4>
+					<p style="font-size: 28px"> Dado un conjunto de variables <span style="color: #FF5555;font-size: 38px">$V$</span> siendo <span style="color: #FF5555;font-size: 38px">$V = V_{1} \cup V_{2}$</span> </p>
+					<p style="font-size: 28px">queremos hallar <span style="color: #FF5555;font-size: 38px">$V_{1}$</span> en función de <span style="color: #FF5555;font-size: 38px">$V_{2}$</span> tal que <span style="color: #FF5555;font-size: 38px">$V_{1}=G(V_{2})$</span></p>
+					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar un nuevo subconjunto <span style="color: #FF5555;font-size: 38px">$V^{'}_{1}$</span> en función de <span style="color: #FF5555;font-size: 38px">$V^{'}_{2}$</span> siendo <span style="color: #FF5555;font-size: 38px">$V = V^{'}_{1} \cup V^{'}_{2}$</span>?</p>
+					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #FF5555;font-size: 38px">$V^{'}_{1}=G^{'}(V^{'}_{2})$</span></p>
+					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #FF5555;font-size: 38px">$G \neq G^{'}$</span></p>
+				</section>
+				<!--OBJETIVO-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left;"> Objetivo </h3>
+					<p style="font-size: 28px"> ¿Y si <span style="color: #FF5555;font-size: 38px">$G = G^{'} = M$</span>?</p>
+					<p style="font-size: 28px" > Tendríamos un único modelo que nos permitiría predecir cualquier subconjunto de <span style="color: #FF5555;font-size: 38px">$V$</span> en función del subconjunto complementario del mismo </p>
+					<p style="font-size: 32px" class="fragment grow"> Nuestro principal objetivo es desarrollar un modelo <span style="color: #FF5555;font-size: 42px">$M$</span> que rompa con la rigidez de los modelos clásicos de regresión</p>
+					<p style="font-size: 32px;text-align: center;color: #FF5555" class="fragment fade-up"> Supongamos que disponemos de un conjunto <span style="color: #FF5555;font-size: 38px">$V=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$</span></p>
+				</section>
+				<!--OBJETIVO:animacion-->
+				<section data-background-image="img/objetivo_1.png" data-background-position="50% 50%" data-background-size="750px" data-background-repeat="no repeat">	
+				</section>
+				<section data-background-image="img/objetivo_2.png" data-background-position="50% 50%" data-background-size="750px" data-background-repeat="no repeat">	 
+				</section>
+				<section data-background-image="img/objetivo_4.png" data-background-position="50% 50%" data-background-size="750px" data-background-repeat="no repeat">
+				</section>
+				<!--MODELO-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left;"> MODELO </h3>
+						<p style="float: center;font-size: 32px" class="fragment fade-up"> REDUCCION DIMENSIONAL</p>
+						<p style="float: center;font-size: 32px" class="fragment fade-up"> PROCESOS GAUSSIANOS</p>
+					<h3 style="text-align: right;color: #FF5556;" class="fragment fade-up"> MGSR</h3>
 				</section>
 			</section>
 			<!--MARCO TEORICO-->
-			<section>
+			<section align="left">
 				<!--MARCO TEORICO LISTADO-->
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
@@ -84,26 +120,52 @@
 				<!--REDUCCIÓN DIMENSIONAL: DEFINICIÓN-->
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
+					<p style="font-size: 26px">Representar de forma fiel datos multivariantes en espacios de menor dimensión</p>
+					<table>
+					<tr>
+						<td style="text-align: center; width: 50%">
+							<p>Insurance contract</p>
+							<ul>
+								<li>HOLA
+								<li>ADIOS
+							</ul>
+						</td>
+						<td style="text-align: center; width: 50%">
+							<p>Insurance contract</p>
+							<ul>
+								<li>HOLA
+								<li>ADIOS
+							</ul>
+						</td>
+					</tr>
+					</table>
 				</section>
 				<!--ACP-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
-						<h4 style="text-align:left">ACP <span style="font-size:26px">(Karl Pearson, 1901)</span></h4>
+						<h4 style="text-align:left">Análisis de componentes principales </h4>
+					<div align="right">
 						<figure style="float:right">
                                                 <img data-src="img/pearson.png" style="width: 60%; height: 60%">
                         </figure>
+                    </div>
+                    <div>
+                    	<p style="font-size: 26px;color: #FF5555">K. Pearson (1901)</p>
 						<p style="font-size: 26px">Sean $X=[X_{1},...,X_{p}]$  y  $S=var(X)$  su matrix de covarianzas</p>
 						<p style="font-size: 26px">La descomposición espectral de  $S$  es  $S=T \Lambda T^{'}$
-					donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
-					y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
+						donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
+						y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
 						<p style="font-size: 26px">Las componentes principales de $X$ son las nuevas variables</p>
-					\begin{equation}
-					Y_{j}=X t_{j} \text{ , } j=1,...,p
-					\end{equation}
+						<span style="color: #FF5555">
+						\begin{equation}
+						Y_{j}=X t_{j} \text{ , } j=1,...,p
+						\end{equation}
+						</span>
+					</div>
 				</section>
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
-						<h4 style="text-align:left">ACP</h4>
+						<h4 style="text-align:left">Análisis de componentes principales</h4>
 						<pre><code data-trim data-noescape>
                                         library(ggfortify)
                                         autoplot(prcomp(iris[c[1:4])), data=iris, colour = 'Species')
@@ -123,9 +185,38 @@
 				<!--AC-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
-                                        <h4 style="text-align:left">AC</h4>
-					<p>Benzecri (1971)</p>
-					<img data-src="https://www.babelio.com/users/AVT_Jean-Paul-Benzecri_5849.jpeg">
+						<h4 style="text-align:left">Análisis de Correspondencias</h4>
+						<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/Benzecri.png" style="width: 80%; height: 80%"">
+							</figure>
+						</div>
+						<div>
+							<p style="font-size: 26px;color: #FF5555">J. Benzécri (1901)</p>
+							<p style="font-size: 26px">Tablas de contingencia</p>
+							<ul style="font-size: 26px">
+								<li>Perfiles Fila
+								<li>Perfiles Columna
+							</ul>
+							<p style="font-size: 26px">Proyección de ambos perfiles en un subespacio común</p>
+						</div>
+				</section>
+				<!--ACM-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Análisis de Correspondencias Múltiples</h4>
+						<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/MCA.png" style="width: 90%; height: 90%; background-color:white">
+							</figure>
+						</div>
+							<p style="font-size: 26px">Extensión del Análisis de Correspondencias</p>
+							<p style="font-size: 26px">Conjunto de matrices</p>
+							<ul style="font-size: 26px">
+								<li>Filas fijas
+								<li>Columnas variables
+							</ul>
+							<p style="font-size: 26px">Representación gráfica semejante al ACP para variables categóricas</p>
 				</section>
 			</section>
 			</div>
@@ -155,4 +246,5 @@
 			});
 		</script>
 	</body>
+
 </html>
