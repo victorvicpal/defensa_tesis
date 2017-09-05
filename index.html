@@ -102,7 +102,7 @@
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
 					<ul>
-						<li>Reducción Dimensional</li>
+						<li class="fragment highlight-current-red"> Reducción Dimensional</li>
 							<ul>
 								<li>Análisis de Componentes Principales
 								<li>Análisis de Correspondencias
@@ -110,7 +110,7 @@
 								<li>Sistemas Gifi
 								<li>Biplot
 							</ul>
-						<li>Procesos Gaussianos</li>
+						<li class="fragment highlight-current-red"> Procesos Gaussianos</li>
 							<ul>
 								<li>Kriging
 								<li>Cokriging
@@ -291,6 +291,7 @@
 							</figure>
 					</div>
 				</section>
+				<!--Biplots-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
@@ -302,6 +303,7 @@
 					<p style="font-size: 24px">Un Biplot es una representación gráfica de <span style="color: #FF5555;font-size: 38px">$X$</span> mediante marcadores fila <span style="color: #FF5555;font-size: 38px">$r_{1},...,r_{N}$</span> y marcadores columna <span style="color: #FF5555;font-size: 38px">$c_{1},...,c_{P}$</span> tal que <span style="color: #FF5555;font-size: 38px">$x_{ij} \approx r_{i}^{'} c_{j}$</span> </p>
 					<p style="color: #FF5555;font-size: 38px;text-align: center">$X \approx R C^{'}$ </p>
 				</section>
+				<!--Biplots-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
@@ -313,6 +315,7 @@
 						</p>
 						<p style="font-size: 24px">donde <span style="color: #FF5555;font-size: 38px">$U$</span> es una <span style="color: #FF5555;font-size: 38px">$N \times T$</span> matriz unitaria, <span style="color: #FF5555;font-size: 38px">$\Lambda$</span> es una <span style="color: #FF5555;font-size: 38px">$T \times T$</span> matriz diagonal no negativa, y <span style="color: #FF5555;font-size: 38px">$V$</span> es una <span style="color: #FF5555;font-size: 38px">$P \times T$</span> matriz unitaria</p>
 				</section>
+				<!--Biplots-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
@@ -332,9 +335,10 @@
 						</p>
 						<p style="font-size: 24px">donde  <span style="color: #FF5555;font-size: 30px">$0 \leq \psi \leq 1$</span></p>
 				</section>
+				<!--Biplots Clásicos-->
 				<section align="left">
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
-						<h4 style="text-align:left">Tipos de Biplot</h4>
+						<h4 style="text-align:left">Biplots Clásicos</h4>
 						<p style="font-size: 38px;color: #FF5555;text-align: center">
 							<span style="color:white">JK-Biplot : </span> $\psi = 1$
 								\begin{equation}
@@ -350,6 +354,7 @@
 								\end{equation}
 						</p>
 				</section>
+				<!--Biplot: Interpretación-->
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Interpretación</h4>
@@ -369,6 +374,201 @@
 								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%">
 							</figure>
 					</div>
+				</section>
+				<!--Biplot: Calidad-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Calidad de representación</h4>
+						<table style="font-size: 30px;" >
+							<tr>
+								<td style="text-align: center;border: solid #F0F1EB 3px;">
+									Global
+								</td>
+								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+									$CA = \frac{\lambda_{1}+\lambda_{2}}{sum_{t=1}^T \lambda_{t}}$
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #F0F1EB 3px;">
+									Filas
+								</td>
+								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+									$CR = \frac{r^2_{jk}}{\sum_{k=1}^N r^2_{jk}}$
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #F0F1EB 3px;">
+									Columnas
+								</td>
+								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+									$CC = \frac{c^2_{jk}}{\sum_{k=1}^P c^2_{jk}}$
+								</td>
+							</tr>
+						</table>
+				</section>
+				<!--Tipos de Biplot-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Otros Biplots</h4>
+						<table style="font-size: 20px;">
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;font-weight: bold;">
+								Biplot
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px;font-weight: bold;">
+									Autor
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px;font-weight: bold;">
+									Características
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								HJ
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									M.P. Galindo (1986)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Alta calidad de representación en filas y columna
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								MANOVA
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+								H. Gabriel (1972)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Representación de grupos de elementos fila y variables
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								Generalizado
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									J. Vicente-Villardón (1992)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Permite considerar la importancia de los diferentes individuos y variables
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								No lineales
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									J. Gower y S. Harding (1988)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Trayectorias no lineales de los individuos
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								Interpolación
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									J. Gower y D. Hand (1995)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Superponen nuevos individuos proyectándolos sobre el subespacio de representación
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								Predicción
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									J. Gower y D. Hand (1995)
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Infieren valores de las variables originales dado un punto sobre la representación subespacial
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: center;border: solid #FF5555 3px;">
+								Multivía
+								</td>
+								<td style="text-align: center;border: solid #FF5555 3px">
+									Varios
+								</td>
+								<td style="text-align: right;border: solid #FF5555 3px">
+									Versiones Biplot de técnicas multivariantes de varias vías
+								</td>
+							</tr>
+						</table>
+				</section>
+				<!--Otros Biplots-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Otros Biplots</h4>
+						<ul style="font-size: 24px;">
+							<li>Meta-Biplot -- J. Martín-Rodríguez, P. Galindo y J.L. Vicente-Villardón (2002)
+							<li>Minería de datos -- V. Vairinhos
+							<li>Logístico -- J. Vicente-Villardón, M. Galindo-Villardón y A. Blázquez-Zaballos (2006)
+							<li>Canónico -- A. Vallejo-Arboleda, J. Vicente-Villardón y P. Galindo-Villardón (2006)
+							<li>Nominal -- J. Hernández-Sánchez y J. Vicente-Villardón (2016)
+							<li>Co-Tucker3 -- M. Rodríguez-Rosa (2016)
+						</ul>
+				</section>
+				<!--Procesos Gaussianos-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<div style="width: 50%; float: left">
+						<ul style="font-size: 32px">
+							<li>Observaciones ocurren en un dominio contínuo (tiempo o espacio)
+							<li>Extensión de las distribuciones multivariantes gaussianas
+						</ul>
+					<p style="font-size: 26px"> Sea <span style="color: #FF5555;font-size: 38px">$y=\{y_{1},...,y_{n}\} $</span> una muestra de <span style="color: #FF5555;font-size: 38px">$n$</span> elementos y <span style="color: #FF5555;font-size: 38px">$x$</span> su dominio asociado</p>
+					</div>
+					<div style="width: 45%; float: right">
+						<figure style="float:right">
+							<img data-src="img/ProcesoGaussiano.png" style="width: 80%;height: 80%">
+						</figure>
+					</div>
+				</section>
+				<!--Procesos Gaussianos: Covarianza ideal-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Función de covarianza ideal</h4>
+						<p style="font-size: 26px">La función de covarianza del dominio contínuo se define como </p>
+						<p style="color: #FF5555;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right]$</p>
+						<ul style="font-size: 22px">
+							<li> <span style="color: #FF5555;font-size: 38px">$f$</span> función de nuestra distribución
+							<li> <span style="color: #FF5555;font-size: 38px">$\sigma^2_{f}$</span> covarianza de la función <span style="color: #FF5555;font-size: 38px">$f$</span>
+							<li> <span style="color: #FF5555;font-size: 38px">$l$</span> distancia o gradiente temporal entre <span style="color: #FF5555;font-size: 38px">$x$</span> y <span style="color: #FF5555;font-size: 38px">$x^{\prime}$</span>
+						</ul>
+						<p style="font-size: 26px">La función <span style="color: #FF5555;font-size: 38px">$k$</span> nos indica cuánto varían nuestros datos en función de la distancia o gradiente temporal en el que se encuentran</p>
+				</section>
+				<!--Procesos Gaussianos: Covarianza-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Función de covarianza</h4>
+					<p style="font-size: 26px">En general los PG presentan ruido que hace que la distribución sea <span style="color: #FF5555;font-size: 32px"> $y = f(x) +N(0,\sigma^2_{n})$ </span> y por tanto</p>
+					<p style="color: #FF5555;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right] + \sigma^2_{n} \delta(x,x^{\prime})$</p>
+					<ul style="font-size: 22px">
+							<li> <span style="color: #FF5555;font-size: 38px">$\delta(x,x^{\prime})$</span> delta de Kronecker
+					</ul>
+				</section>
+				<!--Procesos Gaussianos: Estimación-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Estimación</h4>
+					<p style="font-size: 26px">Para poder realizar una estimación <span style="color: #FF5555;font-size: 38px">$y_{*}$</span> de <span style="color: #FF5555;font-size: 38px">$y$</span> calculamos la función de covarianza asociada al dominio contínuo para todas las posibles combinaciones existentes entre cada observación tal que</p>
+					<p style="color: #FF5555;font-size: 38px;text-align: center">
+					$K_{*} = 	\begin{bmatrix}
+								k(x_{*},x_{1}) & k(x_{*},x_{2}) & \dots  & k(x_{*},x_{n})
+								\end{bmatrix}
+					\text{ }
+					K_{**} = k(x_{*},x_{*})$
+					</p>
+					<p style="font-size: 26px">El estimador se calcula tal que</p>
+					<p style="color: #FF5555;font-size: 38px;text-align: center">$\hat{y}_{*}=K_{*}K^{-1}y$</p>
+					<p style="font-size: 26px">Y la varianza del estimador es</p>
+					<p style="color: #FF5555;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
 				</section>
 			</section>
 			</div>
