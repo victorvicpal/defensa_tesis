@@ -120,25 +120,21 @@
 				<!--REDUCCIÓN DIMENSIONAL: DEFINICIÓN-->
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
-					<p style="font-size: 26px">Representar de forma fiel datos multivariantes en espacios de menor dimensión</p>
-					<table>
-					<tr>
-						<td style="text-align: center; width: 50%">
-							<p>Insurance contract</p>
-							<ul>
-								<li>HOLA
-								<li>ADIOS
-							</ul>
-						</td>
-						<td style="text-align: center; width: 50%">
-							<p>Insurance contract</p>
-							<ul>
-								<li>HOLA
-								<li>ADIOS
-							</ul>
-						</td>
-					</tr>
-					</table>
+					<!--<p style="font-size: 26px">Representar de forma fiel datos multivariantes en espacios de menor dimensión</p>-->
+					<div style="width: 50%; float: left">
+						<ul style="font-size: 32px">
+							<li>Técnicas descriptivas
+							<li>Adaptabilidad al ojo humano
+							<li>Baja dimensionalidad
+							<li>Similaridad/Disimilaridad
+							<li>Máxima información
+						</ul>
+					</div>
+					<div style="width: 45%; float: right">
+						<figure style="float:right">
+							<img data-src="img/data.png" style="width: 80%;height: 80%">
+						</figure>
+					</div>
 				</section>
 				<!--ACP-->
 				<section align="left">
@@ -207,7 +203,7 @@
 						<h4 style="text-align:left">Análisis de Correspondencias Múltiples</h4>
 						<div style="width: 45%; float: right">
 							<figure style="float:right">
-								<img data-src="img/MCA.png" style="width: 90%; height: 90%; background-color:white">
+								<img data-src="img/MCA.png" style="width: 90%; height: 90%">
 							</figure>
 						</div>
 							<p style="font-size: 26px">Extensión del Análisis de Correspondencias</p>
@@ -217,6 +213,162 @@
 								<li>Columnas variables
 							</ul>
 							<p style="font-size: 26px">Representación gráfica semejante al ACP para variables categóricas</p>
+				</section>
+				<!--Análisis Factorial-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Análisis Factorial</h4>
+					<div style="width: 50%;float: left">
+						<p style="font-size: 26px;color: #FF5555">C. Spearman (1904)</p>
+						<p style="font-size: 26px">Búsqueda de variables no observables denominadas factores</p>
+						<ul style="font-size: 26px">
+								<li>Factores comunes
+								<li>Factores únicos
+						</ul>
+						<p style="font-size: 26px">Interpretabilidad de los factores comunes</p>
+					</div>
+					<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/Spearman.png" style="width: 60%; height: 60%">
+							</figure>
+					</div>
+				</section>
+				<!--Análisis Factorial Múltiple-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Análisis Factorial Múltiple</h4>
+					<div style="width: 50%;float: left">
+						<p style="font-size: 26px">Extensión del Análisis Factorial</p>
+						<p style="font-size: 26px">Técnica que agrupa variables cualitativas y cuantitativas en el mismo subespacio</p>
+						<p style="font-size: 26px">Ponderaciones a través del inverso del primer valor propio:</p>
+						<ul style="font-size: 26px">
+								<li>Variables cuantitativas (ACP)
+								<li>Variables cualitativas (AC)
+						</ul>
+						<p style="font-size: 26px">Se asume equilibrio entre grupos</p>
+					</div>
+					<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/MFA1.png" style="width: 55%; height: 55%">
+								<img data-src="img/MFA2.png" style="width: 55%; height: 55%">
+							</figure>
+					</div>
+				</section>
+				<!--Sistemas Gifi-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Sistemas Gifi</h4>
+					<div style="width: 50%;float: left">
+						<p style="font-size: 26px;color: #FF5555">A. Gifi (1981)</p>
+						<p style="font-size: 26px">Minimización de la función de pérdida (loss function) a través de Mínimos Cuadrados Alternados (ALS)</p>
+						<p style="font-size: 26px">Exploración y modelado de la relación entre dos o más conjuntos de variables</p>
+						<ul style="font-size: 26px">
+								<li>OVERALS
+								<li>HOMALS
+						</ul>
+					</div>
+					<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/Jan_de_Leeuw.png" style="width: 200%; height: 200%">
+							</figure>
+					</div>
+				</section>
+				<!--Métodos Biplot-->
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Métodos Biplot</h4>
+					<div style="width: 50%;float: left">
+						<p style="font-size: 26px;color: #FF5555">K. Gabriel (1971)</p>
+						<p style="font-size: 26px">Representación de elementos (filas) y variables (columnas) en un mismo subespacio</p>
+						<ul style="font-size: 26px">
+							<li>Variables > Vectores
+							<li>Elementos > Puntos
+						</ul>
+					</div>
+					<div style="width: 45%; float: right">
+							<figure style="float:right">
+								<img data-src="img/Gabriel.png" style="width: 100%; height: 100%">
+							</figure>
+					</div>
+				</section>
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Métodos Biplot</h4>
+					<p style="font-size: 24px"> Sea <span style="color: #FF5555;font-size: 38px">$X_{N \times P}$</span> la matriz de partida compuesta por: 
+						<ul style="font-size: 26px">
+							<li><span style="color: #FF5555;font-size: 38px">$P$</span> variables cuantitativas
+							<li><span style="color: #FF5555;font-size: 38px">$N$</span> individuos
+						</ul>
+					<p style="font-size: 24px">Un Biplot es una representación gráfica de <span style="color: #FF5555;font-size: 38px">$X$</span> mediante marcadores fila <span style="color: #FF5555;font-size: 38px">$r_{1},...,r_{N}$</span> y marcadores columna <span style="color: #FF5555;font-size: 38px">$c_{1},...,c_{P}$</span> tal que <span style="color: #FF5555;font-size: 38px">$x_{ij} \approx r_{i}^{'} c_{j}$</span> </p>
+					<p style="color: #FF5555;font-size: 38px;text-align: center">$X \approx R C^{'}$ </p>
+				</section>
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Métodos Biplot</h4>
+						<p style="font-size: 24px"> Para obtener esta aproximación aplicamos una Descomposición en Valores Singulares. Si <span style="color: #FF5555;font-size: 38px">$T=rank(X)$</span> entonces la factorización de <span style="color: #FF5555;font-size: 38px">$X$</span> se obtiene tal que
+						<p style="font-size: 38px;color: #FF5555;text-align: center">
+						\begin{equation}
+						X=U \Lambda V^{'}=\sum_{t=1}^T \lambda_{t} r_{t} c_{t}
+						\end{equation}
+						</p>
+						<p style="font-size: 24px">donde <span style="color: #FF5555;font-size: 38px">$U$</span> es una <span style="color: #FF5555;font-size: 38px">$N \times T$</span> matriz unitaria, <span style="color: #FF5555;font-size: 38px">$\Lambda$</span> es una <span style="color: #FF5555;font-size: 38px">$T \times T$</span> matriz diagonal no negativa, y <span style="color: #FF5555;font-size: 38px">$V$</span> es una <span style="color: #FF5555;font-size: 38px">$P \times T$</span> matriz unitaria</p>
+				</section>
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Métodos Biplot</h4>
+						<p style="font-size: 38px;color: #FF5555;text-align: center">
+							\begin{equation}
+							X \cong U_{(T)} \Lambda_{(T)} V_{(T)}^{'} = \sum_{t=1}^T \lambda_{t} r_{t} c_{t}
+							\end{equation}
+						</p>
+						<p style="font-size: 24px">Siendo <span style="color: #FF5555;font-size: 38px">$\lambda_{t}$</span> los valores propios, <span style="color: #FF5555;font-size: 38px">$r_{t}$</span> y <span style="color: #FF5555;font-size: 38px">$c_{t}$</span> los vectores propios de filas y columnas respectivamente.
+							Por tanto, <span style="color: #FF5555;font-size: 38px">$R$</span> y <span style="color: #FF5555;font-size: 38px">$C$</span> son fácilmente obtenibles tal que
+						</p>
+						<p style="font-size: 38px;color: #FF5555;float: left">
+								\begin{equation}
+									R = U_{(T)} \Lambda_{(T)}^{\psi} \\
+									C = V_{(T)} \Lambda_{(T)}^{1-\psi}
+								\end{equation}
+						</p>
+						<p style="font-size: 24px">donde  <span style="color: #FF5555;font-size: 30px">$0 \leq \psi \leq 1$</span></p>
+				</section>
+				<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Tipos de Biplot</h4>
+						<p style="font-size: 38px;color: #FF5555;text-align: center">
+							<span style="color:white">JK-Biplot : </span> $\psi = 1$
+								\begin{equation}
+									R = U \Lambda \\
+									C = V
+								\end{equation}
+						</p>
+						<p style="font-size: 38px;color: #FF5555;text-align: center">
+							<span style="color:white">GH-Biplot : </span> $\psi = 0$
+								\begin{equation}
+									R = U \\
+									C = V \Lambda
+								\end{equation}
+						</p>
+				</section>
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+						<h4 style="text-align:left">Interpretación</h4>
+						<div style="width: 55%;float: left">
+							<p style="font-size: 24px"> Elementos fila > Puntos </p>
+							<p style="font-size: 24px"> Elementos columna > Vectores </p>
+							<ul style="font-size: 24px">
+								<p style="font-size: 34px">Propiedades</p>
+								<li>Proyecciones $ \bot $ puntos sobre vectores $ \approx $ valor real
+								<li>Producto escalar vectores $ \approx $ matriz covarianzas
+								<li>Longitud vectores $ \approx $ desviación estándar de las variables
+								<li>Coseno del ángulo entre dos variables $ \approx $ correlación entre ellas
+							</ul>
+						</div>
+						<div style="width: 40%; float: right">
+							<figure style="float:right">
+								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%">
+							</figure>
+					</div>
 				</section>
 			</section>
 			</div>
