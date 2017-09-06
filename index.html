@@ -108,13 +108,13 @@
 								<li>Análisis de Correspondencias
 								<li>Análisis Factorial
 								<li>Sistemas Gifi
-								<li>Biplot
+								<li>Métodos Biplot
 							</ul>
-						<li class="fragment highlight-current-red"> Procesos Gaussianos</li>
-							<ul>
+						<li> Procesos Gaussianos</li>
+						<!--<ul>
 								<li>Kriging
 								<li>Cokriging
-							</ul>
+							</ul>-->
 					</ul>
 				</section>
 				<!--REDUCCIÓN DIMENSIONAL: DEFINICIÓN-->
@@ -373,7 +373,7 @@
 							<figure style="float:right">
 								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%">
 							</figure>
-					</div>
+						</div>
 				</section>
 				<!--Biplot: Calidad-->
 				<section>
@@ -514,6 +514,27 @@
 							<li>Co-Tucker3 -- M. Rodríguez-Rosa (2016)
 						</ul>
 				</section>
+			</section>
+			<section>
+				<!--MARCO TEORICO LISTADO-->
+				<section style="text-align:left">
+					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
+					<ul style="text-align:left">
+						<li> Reducción Dimensional</li>
+							<!--<ul>
+								<li>Análisis de Componentes Principales
+								<li>Análisis de Correspondencias
+								<li>Análisis Factorial
+								<li>Sistemas Gifi
+								<li>Métodos Biplot
+							</ul>-->
+						<li class="fragment highlight-current-red"> Procesos Gaussianos</li>
+							<ul>
+								<li>Kriging
+								<li>Cokriging
+							</ul>
+					</ul>
+				</section>
 				<!--Procesos Gaussianos-->
 				<section>
 					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
@@ -570,9 +591,133 @@
 					<p style="font-size: 26px">Y la varianza del estimador es</p>
 					<p style="color: #FF5555;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
 				</section>
+				<!--Geoestadística-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Geoestadística</h4>
+					<div style="width: 50%; float: left">
+						<p style="font-size: 26px;color: #FF5555">D. Krige (1951)</p>
+							<ul style="font-size: 26px">
+								<li> Minería
+								<li> Basado en la experiencia
+							</ul>
+						<p style="font-size: 26px;color: #FF5555">G. Matheron (1962)</p>
+							<ul style="font-size: 26px">
+								<li> École de Mines (Paris)
+								<li> Formulación matemática
+							</ul>
+						<p style="font-size: 26px">Aplicaciones en hidrología, geología, agricultura, geografía, meteorología, ecología, biología, etc</p>
+					</div>
+					<div style="width: 45%; float: right">
+					<table>
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+								<img data-src="img/Krige.png" style="width: 30%;height: 30%">
+							</td>
+						</tr>
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+							<img data-src="img/Matheron.png" style="width: 50%;height: 60%">
+							</td>
+						</tr>
+					</table>
+					</div>
+				</section>
+				<!--Datos-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Datos geoestadísticos</h4>
+					<table style="font-size: 26px">
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+								Variable regionalizada <span style="color: #FF5555;font-size: 38px">$z(x_{\alpha})$</span>
+							</td>
+							<td style="text-align: center;border: transparent;">
+								Variables aleatorias <span style="color: #FF5555;font-size: 38px">$Z(x_{\alpha})$</span>
+							</td>
+						</tr>
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+								<img data-src="img/dg.png" style="width: 100%;height: 40%">
+							</td>
+							<td style="text-align: center;border: transparent;">
+								<img data-src="img/Matriz_dg.png" style="width: 100%;height: 40%">
+							</td>
+						</tr>
+					</table>
+				</section>
+				<!--Conceptos Geoestadísticos 1-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Conceptos geoestadísticos</h4>
+					<div style="width: 60%; float: left">
+						<p style="font-size: 24px;">La media de <span style="color: #FF5555;font-size: 38px">$Z(x_{\alpha})$</span> se defime como <span style="color: #FF5555;font-size: 38px">$E[Z(x_{\alpha})]=m$</span></p>
+						<p style="font-size: 24px;">La covarianza depende de la distancia <span style="color: #FF5555;font-size: 38px">$h$</span> entre pares de puntos <span style="color: #FF5555;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #FF5555;font-size: 38px">$x_{\beta}$</span> </p>
+						<p style="font-size: 38px;color: #FF5555;text-align: center"> $Cov(Z(x_{\alpha}),Z(x_{\beta}))=E[(Z(x_{\alpha})-m) \cdot (Z(x_{\alpha}+h)-m)]$</p>
+					</div>
+					<div style="width: 35%; float: right">
+							<figure style="float:right;">
+								<img data-src="img/vectorh.png" style="width: 50%; height: 50%;border: transparent;background: transparent">
+							</figure>
+					</div>
+				</section>
+				<!--Conceptos Geoestadísticos: Semivarianza-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Conceptos geoestadísticos</h4>
+					<p style="font-size: 24px;"> La media de los incrementos <span style="color: #FF5555;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #FF5555;font-size: 38px">$x_{\alpha}+h$</span> es nula</p>
+					<p style="font-size: 38px;color: #FF5555;text-align: center"> $E[Z(x_{\alpha}+h)-Z(x_{\alpha})]=0$ </p>
+					<p style="font-size: 24px;"> La varianza de los incrementos es</p>
+					<p style="font-size: 38px;color: #FF5555;text-align: center">$var(Z(x_{\alpha}+h)-Z(x_{\alpha}))=2\gamma(h)$</p>
+					<p style="font-size: 24px;"> donde <span style="color: #FF5555;font-size: 38px">$\gamma(h)$</span> es la semivarianza que es </p>
+					<p style="font-size: 38px;color: #FF5555;text-align: center">$\gamma(h)=\frac{1}{2}(Z(x_{\alpha}+h)-Z(x_{\alpha}))^2$</p>
+				</section>
+				<!--Conceptos Geoestadísticos: Variograma-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Variograma <span style="color: #FF5555">$\gamma^{*}$</span></h4>
+					<table style="font-size: 26px">
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+								Variograma en nube <span style="color: #FF5555;font-size: 38px">$\frac{1}{2}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
+							</td>
+							<td style="text-align: center;border: transparent;">
+								Variograma experimental <span style="color: #FF5555;font-size: 38px">$\frac{1}{2n}\sum_{\alpha=1}^{n}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
+							</td>
+						</tr>
+						<tr style="text-align: center;border: transparent;">
+							<td style="text-align: center;border: transparent;">
+								<img data-src="img/Cloud.png" style="width: 100%;height: 50%;border: transparent;">
+							</td>
+							<td style="text-align: center;border: transparent;">
+								<img data-src="img/VarExp.png" style="width: 100%;height: 50%;border: transparent;">
+							</td>
+						</tr>
+					</table>
+				</section>
+				<!--Variograma Teórico-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Variograma teórico</h4>
+					<div style="width: 45%; float: left;font-size: 26px">
+						<ul>
+							<li> <span style="font-weight: bold;font-size: 28px">Nugget ($nug$):</span> Valor de la semivarianza para distancias cercanas a cero
+							<li> <span style="font-weight: bold;font-size: 28px">Sill ($b$):</span> Valor constante que alcanza la semivarianza a una distancia $h$ determinada
+							<li> <span style="font-weight: bold;font-size: 28px">Rango ($a$):</span> Valor de $h$ al que alcanzamos el sill $b$
+						</ul>
+					</div>
+					<div style="width: 45%; float: right">
+						<img data-src="img/variogramateorico.png" style="width: 90%;height: 90%;border: transparent;">
+					</div>
+				</section>
+				<!--Ajuste LMR-->
+				<section>
+					
+				</section>
 			</section>
-			</div>
+		</section>
 		</div>
+	</div>
 
 
 		<script src="lib/js/head.min.js"></script>

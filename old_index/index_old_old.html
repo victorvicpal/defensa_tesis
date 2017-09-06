@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Modelo de predicción subespacial: Regresión Multivariante Gaussiana Subespacial</title>
+		
+		<meta name="description" content="Defensa Tesis">
+		<meta name="author" content="Víctor Vicente Palacios">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			<section>
+				<section data-background-image="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Salamanca_vector_seal.svg/200px-University_of_Salamanca_vector_seal.svg.png" data-background-size="300px" data-background-repeat="no repeat">
+					<h3 style="color: #FF5555">Modelo de predicción subespacial: </h3>
+					<h4 style="color: white">Regresión Multivariante Gaussiana Subespacial</h4>
+					<p style="text-align: right; padding-right: 1em"> <a href="https://github.com/victorvicpal" style="color: white">Víctor Vicente Palacios</a></p>
+					<p style="text-align: right; padding-right: 1em"><small>12 de Septiembre 2017</small></p>
+				</section>
+				<section align="left" data-background-image="img/UsalCentenario.png" data-background-position="64% 50%" data-background-size="270px" data-background-repeat="no repeat">
+				<h3 style="color: #FF5555;text-align:left"> Contenido </h3>
+				<ul>
+				<li><p class="fragment highlight-current-red">Introducción</p>
+				<li><p class="fragment highlight-current-red">Marco Teórico</p>
+				<li><p class="fragment highlight-current-red">Algoritmo MGSR</p>
+				<li><p class="fragment highlight-current-red">Aplicaciones</p>
+				<li><p class="fragment highlight-current-red">Software</p>
+				</ul>
+				</section>
+			<section/>
+				<section>
+					<section align="left">
+					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
+					</section>
+					<section>
+					<h3> Imágenes </h3>
+					<img data-src="img/Portada-Tesis-Victor02.png" style="width: 50%; height: 50%">
+					</section>
+				</section>
+				<section align="left">
+					<section>
+					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
+					<ul>
+					<li>Reducción Dimensional</li>
+						<ul>
+						<li>Análisis de Componentes Principales
+						<li>Análisis de Correspondencias
+						<li>Biplot
+						</ul>
+					<li>Procesos Gaussianos</li>
+						<ul>
+						<li>Kriging
+						<li>Cokriging
+						</ul>
+					</ul>
+					</section>
+					<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
+					<h4 style="text-align:left">ACP <span style="font-size:26px">(Karl Pearson, 1901)</span></h4>
+					<figure style="float:right">
+                                                <img data-src="img/pearson.png" style="width: 60%; height: 60%">
+                                        </figure>
+					<p style="font-size: 26px">Sean $X=[X_{1},...,X_{p}]$  y  $S=var(X)$  su matrix de covarianzas</p>
+					<p style="font-size: 26px">La descomposición espectral de  $S$  es  $S=T \Lambda T^{'}$
+					donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
+					y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
+					<p style="font-size: 26px">Las componentes principales de $X$ son las nuevas variables</p>
+					\begin{equation}
+					Y_{j}=X t_{j} \text{ , } j=1,...,p
+					\end{equation}
+					</section>
+					<section align="left">
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h4 style="text-align:left">ACP</h4>
+					<pre><code data-trim data-noescape>
+                                        library(ggfortify)
+                                        autoplot(prcomp(iris[c[1:4])), data=iris, colour = 'Species')
+                                        </code></pre>
+					<div align="right">
+					<figure style="float:right">
+						<img data-src="img/PCA.png" style="width: 80%; height: 80%; background-color:white">
+					</figure>
+					</div>
+					<div align="left">
+					<p style="font-size:28px;text-align:left;top:10;bottom:0">
+					Dos simples líneas de código nos permiten realizar un análisis exploratorio y descriptivo
+					de nuestros datos de manera rápida y efectiva
+					</p>
+					</div>
+					</section>
+					<section>
+					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+                                        <h4 style="text-align:left">AC</h4>
+					<p>Benzecri (1971)</p>
+					<img data-src="https://www.babelio.com/users/AVT_Jean-Paul-Benzecri_5849.jpeg">
+					</section>
+				</section>
+				<section>
+				<h3>Código del programa</h3>
+					<pre><code data-trim data-noescape>
+					CV <- CrossVariogram(
+							coord=as.data.frame(PC_versicolor$scores[,1:2],
+							values=as.data.frame(versicolor_st),
+							n=12)
+					</code></pre>
+				</section>
+				<section>
+				<p>Fórmula matemática</p>
+				\begin{equation}
+				X=U \Lambda V^\intercal=\sum_{t=1}^T \lambda_{t}r_{t}c_{t}
+				\end{equation}
+				</section>
+				<section>
+					<p class="fragment grow">grow</p>
+				    	<p class="fragment shrink">shrink</p>
+    					<p class="fragment fade-out">fade-out</p>
+    					<p class="fragment fade-up">fade-up (also down, left and right!)</p>
+    					<p class="fragment current-visible">visible only once</p>
+    					<p class="fragment highlight-current-blue">blue only once</p>
+    					<p class="fragment highlight-red">highlight-red</p>
+    					<p class="fragment highlight-green">highlight-green</p>
+    					<p class="fragment highlight-blue">highlight-blue</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				math: {
+					mathjax:
+				'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+				},
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/math/math.js', async: true},
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
