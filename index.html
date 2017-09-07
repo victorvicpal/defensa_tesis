@@ -864,6 +864,7 @@
 						\end{equation*}
 					</p>
 				</section>
+				<!--Variogramas Cruzados Subespaciales-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
@@ -879,7 +880,6 @@
 						\end{equation*}
 					</p>
 					<p style="font-size: 32px;color: #e53b50;text-align: center">$\gamma^{*}_{ij}=[\Gamma^{*}_{ij}(h_{1}),...,\Gamma^{*}_{ij}(h_{K})]$</p>
-						<p style="font-size: 32px;text-align: left"">Código software:</p>
 					<pre>
 						<code data-trim data-noescape>
                             CV <- crossvariogram(coord=data[,1:2],values=data[,3:6],n=12)
@@ -887,6 +887,7 @@
                         </code>
                     </pre>
 				</section>
+				<!--Modelo Lineal Corregionalizado-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Modelo Lineal Corregionalizado</h4>
@@ -908,6 +909,7 @@
 					 	</tr>
 					</table>
 				</section>
+				<!--LMC-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Modelo Lineal Corregionalizado</h4>
@@ -915,6 +917,120 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center">$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$</p>
 					<p style="font-size: 24px;"><span style="font-size: 30px;color: #e53b50">$G$</span> es la matriz <span style="font-size: 30px;color: #e53b50">$K \times S$</span> correspondiente a las distintas funciones de los variogramas anidados</p> 
 					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #e53b50">$Cov(b_{ij})$</span> es la <b style="color: #e53b50">matriz de varianza-covarianza subespacial</b> que representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #e53b50">$h$</span></p>
+				</section>
+				<!--Matriz Covarianza-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Matriz Varianza-Covarianza Subespacial</h4>
+					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #e53b50">$Cov(b_{ij})$</span> representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #e53b50">$h$</span> y es equivalente a</p>
+					<p style="font-size: 26px;color: #e53b50;text-align: center">
+						\begin{equation}
+							Cov(\gamma_{ij}^{*}(h_{k}),\gamma_{ij}^{*}(h_{k'}))=tr(A(h_{k})C(b_{ij})A(h_{k'})C(b_{ij}))+
+							tr(A(h_{k})C(b_{ii})A(h_{k'})C(b_{jj}))
+						\end{equation}
+					</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$C(b_{ij})=\sum_{s=0}^{S}b_{ij,s}\rho_{s}$</span> es la matriz de covarianzas entre <span style="font-size: 30px;color: #e53b50">$z_{i}$</span> y <span style="font-size: 30px;color: #e53b50">$z_{j}$</span> y <span style="font-size: 30px;color: #e53b50">$\rho_{s}$</span> es la matriz de correlación subespacial para cada variograma normalizado</p>
+					<table>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: solid #e53b50;">
+							<td>
+							$Cov(\gamma_{ij}^{*}(h_{k}),\gamma_{ij}^{*}(h_{k'}))=\sum_{r=1}^{S}\sum_{q=1}^{S}[(b_{ij,r}b_{ij,q}+b_{ii,r}b_{jj,q})tr(\rho_{r}A(h_{k})\rho_{q}A(h_{k'}))]$
+							</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Algoritmo LMC subespacial</h4>
+					<table>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+							<td style="border: transparent;">
+								<b style="color: white">Paso 0:</b>
+							</td>
+							<td style="border: transparent;">
+								<span style="color: white;font-size: 22px">Inicializamos</span> $\tau$ <span style="color: white;font-size: 22px">a 0 y evaluamos</span> $WSS(\widehat{B}^{\tau})$
+							</td>
+						</tr>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+							<td style="border: transparent;">
+								<b style="color: white">Paso 1:</b>
+							</td>
+							<td style="border: transparent;">
+								$\Gamma_{s_{0}}^{*}(h_{k})=\Gamma^{*}(h_{k})-\sum_{s\neq s_{0}}^{S}\widehat{B}_{s}^{\tau}g_{s}(h_{k}),\text{		}k=1,...,K$
+							</td>
+						</tr>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+							<td style="border: transparent;">
+								<b style="color: white">Paso 2:</b>
+							</td>
+							<td style="border: transparent;">
+								$
+								\widehat{b}_{ij,s_{0}}^{\tau+1}=(g_{s_{0}}^{T}Cov(\widehat{b}_{ij}^{\tau})^{-1}g_{s_{0}})^{-1}g_{s_{0}}^{T}Cov(\widehat{b}_{ij}^{\tau})^{-1}\gamma_{ij,s_{0}}^{*}
+								$
+							</td>
+						</tr>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+							<td style="border: transparent;">
+								<b style="color: white">Paso 3:</b>
+							</td>
+							<td style="border: transparent;">
+							<table>
+								<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+									<td style="border: transparent;">
+									<span style="color: white;font-size: 22px">Descomposición espectral</span> $\widehat{b}_{ij,s_{0}}^{\tau+1}=Q \Lambda Q^{T}$
+									</td>
+								</tr>
+								<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+									<td style="border: transparent;">
+									<span style="color: white;font-size: 22px">Definimos</span> $\Lambda^{+}$ <span style="color: white;font-size: 22px">para que</span> $\widehat{B}_{s0}^{\tau}$ <span style="color: white;font-size: 22px">sea semidefinida positiva</span>
+									</td>
+								</tr>
+								<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+									<td style="border: transparent;">
+									<span style="color: white;font-size: 22px">el nuevo vector</span> $b_{ij}^{\tau}$ <span style="color: white;font-size: 22px">de la estructura</span> $s_{0}$ <span style="color: white;font-size: 22px">se sustituye en la matriz</span> $Cov(\widehat{b}_{ij}^{\tau})$
+									</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: transparent;">
+							<td style="border: transparent;">
+								<b style="color: white">Paso 4:</b>
+							</td>
+							<td style="border: transparent;">
+								<span style="color: white;font-size: 22px">Si la diferencia entre</span> $WSS(\widehat{B}^{\tau+1})$ <span style="color: white;font-size: 22px">y</span> $WSS(\widehat{B}^{\tau})$ <span style="color: white;font-size: 22px">es mayor que</span> $\delta \rightarrow$ <b style="color: white;font-size: 22px">Paso 1</b>
+							</td>
+						</tr>
+					</table>
+					<pre>
+						<code data-trim data-noescape>
+                            RES <- lmc(CV= crossvariog,fun= c("Lin","Pow"),a= c(0.4,1.5))
+                            plot.crossvariogram(CV,RES)
+                        </code>
+                    </pre>
+				</section>
+				<!--Cokriging Simple-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Cokriging Simple</h4>
+					<p style="font-size: 24px;">Partiendo de <span style="color: #e53b50;font-size: 30px">$Z(u_{\alpha})$</span> queremos hallar <span style="color: #e53b50;font-size: 30px">$Z^{*}(u_{0})$</span> siendo <span style="color: #e53b50;font-size: 30px">$u_{0}$</span> las coordenadas subespaciales de nuestro mallado. Para ello, hemos de hallar <span style="color: #e53b50;font-size: 30px">$W_{s}$</span></p>
+					<p style="color: #e53b50;font-size: 30px;text-align: center">
+						$C(u_{\alpha}-u_{\beta})W_{s}=B_{s} \otimes \rho_{s}(u_{0}-u_{\alpha})$
+					</p>
+					<p style="font-size: 24px;">donde <span style="color: #e53b50;font-size: 30px">$C(u_{\alpha}-u_{\beta})=\sum_{s=1}^{S} B_{s} \otimes \rho_{s}(u_{\alpha}-u_{\beta})$</span></p>
+					<p style="font-size: 24px;">Y por tanto</p>
+					<table>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: solid #e53b50;">
+							<td>
+								$Z_{i}^{*}(u_{0})= \sum_{i=1}^{P}\sum_{\alpha=1}^{N}w_{\alpha}^{i}Z_{i}(u_{\alpha})$
+							</td>
+						</tr>
+					</table>
+					<pre>
+						<code data-trim data-noescape>
+                            xygrid <- GRID_MGSR(DAT = coordinates,lag = 0.05)
+                            Z <- cokrig(RES,xygrid)
+                        </code>
+                    </pre>
 				</section>
 			</section>
 			</div>
@@ -937,7 +1053,7 @@
 				// Number of pixels to move the parallax background per slide
 				// - Calculated automatically unless specified
 				// - Set to 0 to disable movement along an axis
-				parallaxBackgroundHorizontal: 20,
+				parallaxBackgroundHorizontal: 10,
 				parallaxBackgroundVertical: 10,
 				
 				math: {
