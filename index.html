@@ -794,13 +794,102 @@
 					<p style="font-size: 38px;color: #FF5555;text-align: center">$Z_{i_{0}}^{*}(x_{0})=m_{i_{0}}+\sum_{i=1}^{P}\sum_{\alpha=1}^{n}w_{\alpha}^{i}(Z_{i}(x_{\alpha})-m_{i})$</p>
 					<p style="font-size: 28px;">donde <span style="font-size: 32px;color: #FF5555">$i_{0}$</span> es la variable a estimar e <span style="font-size: 30px;color: #FF5555">$i$</span> corresponden a las <span style="font-size: 30px;color: #FF5555">$P$</span> variables analizadas</p>
 					<p style="font-size: 28px;">Existen diferentes tipos como el Cokriging ordinario, universal, <i>colocado</i>, factorial...</p>
-					</div>
 				</section>
 			</section>
-		</section>
+			<!--MGSR-->
+			<section style="text-align: left">
+				<!--MGSR-->
+				<section>
+					<h2 style="color: #FF5555;text-align:center;font-size: 58px">Regresión Multivariante Gaussiana Subespacial</h2>
+					<p style="color: #FF5555;text-align:center;font-size: 58px"><b>(MGSR)</b></p>
+				</section>
+				<!--Algoritmo Esquema-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Algoritmo</h4>
+					<figure style="float:right">
+							<img data-src="img/esquemaalgoritmo.png" style="width: 100%;height: 100%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Coordenadas Subespaciales-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Coordenadas Subespaciales</h4>
+					<p style="font-size: 24px;">Partimos de una matriz <span style="font-size: 28px;color: #FF5555">$X_{N \times P}$</span> con <span style="font-size: 30px;color: #FF5555">$N$</span> elementos y <span style="font-size: 30px;color: #FF5555">$P$</span> variables, ninguna de ellas de dominio contínuo y estandarizada por columnas</p>
+					<p style="font-size: 24px;">Aplicando una técnica de reducción dimensional obtenemos una serie de coordenadas subespaciales <span style="font-size: 30px;color: #FF5555">$R_{N \times S}$</span> para cada uno de los <span style="font-size: 30px;color: #FF5555">$N$</span> elementos en <span style="font-size: 30px;color: #FF5555">$T$</span> subespacios</p>
+					<p style="font-size: 24px;">Con <span style="font-size: 30px;color: #FF5555">$X$</span> y <span style="font-size: 30px;color: #FF5555">$R$</span> conformamos la matriz <span style="font-size: 30px;color: #FF5555">$Z(u)=[X(R)]$</span></p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #FF5555">$u$</span> son las coordenadas subespaciales intrínsecas a <span style="font-size: 30px;color: #FF5555">$Z$</span></p>
+					<p style="font-size: 24px;" class="fragment highlight-current-red"><span style="font-size: 30px;color: #FF5555">$Z$</span> es semejante a las matrices empleadas en Procesos Gaussianos</p>
+				</section>
+				<!--Variogramas Cruzados Subespaciales-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
+					<p style="font-size: 24px;"> El vector de distancias intermedias o <i>lag</i> <span style="font-size: 30px;color: #FF5555">$h$</span> se compone de <span style="font-size: 30px;color: #FF5555">$k$</span> elementos tal que <span style="font-size: 30px;color: #FF5555">$h=\{h_{1},h_{2},...,h_{k}\}$</span></p>
+					<p style="font-size: 24px;"> El variograma experimental se define como</p>
+					<p style="font-size: 38px;color: #FF5555;text-align: center">$\Gamma^{*}(h_{k})=\gamma_{ij}^{*}(h_{k})$</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #FF5555">$i,j={1,...,P}$</span></p>
+					<table>
+						<tr style="font-size: 38px;color: #FF5555;text-align: center;border: solid #FF5555">
+							<td>
+					 		$\gamma_{ij}^{*}(h_{k})=z^{T}A(h_{k})z$
+					 		</td>
+					 	</tr>
+					</table>
+				</section>
+				<!--Variogramas Cruzados Subespaciales-->
+				<section>
+					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
+					<p style="font-size: 38px;color: #FF5555;text-align: center">
+						$A(h_{k}) = \frac{M_{i}(h_{k}) - \eta_{ij}(h_{k})}{J(h_{k})}=\frac{1}{J(h_{k})}$
+ 						<span style="font-size: 24px">$\begin{bmatrix}
+ 						m_{1}(h_{k}) & -\eta_{12} & \dots  & -\eta_{1N} \\
+    					-\eta_{12} & m_{2}(h_{k}) & \dots  & -\eta_{2N} \\
+    					\vdots & \vdots & \ddots & \vdots \\
+    					-\eta_{1N} & -\eta_{2N} & \dots  & m_{N}(h_{k})
+ 						\end{bmatrix}$</span>
+					</p>
+					<p style="font-size: 24px;"> donde <span style="font-size: 30px;color: #FF5555">$m_{i}$</span> es el número de pares que tiene el elemento <span style="font-size: 30px;color: #FF5555">$i$</span> a la distancia <span style="font-size: 30px;color: #FF5555">$h_{k}$</span> y</p>
+					<p style="font-size: 30px;color: #FF5555;text-align: center">
+						\begin{equation*}
+  							\eta_{ij}=
+  							\left\lbrace
+  								\begin{array}{l}
+    							  1 \text{ para pares \{i,j\} que se encuentren en distancias } h_{k} \\
+    							  \\
+    							  0 \text{ para pares \{i,j\} que no se encuentren en distancias } h_{k} \\
+  								\end{array}
+  							\right.
+						\end{equation*}
+					</p>
+				</section>
+				<section>
+					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
+					<p style="font-size: 32px;color: #FF5555;text-align: center">
+						\begin{equation*}
+							\Gamma^{*}(h_{k})=
+ 								\begin{bmatrix}
+ 									z_{1}A(h_{k})z^{T}_{1} & z_{1}A(h_{k})z^{T}_{2} & \dots  & z_{1}A(h_{k})z^{T}_{P} \\
+    								z_{2}A(h_{k})z^{T}_{1} & z_{2}A(h_{k})z^{T}_{2} & \dots  & z_{2}A(h_{k})z^{T}_{P} \\
+    								\vdots & \vdots & \ddots & \vdots \\
+    								z_{P}A(h_{k})z^{T}_{1} & z_{P}A(h_{k})z^{T}_{2} & \dots  & z_{P}A(h_{k})z^{T}_{P}
+ 								\end{bmatrix}
+						\end{equation*}
+					</p>
+					<p style="font-size: 32px;color: #FF5555;text-align: center">$\gamma^{*}_{ij}=[\Gamma^{*}_{ij}(h_{1}),...,\Gamma^{*}_{ij}(h_{K})]$</p>
+					<p style="font-size: 28px;text-align: left;">SOFTWARE</p>
+					<pre>
+						<code data-trim data-noescape>
+                            CV <- crossvariogram(coord=data[,1:2],values=data[,3:6],n=12)
+                            plot.crossvariogram(CV)
+                        </code>
+                    </pre>
+				</section>
+			</section>
+			</div>
 		</div>
-	</div>
-
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
