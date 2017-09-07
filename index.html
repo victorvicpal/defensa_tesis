@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-
+<!--Azul oscuro: 2d324e-->
 	<head>
 		<meta charset="utf-8">
 		<title>Modelo de predicción subespacial: Regresión Multivariante Gaussiana Subespacial</title>
@@ -32,14 +32,14 @@
 			<section>
 				<section data-background-image="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Salamanca_vector_seal.svg/200px-University_of_Salamanca_vector_seal.svg.png" data-background-size="300px" data-background-repeat="no repeat">
 				<!--TITULO-->
-				<h3 style="color: #FF5555">Modelo de predicción subespacial: </h3>
+				<h3 style="color: #e53b50">Modelo de predicción subespacial: </h3>
 					<h4 style="color: white">Regresión Multivariante Gaussiana Subespacial</h4>
 					<p style="text-align: right; padding-right: 1em"> <a href="https://github.com/victorvicpal" style="color: white">Víctor Vicente Palacios</a></p>
 					<p style="text-align: right; padding-right: 1em"><small>12 de Septiembre 2017</small></p>
 				</section>
-				<section align="left" data-background-image="img/UsalCentenario.png" data-background-position="64% 50%" data-background-size="270px" data-background-repeat="no repeat">
+				<section align="left" data-background-image="img/Logos.svg" data-background-position="64% 50%" data-background-size="270px" data-background-repeat="no repeat">
 				<!--CONTENIDO DE LA TESIS-->
-				<h3 style="color: #FF5555;text-align:left"> Contenido de la tesis </h3>
+				<h3 style="color: #e53b50;text-align:left"> Contenido de la tesis </h3>
 					<ul>
 						<li><p class="fragment highlight-current-red">Introducción</p>
 						<li><p class="fragment highlight-current-red">Marco Teórico</p>
@@ -54,32 +54,32 @@
 				<!--INTRODUCCION-->
 				<!--Regresión clásica-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
+					<h3 style="color: #e53b50;text-align:left"> Introducción </h3>
 					<h4 style="text-align:left">Regresión Clásica</h4>
-					<p style="font-size: 28px"> Conjunto de variables: <span style="color: #FF5555;font-size: 38px">$v_{1}$,...,$v_{n}$</span> </p>
-					<p style="font-size: 28px"> p. ej. Quiero hallar <span style="color: #FF5555;font-size: 38px">$v_{1}$</span> en función del resto tal que <span style="color: #FF5555;font-size: 38px">$v_{1}=f(v_{2}$,...,$v_{n})$</span></p>
-					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar <span style="color: #FF5555;font-size: 38px">$v_{2}$</span> en función del resto?</p>
-					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #FF5555;font-size: 38px">$v_{2}=f^{'}(v_{1}$,$v_{3}$,...,$v_{n})$</span></p>
-					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #FF5555;font-size: 38px">$f \neq f^{'}$</span></p>
+					<p style="font-size: 28px"> Conjunto de variables: <span style="color: #e53b50;font-size: 38px">$v_{1}$,...,$v_{n}$</span> </p>
+					<p style="font-size: 28px"> p. ej. Quiero hallar <span style="color: #e53b50;font-size: 38px">$v_{1}$</span> en función del resto tal que <span style="color: #e53b50;font-size: 38px">$v_{1}=f(v_{2}$,...,$v_{n})$</span></p>
+					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar <span style="color: #e53b50;font-size: 38px">$v_{2}$</span> en función del resto?</p>
+					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #e53b50;font-size: 38px">$v_{2}=f^{'}(v_{1}$,$v_{3}$,...,$v_{n})$</span></p>
+					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #e53b50;font-size: 38px">$f \neq f^{'}$</span></p>
 				</section>
 				<!--INTRODUCCION-->
 				<!--Regresión multivariante-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left"> Introducción </h3>
+					<h3 style="color: #e53b50;text-align:left"> Introducción </h3>
 					<h4 style="text-align:left">Regresión Multivariante</h4>
-					<p style="font-size: 28px"> Dado un conjunto de variables <span style="color: #FF5555;font-size: 38px">$V$</span> siendo <span style="color: #FF5555;font-size: 38px">$V = V_{1} \cup V_{2}$</span> </p>
-					<p style="font-size: 28px">queremos hallar <span style="color: #FF5555;font-size: 38px">$V_{1}$</span> en función de <span style="color: #FF5555;font-size: 38px">$V_{2}$</span> tal que <span style="color: #FF5555;font-size: 38px">$V_{1}=G(V_{2})$</span></p>
-					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar un nuevo subconjunto <span style="color: #FF5555;font-size: 38px">$V^{'}_{1}$</span> en función de <span style="color: #FF5555;font-size: 38px">$V^{'}_{2}$</span> siendo <span style="color: #FF5555;font-size: 38px">$V = V^{'}_{1} \cup V^{'}_{2}$</span>?</p>
-					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #FF5555;font-size: 38px">$V^{'}_{1}=G^{'}(V^{'}_{2})$</span></p>
-					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #FF5555;font-size: 38px">$G \neq G^{'}$</span></p>
+					<p style="font-size: 28px"> Dado un conjunto de variables <span style="color: #e53b50;font-size: 38px">$V$</span> siendo <span style="color: #e53b50;font-size: 38px">$V = V_{1} \cup V_{2}$</span> </p>
+					<p style="font-size: 28px">queremos hallar <span style="color: #e53b50;font-size: 38px">$V_{1}$</span> en función de <span style="color: #e53b50;font-size: 38px">$V_{2}$</span> tal que <span style="color: #e53b50;font-size: 38px">$V_{1}=G(V_{2})$</span></p>
+					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar un nuevo subconjunto <span style="color: #e53b50;font-size: 38px">$V^{'}_{1}$</span> en función de <span style="color: #e53b50;font-size: 38px">$V^{'}_{2}$</span> siendo <span style="color: #e53b50;font-size: 38px">$V = V^{'}_{1} \cup V^{'}_{2}$</span>?</p>
+					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #e53b50;font-size: 38px">$V^{'}_{1}=G^{'}(V^{'}_{2})$</span></p>
+					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #e53b50;font-size: 38px">$G \neq G^{'}$</span></p>
 				</section>
 				<!--OBJETIVO-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left;"> Objetivo </h3>
-					<p style="font-size: 28px"> ¿Y si <span style="color: #FF5555;font-size: 38px">$G = G^{'} = M$</span>?</p>
-					<p style="font-size: 28px" > Tendríamos un único modelo que nos permitiría predecir cualquier subconjunto de <span style="color: #FF5555;font-size: 38px">$V$</span> en función del subconjunto complementario del mismo </p>
-					<p style="font-size: 32px" class="fragment grow"> Nuestro principal objetivo es desarrollar un modelo <span style="color: #FF5555;font-size: 42px">$M$</span> que rompa con la rigidez de los modelos clásicos de regresión</p>
-					<p style="font-size: 32px;text-align: center;color: #FF5555" class="fragment fade-up"> Supongamos que disponemos de un conjunto <span style="color: #FF5555;font-size: 38px">$V=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$</span></p>
+					<h3 style="color: #e53b50;text-align:left;"> Objetivo </h3>
+					<p style="font-size: 28px"> ¿Y si <span style="color: #e53b50;font-size: 38px">$G = G^{'} = M$</span>?</p>
+					<p style="font-size: 28px" > Tendríamos un único modelo que nos permitiría predecir cualquier subconjunto de <span style="color: #e53b50;font-size: 38px">$V$</span> en función del subconjunto complementario del mismo </p>
+					<p style="font-size: 32px" class="fragment grow"> Nuestro principal objetivo es desarrollar un modelo <span style="color: #e53b50;font-size: 42px">$M$</span> que rompa con la rigidez de los modelos clásicos de regresión</p>
+					<p style="font-size: 32px;text-align: center;color: #e53b50" class="fragment fade-up"> Supongamos que disponemos de un conjunto <span style="color: #e53b50;font-size: 38px">$V=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$</span></p>
 				</section>
 				<!--OBJETIVO:animacion-->
 				<section data-background-image="img/objetivo_1.png" data-background-position="50% 50%" data-background-size="750px" data-background-repeat="no repeat">	
@@ -90,7 +90,7 @@
 				</section>
 				<!--MODELO-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left;"> MODELO </h3>
+					<h3 style="color: #e53b50;text-align:left;"> MODELO </h3>
 						<p style="float: center;font-size: 32px" class="fragment fade-up"> REDUCCION DIMENSIONAL</p>
 						<p style="float: center;font-size: 32px" class="fragment fade-up"> PROCESOS GAUSSIANOS</p>
 					<h3 style="text-align: right;color: #FF5556;" class="fragment fade-up"> MGSR</h3>
@@ -100,7 +100,7 @@
 			<section align="left">
 				<!--MARCO TEORICO LISTADO-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
+					<h3 style="color: #e53b50;text-align:left">Marco teórico</h3>
 					<ul>
 						<li class="fragment highlight-current-red"> Reducción Dimensional</li>
 							<ul>
@@ -119,7 +119,7 @@
 				</section>
 				<!--REDUCCIÓN DIMENSIONAL: DEFINICIÓN-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción Dimensional</h3>
 					<!--<p style="font-size: 26px">Representar de forma fiel datos multivariantes en espacios de menor dimensión</p>-->
 					<div style="width: 50%; float: left">
 						<ul style="font-size: 32px">
@@ -138,7 +138,7 @@
 				</section>
 				<!--ACP-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción Dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción Dimensional</h3>
 						<h4 style="text-align:left">Análisis de componentes principales </h4>
 					<div align="right">
 						<figure style="float:right">
@@ -146,13 +146,13 @@
                         </figure>
                     </div>
                     <div>
-                    	<p style="font-size: 26px;color: #FF5555">K. Pearson (1901)</p>
+                    	<p style="font-size: 26px;color: #e53b50">K. Pearson (1901)</p>
 						<p style="font-size: 26px">Sean $X=[X_{1},...,X_{p}]$  y  $S=var(X)$  su matrix de covarianzas</p>
 						<p style="font-size: 26px">La descomposición espectral de  $S$  es  $S=T \Lambda T^{'}$
 						donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
 						y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
 						<p style="font-size: 26px">Las componentes principales de $X$ son las nuevas variables</p>
-						<span style="color: #FF5555">
+						<span style="color: #e53b50">
 						\begin{equation}
 						Y_{j}=X t_{j} \text{ , } j=1,...,p
 						\end{equation}
@@ -160,7 +160,7 @@
 					</div>
 				</section>
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis de componentes principales</h4>
 						<pre><code data-trim data-noescape>
                                         library(ggfortify)
@@ -168,7 +168,7 @@
                         </code></pre>
 					<div align="right">
 						<figure style="float:right">
-							<img data-src="img/PCA.png" style="width: 80%; height: 80%; background-color:white">
+							<img data-src="img/PCA.png" style="width: 80%; height: 80%; background-color:white;border: transparent;">
 						</figure>
 					</div>
 					<div align="left">
@@ -180,7 +180,7 @@
 				</section>
 				<!--AC-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis de Correspondencias</h4>
 						<div style="width: 45%; float: right">
 							<figure style="float:right">
@@ -188,7 +188,7 @@
 							</figure>
 						</div>
 						<div>
-							<p style="font-size: 26px;color: #FF5555">J. Benzécri (1901)</p>
+							<p style="font-size: 26px;color: #e53b50">J. Benzécri (1901)</p>
 							<p style="font-size: 26px">Tablas de contingencia</p>
 							<ul style="font-size: 26px">
 								<li>Perfiles Fila
@@ -199,11 +199,11 @@
 				</section>
 				<!--ACM-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis de Correspondencias Múltiples</h4>
 						<div style="width: 45%; float: right">
 							<figure style="float:right">
-								<img data-src="img/MCA.png" style="width: 90%; height: 90%">
+								<img data-src="img/MCA.png" style="width: 90%; height: 90%;border: transparent;">
 							</figure>
 						</div>
 							<p style="font-size: 26px">Extensión del Análisis de Correspondencias</p>
@@ -216,10 +216,10 @@
 				</section>
 				<!--Análisis Factorial-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis Factorial</h4>
 					<div style="width: 50%;float: left">
-						<p style="font-size: 26px;color: #FF5555">C. Spearman (1904)</p>
+						<p style="font-size: 26px;color: #e53b50">C. Spearman (1904)</p>
 						<p style="font-size: 26px">Búsqueda de variables no observables denominadas factores</p>
 						<ul style="font-size: 26px">
 								<li>Factores comunes
@@ -235,7 +235,7 @@
 				</section>
 				<!--Análisis Factorial Múltiple-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis Factorial Múltiple</h4>
 					<div style="width: 50%;float: left">
 						<p style="font-size: 26px">Extensión del Análisis Factorial</p>
@@ -249,17 +249,17 @@
 					</div>
 					<div style="width: 45%; float: right">
 							<figure style="float:right">
-								<img data-src="img/MFA1.png" style="width: 55%; height: 55%">
-								<img data-src="img/MFA2.png" style="width: 55%; height: 55%">
+								<img data-src="img/MFA1.png" style="width: 55%; height: 55%;border: transparent;">
+								<img data-src="img/MFA2.png" style="width: 55%; height: 55%;border: transparent;">
 							</figure>
 					</div>
 				</section>
 				<!--Sistemas Gifi-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Sistemas Gifi</h4>
 					<div style="width: 50%;float: left">
-						<p style="font-size: 26px;color: #FF5555">A. Gifi (1981)</p>
+						<p style="font-size: 26px;color: #e53b50">A. Gifi (1981)</p>
 						<p style="font-size: 26px">Minimización de la función de pérdida (loss function) a través de Mínimos Cuadrados Alternados (ALS)</p>
 						<p style="font-size: 26px">Exploración y modelado de la relación entre dos o más conjuntos de variables</p>
 						<ul style="font-size: 26px">
@@ -275,10 +275,10 @@
 				</section>
 				<!--Métodos Biplot-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
 					<div style="width: 50%;float: left">
-						<p style="font-size: 26px;color: #FF5555">K. Gabriel (1971)</p>
+						<p style="font-size: 26px;color: #e53b50">K. Gabriel (1971)</p>
 						<p style="font-size: 26px">Representación de elementos (filas) y variables (columnas) en un mismo subespacio</p>
 						<ul style="font-size: 26px">
 							<li>Variables > Vectores
@@ -293,60 +293,60 @@
 				</section>
 				<!--Biplots-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
-					<p style="font-size: 24px"> Sea <span style="color: #FF5555;font-size: 38px">$X_{N \times P}$</span> la matriz de partida compuesta por: 
+					<p style="font-size: 24px"> Sea <span style="color: #e53b50;font-size: 38px">$X_{N \times P}$</span> la matriz de partida compuesta por: 
 						<ul style="font-size: 26px">
-							<li><span style="color: #FF5555;font-size: 38px">$P$</span> variables cuantitativas
-							<li><span style="color: #FF5555;font-size: 38px">$N$</span> individuos
+							<li><span style="color: #e53b50;font-size: 38px">$P$</span> variables cuantitativas
+							<li><span style="color: #e53b50;font-size: 38px">$N$</span> individuos
 						</ul>
-					<p style="font-size: 24px">Un Biplot es una representación gráfica de <span style="color: #FF5555;font-size: 38px">$X$</span> mediante marcadores fila <span style="color: #FF5555;font-size: 38px">$r_{1},...,r_{N}$</span> y marcadores columna <span style="color: #FF5555;font-size: 38px">$c_{1},...,c_{P}$</span> tal que <span style="color: #FF5555;font-size: 38px">$x_{ij} \approx r_{i}^{'} c_{j}$</span> </p>
-					<p style="color: #FF5555;font-size: 38px;text-align: center">$X \approx R C^{'}$ </p>
+					<p style="font-size: 24px">Un Biplot es una representación gráfica de <span style="color: #e53b50;font-size: 38px">$X$</span> mediante marcadores fila <span style="color: #e53b50;font-size: 38px">$r_{1},...,r_{N}$</span> y marcadores columna <span style="color: #e53b50;font-size: 38px">$c_{1},...,c_{P}$</span> tal que <span style="color: #e53b50;font-size: 38px">$x_{ij} \approx r_{i}^{'} c_{j}$</span> </p>
+					<p style="color: #e53b50;font-size: 38px;text-align: center">$X \approx R C^{'}$ </p>
 				</section>
 				<!--Biplots-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
-						<p style="font-size: 24px"> Para obtener esta aproximación aplicamos una Descomposición en Valores Singulares. Si <span style="color: #FF5555;font-size: 38px">$T=rank(X)$</span> entonces la factorización de <span style="color: #FF5555;font-size: 38px">$X$</span> se obtiene tal que
-						<p style="font-size: 38px;color: #FF5555;text-align: center">
+						<p style="font-size: 24px"> Para obtener esta aproximación aplicamos una Descomposición en Valores Singulares. Si <span style="color: #e53b50;font-size: 38px">$T=rank(X)$</span> entonces la factorización de <span style="color: #e53b50;font-size: 38px">$X$</span> se obtiene tal que
+						<p style="font-size: 38px;color: #e53b50;text-align: center">
 						\begin{equation}
 						X=U \Lambda V^{'}=\sum_{t=1}^T \lambda_{t} r_{t} c_{t}
 						\end{equation}
 						</p>
-						<p style="font-size: 24px">donde <span style="color: #FF5555;font-size: 38px">$U$</span> es una <span style="color: #FF5555;font-size: 38px">$N \times T$</span> matriz unitaria, <span style="color: #FF5555;font-size: 38px">$\Lambda$</span> es una <span style="color: #FF5555;font-size: 38px">$T \times T$</span> matriz diagonal no negativa, y <span style="color: #FF5555;font-size: 38px">$V$</span> es una <span style="color: #FF5555;font-size: 38px">$P \times T$</span> matriz unitaria</p>
+						<p style="font-size: 24px">donde <span style="color: #e53b50;font-size: 38px">$U$</span> es una <span style="color: #e53b50;font-size: 38px">$N \times T$</span> matriz unitaria, <span style="color: #e53b50;font-size: 38px">$\Lambda$</span> es una <span style="color: #e53b50;font-size: 38px">$T \times T$</span> matriz diagonal no negativa, y <span style="color: #e53b50;font-size: 38px">$V$</span> es una <span style="color: #e53b50;font-size: 38px">$P \times T$</span> matriz unitaria</p>
 				</section>
 				<!--Biplots-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Métodos Biplot</h4>
-						<p style="font-size: 38px;color: #FF5555;text-align: center">
+						<p style="font-size: 38px;color: #e53b50;text-align: center">
 							\begin{equation}
 							X \cong U_{(T)} \Lambda_{(T)} V_{(T)}^{'} = \sum_{t=1}^T \lambda_{t} r_{t} c_{t}
 							\end{equation}
 						</p>
-						<p style="font-size: 24px">Siendo <span style="color: #FF5555;font-size: 38px">$\lambda_{t}$</span> los valores propios, <span style="color: #FF5555;font-size: 38px">$r_{t}$</span> y <span style="color: #FF5555;font-size: 38px">$c_{t}$</span> los vectores propios de filas y columnas respectivamente.
-							Por tanto, <span style="color: #FF5555;font-size: 38px">$R$</span> y <span style="color: #FF5555;font-size: 38px">$C$</span> son fácilmente obtenibles tal que
+						<p style="font-size: 24px">Siendo <span style="color: #e53b50;font-size: 38px">$\lambda_{t}$</span> los valores propios, <span style="color: #e53b50;font-size: 38px">$r_{t}$</span> y <span style="color: #e53b50;font-size: 38px">$c_{t}$</span> los vectores propios de filas y columnas respectivamente.
+							Por tanto, <span style="color: #e53b50;font-size: 38px">$R$</span> y <span style="color: #e53b50;font-size: 38px">$C$</span> son fácilmente obtenibles tal que
 						</p>
-						<p style="font-size: 38px;color: #FF5555;float: left">
+						<p style="font-size: 38px;color: #e53b50;float: left">
 								\begin{equation}
 									R = U_{(T)} \Lambda_{(T)}^{\psi} \\
 									C = V_{(T)} \Lambda_{(T)}^{1-\psi}
 								\end{equation}
 						</p>
-						<p style="font-size: 24px">donde  <span style="color: #FF5555;font-size: 30px">$0 \leq \psi \leq 1$</span></p>
+						<p style="font-size: 24px">donde  <span style="color: #e53b50;font-size: 30px">$0 \leq \psi \leq 1$</span></p>
 				</section>
 				<!--Biplots Clásicos-->
 				<section align="left">
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Biplots Clásicos</h4>
-						<p style="font-size: 38px;color: #FF5555;text-align: center">
+						<p style="font-size: 38px;color: #e53b50;text-align: center">
 							<span style="color:white">JK-Biplot : </span> $\psi = 1$
 								\begin{equation}
 									R = U \Lambda \\
 									C = V
 								\end{equation}
 						</p>
-						<p style="font-size: 38px;color: #FF5555;text-align: center">
+						<p style="font-size: 38px;color: #e53b50;text-align: center">
 							<span style="color:white">GH-Biplot : </span> $\psi = 0$
 								\begin{equation}
 									R = U \\
@@ -356,7 +356,7 @@
 				</section>
 				<!--Biplot: Interpretación-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Interpretación</h4>
 						<div style="width: 55%;float: left">
 							<p style="font-size: 24px"> Elementos fila > Puntos </p>
@@ -371,20 +371,20 @@
 						</div>
 						<div style="width: 40%; float: right">
 							<figure style="float:right">
-								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%">
+								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%;border: transparent;">
 							</figure>
 						</div>
 				</section>
 				<!--Biplot: Calidad-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Calidad de representación</h4>
 						<table style="font-size: 30px;" >
 							<tr>
 								<td style="text-align: center;border: solid #F0F1EB 3px;">
 									Global
 								</td>
-								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+								<td style="color: #e53b50;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
 									$CA = \frac{\lambda_{1}+\lambda_{2}}{sum_{t=1}^T \lambda_{t}}$
 								</td>
 							</tr>
@@ -392,7 +392,7 @@
 								<td style="text-align: center;border: solid #F0F1EB 3px;">
 									Filas
 								</td>
-								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+								<td style="color: #e53b50;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
 									$CR = \frac{r^2_{jk}}{\sum_{k=1}^N r^2_{jk}}$
 								</td>
 							</tr>
@@ -400,7 +400,7 @@
 								<td style="text-align: center;border: solid #F0F1EB 3px;">
 									Columnas
 								</td>
-								<td style="color: #FF5555;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
+								<td style="color: #e53b50;text-align: center;border: solid #F0F1EB 3px;font-size: 38px">
 									$CC = \frac{c^2_{jk}}{\sum_{k=1}^P c^2_{jk}}$
 								</td>
 							</tr>
@@ -408,94 +408,94 @@
 				</section>
 				<!--Tipos de Biplot-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Otros Biplots</h4>
 						<table style="font-size: 20px;">
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;font-weight: bold;">
+								<td style="text-align: center;border: solid #e53b50 3px;font-weight: bold;">
 								Biplot
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px;font-weight: bold;">
+								<td style="text-align: center;border: solid #e53b50 3px;font-weight: bold;">
 									Autor
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px;font-weight: bold;">
+								<td style="text-align: right;border: solid #e53b50 3px;font-weight: bold;">
 									Características
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								HJ
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									M.P. Galindo (1986)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Alta calidad de representación en filas y columna
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								MANOVA
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 								H. Gabriel (1972)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Representación de grupos de elementos fila y variables
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								Generalizado
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									J. Vicente-Villardón (1992)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Permite considerar la importancia de los diferentes individuos y variables
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								No lineales
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									J. Gower y S. Harding (1988)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Trayectorias no lineales de los individuos
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								Interpolación
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									J. Gower y D. Hand (1995)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Superponen nuevos individuos proyectándolos sobre el subespacio de representación
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								Predicción
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									J. Gower y D. Hand (1995)
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Infieren valores de las variables originales dado un punto sobre la representación subespacial
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;border: solid #FF5555 3px;">
+								<td style="text-align: center;border: solid #e53b50 3px;">
 								Multivía
 								</td>
-								<td style="text-align: center;border: solid #FF5555 3px">
+								<td style="text-align: center;border: solid #e53b50 3px">
 									Varios
 								</td>
-								<td style="text-align: right;border: solid #FF5555 3px">
+								<td style="text-align: right;border: solid #e53b50 3px">
 									Versiones Biplot de técnicas multivariantes de varias vías
 								</td>
 							</tr>
@@ -503,7 +503,7 @@
 				</section>
 				<!--Otros Biplots-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">Reducción dimensional</h3>
+					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Otros Biplots</h4>
 						<ul style="font-size: 24px;">
 							<li>Meta-Biplot -- J. Martín-Rodríguez, P. Galindo y J.L. Vicente-Villardón (2002)
@@ -518,7 +518,7 @@
 			<section>
 				<!--MARCO TEORICO LISTADO-->
 				<section style="text-align:left">
-					<h3 style="color: #FF5555;text-align:left">Marco teórico</h3>
+					<h3 style="color: #e53b50;text-align:left">Marco teórico</h3>
 					<ul style="text-align:left">
 						<li> Reducción Dimensional</li>
 							<!--<ul>
@@ -537,13 +537,13 @@
 				</section>
 				<!--Procesos Gaussianos-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<div style="width: 50%; float: left">
 						<ul style="font-size: 32px">
 							<li>Observaciones ocurren en un dominio contínuo (tiempo o espacio)
 							<li>Extensión de las distribuciones multivariantes gaussianas
 						</ul>
-					<p style="font-size: 26px"> Sea <span style="color: #FF5555;font-size: 38px">$y=\{y_{1},...,y_{n}\} $</span> una muestra de <span style="color: #FF5555;font-size: 38px">$n$</span> elementos y <span style="color: #FF5555;font-size: 38px">$x$</span> su dominio asociado</p>
+					<p style="font-size: 26px"> Sea <span style="color: #e53b50;font-size: 38px">$y=\{y_{1},...,y_{n}\} $</span> una muestra de <span style="color: #e53b50;font-size: 38px">$n$</span> elementos y <span style="color: #e53b50;font-size: 38px">$x$</span> su dominio asociado</p>
 					</div>
 					<div style="width: 45%; float: right">
 						<figure style="float:right">
@@ -553,33 +553,33 @@
 				</section>
 				<!--Procesos Gaussianos: Covarianza ideal-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Función de covarianza ideal</h4>
 						<p style="font-size: 26px">La función de covarianza del dominio contínuo se define como </p>
-						<p style="color: #FF5555;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right]$</p>
+						<p style="color: #e53b50;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right]$</p>
 						<ul style="font-size: 22px">
-							<li> <span style="color: #FF5555;font-size: 38px">$f$</span> función de nuestra distribución
-							<li> <span style="color: #FF5555;font-size: 38px">$\sigma^2_{f}$</span> covarianza de la función <span style="color: #FF5555;font-size: 38px">$f$</span>
-							<li> <span style="color: #FF5555;font-size: 38px">$l$</span> distancia o gradiente temporal entre <span style="color: #FF5555;font-size: 38px">$x$</span> y <span style="color: #FF5555;font-size: 38px">$x^{\prime}$</span>
+							<li> <span style="color: #e53b50;font-size: 38px">$f$</span> función de nuestra distribución
+							<li> <span style="color: #e53b50;font-size: 38px">$\sigma^2_{f}$</span> covarianza de la función <span style="color: #e53b50;font-size: 38px">$f$</span>
+							<li> <span style="color: #e53b50;font-size: 38px">$l$</span> distancia o gradiente temporal entre <span style="color: #e53b50;font-size: 38px">$x$</span> y <span style="color: #e53b50;font-size: 38px">$x^{\prime}$</span>
 						</ul>
-						<p style="font-size: 26px">La función <span style="color: #FF5555;font-size: 38px">$k$</span> nos indica cuánto varían nuestros datos en función de la distancia o gradiente temporal en el que se encuentran</p>
+						<p style="font-size: 26px">La función <span style="color: #e53b50;font-size: 38px">$k$</span> nos indica cuánto varían nuestros datos en función de la distancia o gradiente temporal en el que se encuentran</p>
 				</section>
 				<!--Procesos Gaussianos: Covarianza-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Función de covarianza</h4>
-					<p style="font-size: 26px">En general los PG presentan ruido que hace que la distribución sea <span style="color: #FF5555;font-size: 32px"> $y = f(x) +N(0,\sigma^2_{n})$ </span> y por tanto</p>
-					<p style="color: #FF5555;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right] + \sigma^2_{n} \delta(x,x^{\prime})$</p>
+					<p style="font-size: 26px">En general los PG presentan ruido que hace que la distribución sea <span style="color: #e53b50;font-size: 32px"> $y = f(x) +N(0,\sigma^2_{n})$ </span> y por tanto</p>
+					<p style="color: #e53b50;font-size: 38px;text-align: center">$k(x,x^{\prime}) = \sigma^2_{f} exp \left[\frac{-(x-x^{\prime})^2}{2l^2}\right] + \sigma^2_{n} \delta(x,x^{\prime})$</p>
 					<ul style="font-size: 22px">
-							<li> <span style="color: #FF5555;font-size: 38px">$\delta(x,x^{\prime})$</span> delta de Kronecker
+							<li> <span style="color: #e53b50;font-size: 38px">$\delta(x,x^{\prime})$</span> delta de Kronecker
 					</ul>
 				</section>
 				<!--Procesos Gaussianos: Estimación-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Estimación</h4>
-					<p style="font-size: 26px">Para poder realizar una estimación <span style="color: #FF5555;font-size: 38px">$y_{*}$</span> de <span style="color: #FF5555;font-size: 38px">$y$</span> calculamos la función de covarianza asociada al dominio contínuo para todas las posibles combinaciones existentes entre cada observación tal que</p>
-					<p style="color: #FF5555;font-size: 38px;text-align: center">
+					<p style="font-size: 26px">Para poder realizar una estimación <span style="color: #e53b50;font-size: 38px">$y_{*}$</span> de <span style="color: #e53b50;font-size: 38px">$y$</span> calculamos la función de covarianza asociada al dominio contínuo para todas las posibles combinaciones existentes entre cada observación tal que</p>
+					<p style="color: #e53b50;font-size: 38px;text-align: center">
 					$K_{*} = 	\begin{bmatrix}
 								k(x_{*},x_{1}) & k(x_{*},x_{2}) & \dots  & k(x_{*},x_{n})
 								\end{bmatrix}
@@ -587,21 +587,21 @@
 					K_{**} = k(x_{*},x_{*})$
 					</p>
 					<p style="font-size: 26px">El estimador se calcula tal que</p>
-					<p style="color: #FF5555;font-size: 38px;text-align: center">$\hat{y}_{*}=K_{*}K^{-1}y$</p>
+					<p style="color: #e53b50;font-size: 38px;text-align: center">$\hat{y}_{*}=K_{*}K^{-1}y$</p>
 					<p style="font-size: 26px">Y la varianza del estimador es</p>
-					<p style="color: #FF5555;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
+					<p style="color: #e53b50;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
 				</section>
 				<!--Geoestadística-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Geoestadística</h4>
 					<div style="width: 50%; float: left">
-						<p style="font-size: 26px;color: #FF5555">D. Krige (1951)</p>
+						<p style="font-size: 26px;color: #e53b50">D. Krige (1951)</p>
 							<ul style="font-size: 26px">
 								<li> Minería
 								<li> Basado en la experiencia
 							</ul>
-						<p style="font-size: 26px;color: #FF5555">G. Matheron (1962)</p>
+						<p style="font-size: 26px;color: #e53b50">G. Matheron (1962)</p>
 							<ul style="font-size: 26px">
 								<li> École de Mines (Paris)
 								<li> Formulación matemática
@@ -625,15 +625,15 @@
 				</section>
 				<!--Datos-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Datos geoestadísticos</h4>
 					<table style="font-size: 26px">
 						<tr style="text-align: center;border: transparent;">
 							<td style="text-align: center;border: transparent;">
-								Variable regionalizada <span style="color: #FF5555;font-size: 38px">$z(x_{\alpha})$</span>
+								Variable regionalizada <span style="color: #e53b50;font-size: 38px">$z(x_{\alpha})$</span>
 							</td>
 							<td style="text-align: center;border: transparent;">
-								Variables aleatorias <span style="color: #FF5555;font-size: 38px">$Z(x_{\alpha})$</span>
+								Variables aleatorias <span style="color: #e53b50;font-size: 38px">$Z(x_{\alpha})$</span>
 							</td>
 						</tr>
 						<tr style="text-align: center;border: transparent;">
@@ -648,12 +648,12 @@
 				</section>
 				<!--Conceptos Geoestadísticos 1-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Conceptos geoestadísticos</h4>
 					<div style="width: 70%; float: left">
-						<p style="font-size: 24px;">La media de <span style="color: #FF5555;font-size: 38px">$Z(x_{\alpha})$</span> se defime como <span style="color: #FF5555;font-size: 38px">$E[Z(x_{\alpha})]=m$</span></p>
-						<p style="font-size: 24px;">La covarianza depende de la distancia <span style="color: #FF5555;font-size: 38px">$h$</span> entre pares de puntos <span style="color: #FF5555;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #FF5555;font-size: 38px">$x_{\beta}$</span> </p>
-						<p style="font-size: 38px;color: #FF5555;text-align: center"> $Cov(Z(x_{\alpha}),Z(x_{\beta}))=E[(Z(x_{\alpha})-m) \cdot (Z(x_{\alpha}+h)-m)]$</p>
+						<p style="font-size: 24px;">La media de <span style="color: #e53b50;font-size: 38px">$Z(x_{\alpha})$</span> se defime como <span style="color: #e53b50;font-size: 38px">$E[Z(x_{\alpha})]=m$</span></p>
+						<p style="font-size: 24px;">La covarianza depende de la distancia <span style="color: #e53b50;font-size: 38px">$h$</span> entre pares de puntos <span style="color: #e53b50;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #e53b50;font-size: 38px">$x_{\beta}$</span> </p>
+						<p style="font-size: 38px;color: #e53b50;text-align: center"> $Cov(Z(x_{\alpha}),Z(x_{\beta}))=E[(Z(x_{\alpha})-m) \cdot (Z(x_{\alpha}+h)-m)]$</p>
 					</div>
 					<div style="width: 25%; float: right">
 							<figure style="float:right;">
@@ -663,26 +663,26 @@
 				</section>
 				<!--Conceptos Geoestadísticos: Semivarianza-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Conceptos geoestadísticos</h4>
-					<p style="font-size: 24px;"> La media de los incrementos <span style="color: #FF5555;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #FF5555;font-size: 38px">$x_{\alpha}+h$</span> es nula</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center"> $E[Z(x_{\alpha}+h)-Z(x_{\alpha})]=0$ </p>
+					<p style="font-size: 24px;"> La media de los incrementos <span style="color: #e53b50;font-size: 38px">$x_{\alpha}$</span> y <span style="color: #e53b50;font-size: 38px">$x_{\alpha}+h$</span> es nula</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $E[Z(x_{\alpha}+h)-Z(x_{\alpha})]=0$ </p>
 					<p style="font-size: 24px;"> La varianza de los incrementos es</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">$var(Z(x_{\alpha}+h)-Z(x_{\alpha}))=2\gamma(h)$</p>
-					<p style="font-size: 24px;"> donde <span style="color: #FF5555;font-size: 38px">$\gamma(h)$</span> es la semivarianza que es </p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">$\gamma(h)=\frac{1}{2}(Z(x_{\alpha}+h)-Z(x_{\alpha}))^2$</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center">$var(Z(x_{\alpha}+h)-Z(x_{\alpha}))=2\gamma(h)$</p>
+					<p style="font-size: 24px;"> donde <span style="color: #e53b50;font-size: 38px">$\gamma(h)$</span> es la semivarianza que es </p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center">$\gamma(h)=\frac{1}{2}(Z(x_{\alpha}+h)-Z(x_{\alpha}))^2$</p>
 				</section>
 				<!--Conceptos Geoestadísticos: Variograma-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
-					<h4 style="text-align:left">Variograma <span style="color: #FF5555">$\gamma^{*}$</span></h4>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
+					<h4 style="text-align:left">Variograma <span style="color: #e53b50">$\gamma^{*}$</span></h4>
 					<table style="font-size: 26px">
 						<tr style="text-align: center;border: transparent;">
 							<td style="text-align: center;border: transparent;">
-								Variograma en nube <span style="color: #FF5555;font-size: 38px">$\frac{1}{2}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
+								Variograma en nube <span style="color: #e53b50;font-size: 38px">$\frac{1}{2}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
 							</td>
 							<td style="text-align: center;border: transparent;">
-								Variograma experimental <span style="color: #FF5555;font-size: 38px">$\frac{1}{2n}\sum_{\alpha=1}^{n}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
+								Variograma experimental <span style="color: #e53b50;font-size: 38px">$\frac{1}{2n}\sum_{\alpha=1}^{n}(z(x_{\alpha}+h)-z(x_{\alpha}))^2$</span>
 							</td>
 						</tr>
 						<tr style="text-align: center;border: transparent;">
@@ -697,13 +697,13 @@
 				</section>
 				<!--Variograma Teórico-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma teórico</h4>
 					<div style="width: 45%; float: left;font-size: 26px">
 						<ul>
-							<li> <span style="font-weight: bold;font-size: 28px;color: #FF5555">Nugget ($nug$):</span> Valor de la semivarianza para distancias cercanas a cero
-							<li> <span style="font-weight: bold;font-size: 28px;color: #FF5555">Sill ($b$):</span> Valor constante que alcanza la semivarianza a una distancia $h$ determinada
-							<li> <span style="font-weight: bold;font-size: 28px;color: #FF5555">Rango ($a$):</span> Valor de $h$ al que alcanzamos el sill $b$
+							<li> <span style="font-weight: bold;font-size: 28px;color: #e53b50">Nugget ($nug$):</span> Valor de la semivarianza para distancias cercanas a cero
+							<li> <span style="font-weight: bold;font-size: 28px;color: #e53b50">Sill ($b$):</span> Valor constante que alcanza la semivarianza a una distancia $h$ determinada
+							<li> <span style="font-weight: bold;font-size: 28px;color: #e53b50">Rango ($a$):</span> Valor de $h$ al que alcanzamos el sill $b$
 						</ul>
 					</div>
 					<div style="width: 45%; float: right">
@@ -712,34 +712,34 @@
 				</section>
 				<!--Covarianza espacial-->
 				<section style="text-align:left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Covarianza espacial</h4>
 					<p style="font-size: 24px;"> El variograma teórico se obtiene a través de una función lineal. Esta función puede ser combinación lineal de una subserie de variogramas o covarianzas espaciales</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center"> $\gamma(h) = C(0) - C(h) $</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h) = C(0) - C(h) $</p>
 					<p style="font-size: 24px;"> A su vez se define la correlación espacial como </p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center"> $\rho(h) = \frac{C(h)}{C(0)} $ <span style="font-size: 24px;color: white">siendo</span> $C(0)=b$</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\rho(h) = \frac{C(h)}{C(0)} $ <span style="font-size: 24px;color: white">siendo</span> $C(0)=b$</p>
 				</section>
 				<!--Variograma anidado-->
 				<section style="text-align:left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma anidado</h4>
 					<p style="font-size: 24px;">La combinación lineal de variogramas se denomina variograma anidado y se define </p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center"> $\gamma(h)=\sum_{u=0}^S\gamma_{u}(h)=\sum_{u=0}^Sb_{u}g_{u}(h)$</p>
-					<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #FF5555">$g_{u}(h)$</span> son variogramas normalizados y <span style="font-size: 38px;color: #FF5555">$b_{u}(h)$</span> es el sill de cada uno de ellos</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=\sum_{u=0}^S\gamma_{u}(h)=\sum_{u=0}^Sb_{u}g_{u}(h)$</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$g_{u}(h)$</span> son variogramas normalizados y <span style="font-size: 38px;color: #e53b50">$b_{u}(h)$</span> es el sill de cada uno de ellos</p>
 					<p style="font-size: 24px;">Los variogramas normalizados son funciones gaussianas (Gaussiana, Esférica, Exponencial, Cuadrática, Lineal...)</p>
-					<p style="font-size: 24px;">Por tanto la relación entre la correlación espacial <span style="font-size: 38px;color: #FF5555">$\rho(h)$</span> y el variograma teórico <span style="font-size: 38px;color: #FF5555">$\gamma(h)$</span> es</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center"> $\gamma(h)=b(1-\rho(h))$ </p>
+					<p style="font-size: 24px;">Por tanto la relación entre la correlación espacial <span style="font-size: 38px;color: #e53b50">$\rho(h)$</span> y el variograma teórico <span style="font-size: 38px;color: #e53b50">$\gamma(h)$</span> es</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=b(1-\rho(h))$ </p>
 					<p style="font-size: 24px;">La estimación de variogramas normalizados se realiza a través de ajustes lineales como los mínimos cuadrados generalizados, ordinarios, ponderados...</p>
 				</section>
 				<!--Kriging Simple-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Kriging Simple</h4>
 					<div style="width: 60%; float: left">
-						<p style="font-size: 24px;">La estimación espacial de los puntos <span style="font-size: 38px;color: #FF5555">$x_{0}$</span> del mallado se realiza como combinación lineal </p>
-						<p style="font-size: 38px;color: #FF5555;text-align: center"> $Z^{*}(x_{0})=m+\sum_{\alpha=1}^{n}w_{\alpha}(Z(x_{\alpha})-m)$ </p>
-						<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #FF5555">$Z^{*}$</span> es la <span style="font-size: 38px;color: #FF5555">$Z$</span> estimada. Finalmente el sistema de ecuaciones se reduce a</p>
-						<p style="font-size: 38px;color: #FF5555;text-align: center"> $\sum_{\beta=1}^n w_{\beta}C(x_{\alpha}-x_{\beta})=C(x_{\alpha}-x_{0}) \text{   } \alpha=1,...,n$ </p>
+						<p style="font-size: 24px;">La estimación espacial de los puntos <span style="font-size: 38px;color: #e53b50">$x_{0}$</span> del mallado se realiza como combinación lineal </p>
+						<p style="font-size: 38px;color: #e53b50;text-align: center"> $Z^{*}(x_{0})=m+\sum_{\alpha=1}^{n}w_{\alpha}(Z(x_{\alpha})-m)$ </p>
+						<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$Z^{*}$</span> es la <span style="font-size: 38px;color: #e53b50">$Z$</span> estimada. Finalmente el sistema de ecuaciones se reduce a</p>
+						<p style="font-size: 38px;color: #e53b50;text-align: center"> $\sum_{\beta=1}^n w_{\beta}C(x_{\alpha}-x_{\beta})=C(x_{\alpha}-x_{0}) \text{   } \alpha=1,...,n$ </p>
 						<p style="font-size: 24px;">Existen otros tipos de kriging como el ordinario, el universal...</p>
 					</div>
 					<div style="width: 35%; float: right">
@@ -750,49 +750,49 @@
 				</section>
 				<!--Cokriging-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Cokriging</h4>
 					<p style="font-size: 30px;">El método cokriging es la versión o extensión multivariante del kriging. La técnica del cokriging basa su principio en la correlación entre muestras debido a su localización espacial</p>
 					<p style="font-size: 28px;font-weight: bold;">Posibles distribuciones de las muestras:</p>
 					<ul style="font-size: 26px;">
-						<li><b><i><span style="color: #FF5555">Heterotopia:</span></i></b> Puntos no coincidentes
-						<li><b><i><span style="color: #FF5555">Heterotopia parcial:</span></i></b> Algunas variables comparten localizaciones
-						<li><b><i><span style="color: #FF5555">Isotopia:</span></i></b> Todas las variables se representan en los mismos puntos
+						<li><b><i><span style="color: #e53b50">Heterotopia:</span></i></b> Puntos no coincidentes
+						<li><b><i><span style="color: #e53b50">Heterotopia parcial:</span></i></b> Algunas variables comparten localizaciones
+						<li><b><i><span style="color: #e53b50">Isotopia:</span></i></b> Todas las variables se representan en los mismos puntos
 					</ul>
 				</section style="text-align: left">
 				<!--Variograma Cruzado-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma Cruzado</h4>
 						<p style="font-size: 24px;">Un variograma cruzado se define como la mitad del producto del incremento de dos variables</p>
-						<p style="font-size: 24px;">Dadas <span style="font-size: 30px;color: #FF5555">$P$</span> variables siendo <span style="font-size: 30px;color: #FF5555">$i,j=1,...,P$</span> los variogramas cruzados posibles son <span style="font-size: 30px;color: #FF5555">$\frac{P(P+1)}{2}$</span> de los cuales <span style="font-size: 30px;color: #FF5555">$P$</span> variogramas son directos <span style="font-size: 30px;color: #FF5555">$i=j$</span> y <span style="font-size: 30px;color: #FF5555">$\frac{P(P-1)}{2}$</span> </p>
-						<p style="font-size: 24px;">Como resultado del cálculo de cada variograma obtenemos una matriz <span style="font-size: 30px;color: #FF5555">$\Gamma(h)$</span> de tamaño <span style="font-size: 30px;color: #FF5555">$P \times P$</span> que es combinación lineal de <span style="font-size: 30px;color: #FF5555">$\Gamma_{u}(h)$</span> tal que <span style="font-size: 30px;color: #FF5555">$\Gamma(h)=\sum_{u=0}^{S}\Gamma_{u}(h)$</span> </p>
+						<p style="font-size: 24px;">Dadas <span style="font-size: 30px;color: #e53b50">$P$</span> variables siendo <span style="font-size: 30px;color: #e53b50">$i,j=1,...,P$</span> los variogramas cruzados posibles son <span style="font-size: 30px;color: #e53b50">$\frac{P(P+1)}{2}$</span> de los cuales <span style="font-size: 30px;color: #e53b50">$P$</span> variogramas son directos <span style="font-size: 30px;color: #e53b50">$i=j$</span> y <span style="font-size: 30px;color: #e53b50">$\frac{P(P-1)}{2}$</span> </p>
+						<p style="font-size: 24px;">Como resultado del cálculo de cada variograma obtenemos una matriz <span style="font-size: 30px;color: #e53b50">$\Gamma(h)$</span> de tamaño <span style="font-size: 30px;color: #e53b50">$P \times P$</span> que es combinación lineal de <span style="font-size: 30px;color: #e53b50">$\Gamma_{u}(h)$</span> tal que <span style="font-size: 30px;color: #e53b50">$\Gamma(h)=\sum_{u=0}^{S}\Gamma_{u}(h)$</span> </p>
 						<p style="font-size: 24px;">El variograma cruzado se define como</p>
-						<p style="font-size: 30px;color: #FF5555;text-align: center"> $\gamma_{ij}^{*}(h)=\dfrac{1}{2n}\sum_{\alpha=1}^N(z_{i}(x_{\beta})-z_{i}(x_{\alpha}))\cdot(z_{j}(x_{\beta})-z_{j}(x_{\alpha}))$ </p>
+						<p style="font-size: 30px;color: #e53b50;text-align: center"> $\gamma_{ij}^{*}(h)=\dfrac{1}{2n}\sum_{\alpha=1}^N(z_{i}(x_{\beta})-z_{i}(x_{\alpha}))\cdot(z_{j}(x_{\beta})-z_{j}(x_{\alpha}))$ </p>
 				</section>
 				<!--LMC-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Modelo lineal de corregionalización</h4>
 					<div style="width: 45%; float: left">
 					<p style="font-size: 24px;">Al igual que hemos hecho para el caso univariante, hemos de ajustar un modelo a cada uno de los variogramas cruzados</p>
 					<p style="font-size: 24px;">La función de covarianza espacial es</p>
-					<p style="font-size: 30px;color: #FF5555;text-align: center">$C(h)=\sum_{u=0}^{S}B_{u}\rho_{u}(h)$</p>
+					<p style="font-size: 30px;color: #e53b50;text-align: center">$C(h)=\sum_{u=0}^{S}B_{u}\rho_{u}(h)$</p>
 					</div>
 					<div style="width: 50%; float: right;">
 						<figure style="float:right;">
 								<img data-src="img/variogramacruzado.png" style="width: 90%; height: 90%;border: transparent;background: transparent">
 						</figure>
 					</div>
-					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #FF5555">$B_{u}$</span> es la matriz de corregionalización de dimensión <span style="font-size: 30px;color: #FF5555">$P \times P$</span> semidefinida positiva</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$B_{u}$</span> es la matriz de corregionalización de dimensión <span style="font-size: 30px;color: #e53b50">$P \times P$</span> semidefinida positiva</p>
 				</section>
 				<!--Cokriging Simple-->
 				<section style="text-align: left">
-					<h3 style="color: #FF5555;text-align:left">Procesos Gaussianos</h3>
+					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Cokriging Simple</h4>
 					<p style="font-size: 28px;">El cokriging simple se apoya en el conocimiento de las medias intrínsecas de las variables analizadas</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">$Z_{i_{0}}^{*}(x_{0})=m_{i_{0}}+\sum_{i=1}^{P}\sum_{\alpha=1}^{n}w_{\alpha}^{i}(Z_{i}(x_{\alpha})-m_{i})$</p>
-					<p style="font-size: 28px;">donde <span style="font-size: 32px;color: #FF5555">$i_{0}$</span> es la variable a estimar e <span style="font-size: 30px;color: #FF5555">$i$</span> corresponden a las <span style="font-size: 30px;color: #FF5555">$P$</span> variables analizadas</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center">$Z_{i_{0}}^{*}(x_{0})=m_{i_{0}}+\sum_{i=1}^{P}\sum_{\alpha=1}^{n}w_{\alpha}^{i}(Z_{i}(x_{\alpha})-m_{i})$</p>
+					<p style="font-size: 28px;">donde <span style="font-size: 32px;color: #e53b50">$i_{0}$</span> es la variable a estimar e <span style="font-size: 30px;color: #e53b50">$i$</span> corresponden a las <span style="font-size: 30px;color: #e53b50">$P$</span> variables analizadas</p>
 					<p style="font-size: 28px;">Existen diferentes tipos como el Cokriging ordinario, universal, <i>colocado</i>, factorial...</p>
 				</section>
 			</section>
@@ -800,12 +800,12 @@
 			<section style="text-align: left">
 				<!--MGSR-->
 				<section>
-					<h2 style="color: #FF5555;text-align:center;font-size: 58px">Regresión Multivariante Gaussiana Subespacial</h2>
-					<p style="color: #FF5555;text-align:center;font-size: 58px"><b>(MGSR)</b></p>
+					<h2 style="color: #e53b50;text-align:center;font-size: 58px">Regresión Multivariante Gaussiana Subespacial</h2>
+					<p style="color: #e53b50;text-align:center;font-size: 58px"><b>(MGSR)</b></p>
 				</section>
 				<!--Algoritmo Esquema-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Algoritmo</h4>
 					<figure style="float:right">
 							<img data-src="img/esquemaalgoritmo.png" style="width: 100%;height: 100%;border: transparent;background: transparent;">
@@ -813,24 +813,24 @@
 				</section>
 				<!--Coordenadas Subespaciales-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Coordenadas Subespaciales</h4>
-					<p style="font-size: 24px;">Partimos de una matriz <span style="font-size: 28px;color: #FF5555">$X_{N \times P}$</span> con <span style="font-size: 30px;color: #FF5555">$N$</span> elementos y <span style="font-size: 30px;color: #FF5555">$P$</span> variables, ninguna de ellas de dominio contínuo y estandarizada por columnas</p>
-					<p style="font-size: 24px;">Aplicando una técnica de reducción dimensional obtenemos una serie de coordenadas subespaciales <span style="font-size: 30px;color: #FF5555">$R_{N \times S}$</span> para cada uno de los <span style="font-size: 30px;color: #FF5555">$N$</span> elementos en <span style="font-size: 30px;color: #FF5555">$T$</span> subespacios</p>
-					<p style="font-size: 24px;">Con <span style="font-size: 30px;color: #FF5555">$X$</span> y <span style="font-size: 30px;color: #FF5555">$R$</span> conformamos la matriz <span style="font-size: 30px;color: #FF5555">$Z(u)=[X(R)]$</span></p>
-					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #FF5555">$u$</span> son las coordenadas subespaciales intrínsecas a <span style="font-size: 30px;color: #FF5555">$Z$</span></p>
-					<p style="font-size: 24px;" class="fragment highlight-current-red"><span style="font-size: 30px;color: #FF5555">$Z$</span> es semejante a las matrices empleadas en Procesos Gaussianos</p>
+					<p style="font-size: 24px;">Partimos de una matriz <span style="font-size: 28px;color: #e53b50">$X_{N \times P}$</span> con <span style="font-size: 30px;color: #e53b50">$N$</span> elementos y <span style="font-size: 30px;color: #e53b50">$P$</span> variables, ninguna de ellas de dominio contínuo y estandarizada por columnas</p>
+					<p style="font-size: 24px;">Aplicando una técnica de reducción dimensional obtenemos una serie de coordenadas subespaciales <span style="font-size: 30px;color: #e53b50">$R_{N \times S}$</span> para cada uno de los <span style="font-size: 30px;color: #e53b50">$N$</span> elementos en <span style="font-size: 30px;color: #e53b50">$T$</span> subespacios</p>
+					<p style="font-size: 24px;">Con <span style="font-size: 30px;color: #e53b50">$X$</span> y <span style="font-size: 30px;color: #e53b50">$R$</span> conformamos la matriz <span style="font-size: 30px;color: #e53b50">$Z(u)=[X(R)]$</span></p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$u$</span> son las coordenadas subespaciales intrínsecas a <span style="font-size: 30px;color: #e53b50">$Z$</span></p>
+					<p style="font-size: 24px;" class="fragment highlight-current-red"><span style="font-size: 30px;color: #e53b50">$Z$</span> es semejante a las matrices empleadas en Procesos Gaussianos</p>
 				</section>
 				<!--Variogramas Cruzados Subespaciales-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
-					<p style="font-size: 24px;"> El vector de distancias intermedias o <i>lag</i> <span style="font-size: 30px;color: #FF5555">$h$</span> se compone de <span style="font-size: 30px;color: #FF5555">$k$</span> elementos tal que <span style="font-size: 30px;color: #FF5555">$h=\{h_{1},h_{2},...,h_{k}\}$</span></p>
+					<p style="font-size: 24px;"> El vector de distancias intermedias o <i>lag</i> <span style="font-size: 30px;color: #e53b50">$h$</span> se compone de <span style="font-size: 30px;color: #e53b50">$k$</span> elementos tal que <span style="font-size: 30px;color: #e53b50">$h=\{h_{1},h_{2},...,h_{k}\}$</span></p>
 					<p style="font-size: 24px;"> El variograma experimental se define como</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">$\Gamma^{*}(h_{k})=\gamma_{ij}^{*}(h_{k})$</p>
-					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #FF5555">$i,j={1,...,P}$</span></p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center">$\Gamma^{*}(h_{k})=\gamma_{ij}^{*}(h_{k})$</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$i,j={1,...,P}$</span></p>
 					<table>
-						<tr style="font-size: 38px;color: #FF5555;text-align: center;border: solid #FF5555">
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
 							<td>
 					 		$\gamma_{ij}^{*}(h_{k})=z^{T}A(h_{k})z$
 					 		</td>
@@ -839,9 +839,9 @@
 				</section>
 				<!--Variogramas Cruzados Subespaciales-->
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">
+					<p style="font-size: 38px;color: #e53b50;text-align: center">
 						$A(h_{k}) = \frac{M_{i}(h_{k}) - \eta_{ij}(h_{k})}{J(h_{k})}=\frac{1}{J(h_{k})}$
  						<span style="font-size: 24px">$\begin{bmatrix}
  						m_{1}(h_{k}) & -\eta_{12} & \dots  & -\eta_{1N} \\
@@ -850,8 +850,8 @@
     					-\eta_{1N} & -\eta_{2N} & \dots  & m_{N}(h_{k})
  						\end{bmatrix}$</span>
 					</p>
-					<p style="font-size: 24px;"> donde <span style="font-size: 30px;color: #FF5555">$m_{i}$</span> es el número de pares que tiene el elemento <span style="font-size: 30px;color: #FF5555">$i$</span> a la distancia <span style="font-size: 30px;color: #FF5555">$h_{k}$</span> y</p>
-					<p style="font-size: 30px;color: #FF5555;text-align: center">
+					<p style="font-size: 24px;"> donde <span style="font-size: 30px;color: #e53b50">$m_{i}$</span> es el número de pares que tiene el elemento <span style="font-size: 30px;color: #e53b50">$i$</span> a la distancia <span style="font-size: 30px;color: #e53b50">$h_{k}$</span> y</p>
+					<p style="font-size: 30px;color: #e53b50;text-align: center">
 						\begin{equation*}
   							\eta_{ij}=
   							\left\lbrace
@@ -865,9 +865,9 @@
 					</p>
 				</section>
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Variogramas Cruzados Subespaciales</h4>
-					<p style="font-size: 32px;color: #FF5555;text-align: center">
+					<p style="font-size: 32px;color: #e53b50;text-align: center">
 						\begin{equation*}
 							\Gamma^{*}(h_{k})=
  								\begin{bmatrix}
@@ -878,7 +878,7 @@
  								\end{bmatrix}
 						\end{equation*}
 					</p>
-					<p style="font-size: 32px;color: #FF5555;text-align: center">$\gamma^{*}_{ij}=[\Gamma^{*}_{ij}(h_{1}),...,\Gamma^{*}_{ij}(h_{K})]$</p>
+					<p style="font-size: 32px;color: #e53b50;text-align: center">$\gamma^{*}_{ij}=[\Gamma^{*}_{ij}(h_{1}),...,\Gamma^{*}_{ij}(h_{K})]$</p>
 						<p style="font-size: 32px;text-align: left"">Código software:</p>
 					<pre>
 						<code data-trim data-noescape>
@@ -888,20 +888,20 @@
                     </pre>
 				</section>
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Modelo Lineal Corregionalizado</h4>
-					<p style="font-size: 24px;">Una vez calculada los variogramas cruzados subespaciales <span style="font-size: 30px;color: #FF5555"> $\Gamma^{*}(h_{k})$</span> hemos de ajustar un modelo lineal <span style="font-size: 30px;color: #FF5555">$\Gamma(h)$</span> tal que</p>
+					<p style="font-size: 24px;">Una vez calculada los variogramas cruzados subespaciales <span style="font-size: 30px;color: #e53b50"> $\Gamma^{*}(h_{k})$</span> hemos de ajustar un modelo lineal <span style="font-size: 30px;color: #e53b50">$\Gamma(h)$</span> tal que</p>
 					<table>
-						<tr style="font-size: 38px;color: #FF5555;text-align: center;border: solid #FF5555">
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
 							<td>
 					 		$\Gamma(h)=\sum_{s=0}^{S}B_{s}g_{s}(h)$
 					 		</td>
 					 	</tr>
 					</table>
-					<p style="font-size: 24px;"><span style="font-size: 30px;color: #FF5555">$B_{s}$</span> es la matriz de corregionalización <span style="font-size: 30px;color: #FF5555">$N \times N$</span> de <i>sills</i> y <span style="font-size: 30px;color: #FF5555">$g_{s}(h)$</span> las funciones ajustadas con rango fijo para cada una de ellas</p>
+					<p style="font-size: 24px;"><span style="font-size: 30px;color: #e53b50">$B_{s}$</span> es la matriz de corregionalización <span style="font-size: 30px;color: #e53b50">$N \times N$</span> de <i>sills</i> y <span style="font-size: 30px;color: #e53b50">$g_{s}(h)$</span> las funciones ajustadas con rango fijo para cada una de ellas</p>
 					<p style="font-size: 24px;">Para el modelo global hemos de minimizar</p>
 					<table>
-						<tr style="font-size: 38px;color: #FF5555;text-align: center;border: solid #FF5555">
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
 							<td>
 					 		$WSS(B)=\sum_{i=1}^{p}\sum_{j=1}^{p}WSS(b_{ij})$
 					 		</td>
@@ -909,12 +909,12 @@
 					</table>
 				</section>
 				<section>
-					<h3 style="color: #FF5555;text-align:left">MGSR</h3>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Modelo Lineal Corregionalizado</h4>
 					<p style="font-size: 24px;">La función de mínimos cuadrados ponderados para cada <i>sill</i> es</p>
-					<p style="font-size: 38px;color: #FF5555;text-align: center">$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$</p>
-					<p style="font-size: 24px;"><span style="font-size: 30px;color: #FF5555">$G$</span> es la matriz <span style="font-size: 30px;color: #FF5555">$K \times S$</span> correspondiente a las distintas funciones de los variogramas anidados</p> 
-					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #FF5555">$Cov(b_{ij})$</span> es la <b style="color: #FF5555">matriz de varianza-covarianza subespacial</b> que representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #FF5555">$h$</span></p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center">$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$</p>
+					<p style="font-size: 24px;"><span style="font-size: 30px;color: #e53b50">$G$</span> es la matriz <span style="font-size: 30px;color: #e53b50">$K \times S$</span> correspondiente a las distintas funciones de los variogramas anidados</p> 
+					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #e53b50">$Cov(b_{ij})$</span> es la <b style="color: #e53b50">matriz de varianza-covarianza subespacial</b> que representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #e53b50">$h$</span></p>
 				</section>
 			</section>
 			</div>
@@ -928,6 +928,18 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				// Parallax background image
+				parallaxBackgroundImage: "img/FondoTesis.png", // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+				// Parallax background size
+				//parallaxBackgroundSize: "2100px 900px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+				// Number of pixels to move the parallax background per slide
+				// - Calculated automatically unless specified
+				// - Set to 0 to disable movement along an axis
+				parallaxBackgroundHorizontal: 20,
+				parallaxBackgroundVertical: 10,
+				
 				math: {
 					mathjax:
 				'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
