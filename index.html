@@ -147,10 +147,10 @@
                     </div>
                     <div>
                     	<p style="font-size: 26px;color: #e53b50">K. Pearson (1901)</p>
-						<p style="font-size: 26px">Sean $X=[X_{1},...,X_{p}]$  y  $S=var(X)$  su matrix de covarianzas</p>
-						<p style="font-size: 26px">La descomposición espectral de  $S$  es  $S=T \Lambda T^{'}$
-						donde  $T^{'} T=T T^{'}=I$  con  $T=[t_{1},...,t_{p}]$
-						y $\Lambda=diag(\lambda_{1},...,\lambda{p)}$</p>
+						<p style="font-size: 26px">Sean <span style="font-size: 32px;color: #e53b50">$X=[X_{1},...,X_{p}]$</span>  y  <span style="font-size: 32px;color: #e53b50">$S=var(X)$</span>  su matrix de covarianzas</p>
+						<p style="font-size: 26px">La descomposición espectral de  <span style="font-size: 32px;color: #e53b50">$S$</span>  es  <span style="font-size: 32px;color: #e53b50">$S=T \Lambda T^{'}$</span>
+						donde  <span style="font-size: 32px;color: #e53b50">$T^{'} T=T T^{'}=I$</span>  con  <span style="font-size: 32px;color: #e53b50">$T=[t_{1},...,t_{p}]$</span>
+						y <span style="font-size: 32px;color: #e53b50">$\Lambda=diag(\lambda_{1},...,\lambda{p)}$</span></p>
 						<p style="font-size: 26px">Las componentes principales de $X$ son las nuevas variables</p>
 						<span style="color: #e53b50">
 						\begin{equation}
@@ -159,6 +159,7 @@
 						</span>
 					</div>
 				</section>
+				<!--ACP-->
 				<section align="left">
 					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Análisis de componentes principales</h4>
@@ -505,13 +506,13 @@
 				<section>
 					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Otros Biplots</h4>
-						<ul style="font-size: 24px;">
-							<li>Meta-Biplot -- J. Martín-Rodríguez, P. Galindo y J.L. Vicente-Villardón (2002)
-							<li>Minería de datos -- V. Vairinhos
-							<li>Logístico -- J. Vicente-Villardón, M. Galindo-Villardón y A. Blázquez-Zaballos (2006)
-							<li>Canónico -- A. Vallejo-Arboleda, J. Vicente-Villardón y P. Galindo-Villardón (2006)
-							<li>Nominal -- J. Hernández-Sánchez y J. Vicente-Villardón (2016)
-							<li>Co-Tucker3 -- M. Rodríguez-Rosa (2016)
+						<ul style="font-size: 20px;">
+							<li><b style="color: #e53b50;font-size: 30px">Meta-Biplot</b> -- J. Martín-Rodríguez, P. Galindo y J.L. Vicente-Villardón (2002)
+							<li><b style="color: #e53b50;font-size: 30px">Minería de datos</b> -- V. Vairinhos
+							<li><b style="color: #e53b50;font-size: 30px">Logístico</b> -- J. Vicente-Villardón, M. Galindo-Villardón y A. Blázquez-Zaballos (2006)
+							<li><b style="color: #e53b50;font-size: 30px">Canónico</b> -- A. Vallejo-Arboleda, J. Vicente-Villardón y P. Galindo-Villardón (2006)
+							<li><b style="color: #e53b50;font-size: 30px">Nominal</b> -- J. Hernández-Sánchez y J. Vicente-Villardón (2016)
+							<li><b style="color: #e53b50;font-size: 30px">Co-Tucker3</b> -- M. Rodríguez-Rosa (2016)
 						</ul>
 				</section>
 			</section>
@@ -1092,6 +1093,60 @@
 						</figure>
 				</section>
 			</section>
+			<!--Aplicaciones-->
+			<section style="text-align: left">
+				<!--Introducción-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left;">Aplicaciones</h3>
+					<ul>
+						<li style="font-size: 30" class="fragment highlight-current-red"> Predicción de los efectos del stent en enfermos de infarto de miocardio</li>
+						<li style="font-size: 30"> Predicción de los efectos de cristalización en el envejecimiento de conglomerados silíceos</li>
+					</ul>
+				</section>
+				<!--Antecedentes-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Antecedentes</h4>
+					<div style="width: 55%; float: left">
+						<p style="font-size: 28px;"><b>Ensayo clínico GRACIA-3</b></p>
+						<ul style="font-size: 26px;">
+							<li>Ensayo clínico aleatorio, abierto y multicéntrico
+							<li>20 hospitales españoles
+							<li>Angiografías coronarias
+								<ul>
+									<li>Post-operatorias (346 pacientes)
+									<li>Follow-up (299 pacientes)
+								</ul>
+							<li>Mediciones en laboratorio independiente
+						</ul>
+						<p style="font-size: 28px;"><b>Objetivo</b></p>
+						<p style="font-size: 26px;">Evaluar la eficacia del stent liberador de fármaco (paclitaxel) frente a un stent convencional</p>
+					</div>
+					<div style="width: 40%; float: right">
+						<figure style="float:right">
+							<img data-src="img/articulostent.png" style="width: 90%;height: 90%;border: transparent;">
+						</figure>
+					</div>
+				</section>
+				<!--Video Stent: Cardioweb-->
+				<section data-background-video="vid/stent.mp4">
+				</section>
+				<!--REESTENOSIS-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">reestenosis</h4>
+					<div style="width: 50%; float: left">
+						<p style="font-size: 28px;">La reestenosis es la reducción en el lumen después de una intervención percutánea con o sin implantación de stent</p>
+						<p style="font-size: 28px;">Ocurre entre los 3 y 12 meses posteriores a la intervención. Afecta a un 10% de los pacientes</p>
+					</div>
+					<div style="width: 48%; float: right">
+						<figure style="float:right">
+							<img data-src="img/Late_Loss_Restenosis.png" style="width: 100%;height: 100%;border: transparent;background: white">
+						</figure>
+					</div>
+					<p style="font-size: 28px;">La incidencia de reestenosis en el ensayo fue similar en ambos tipos de stent aunque la pérdida de lumen se redujo en los grupos con recubrimiento</p>
+				</section>
+			</section>
 			</div>
 		</div>
 
@@ -1112,8 +1167,8 @@
 				// Number of pixels to move the parallax background per slide
 				// - Calculated automatically unless specified
 				// - Set to 0 to disable movement along an axis
-				parallaxBackgroundHorizontal: 10,
-				parallaxBackgroundVertical: 10,
+				parallaxBackgroundHorizontal: 12,
+				parallaxBackgroundVertical: 2,
 				
 				math: {
 					mathjax:
