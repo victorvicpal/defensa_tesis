@@ -36,6 +36,9 @@
 					<h4 style="color: white">Regresión Multivariante Gaussiana Subespacial</h4>
 					<p style="text-align: right; padding-right: 1em"> <a href="https://github.com/victorvicpal" style="color: white">Víctor Vicente Palacios</a></p>
 					<p style="text-align: right; padding-right: 1em"><small>12 de Septiembre 2017</small></p>
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
 				</section>
 				<section align="left" data-background-image="img/Logos.svg" data-background-position="64% 50%" data-background-size="270px" data-background-repeat="no repeat">
 				<!--CONTENIDO DE LA TESIS-->
@@ -546,7 +549,7 @@
 						</ul>
 					<p style="font-size: 26px"> Sea <span style="color: #e53b50;font-size: 38px">$y=\{y_{1},...,y_{n}\} $</span> una muestra de <span style="color: #e53b50;font-size: 38px">$n$</span> elementos y <span style="color: #e53b50;font-size: 38px">$x$</span> su dominio asociado</p>
 					</div>
-					<div style="width: 45%; float: right">
+					<div style="width: 45%; float: right;border: transparent;">
 						<figure style="float:right">
 							<img data-src="img/ProcesoGaussiano.png" style="width: 80%;height: 80%">
 						</figure>
@@ -1146,6 +1149,128 @@
 					</div>
 					<p style="font-size: 28px;">La incidencia de reestenosis en el ensayo fue similar en ambos tipos de stent aunque la pérdida de lumen se redujo en los grupos con recubrimiento</p>
 				</section>
+				<!--DESCRIPTIVO-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Objetivo</h4>
+					<p style="font-size: 26px;"><b>Predecir el comportamiento del lumen en estados posteriores a la intervención (postoperatorio y follow-up)</b></p>
+					<ul style="font-size: 24px;">La matriz de partida se compone de 180 individuos y 5 variables:
+						<li><b style="color:#e53b50">Seg Length PRE:</b> longitud del segmento (mm)
+						<li><b style="color:#e53b50">Diam Ref PRE:</b> diámetro de referencia (mm)
+						<li><b style="color:#e53b50">Diam Obs PRE:</b>diámetro de obstrucción (mm)
+						<li><b style="color:#e53b50">Diam Obs POST:</b>diámetro tras intervención (mm)
+						<li><b style="color:#e53b50">Diam Obs FU:</b>diámetero a los 12 meses (mm)
+					</ul>
+					<figure style="text-align: center">
+						<img data-src="img/descrstent.png" style="width: 70%;height: 70%;border: transparent;">
+					</figure>
+				</section>
+				<!--JK-BIPLOT-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">JK-Biplot</h4>
+					<figure style="text-align: center">
+						<img data-src="img/biplot12.png" style="width: 60%;height: 60%;border: transparent;">
+					</figure>
+				</section>
+				<!--CV+LMC-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Variograma ajustado (LMC)</h4>
+					<figure style="text-align: center">
+						<img data-src="img/CV_MODELO_GLOBAL.png" style="width: 70%;height: 90%;border: transparent;">
+					</figure>
+				</section>
+				<!--LMC-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">LMC</h4>
+					<figure style="text-align: center">
+						<img data-src="img/tabla_lmc_stent.png" style="width: 60%;height: 60%;border: transparent;">
+					</figure>
+				</section>
+				<!--Validación Cruzada
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Validación Cruzada</h4>
+					<figure style="text-align: center">
+						<img data-src="img/crvalstent.png" style="width: 70%;height: 70%;border: transparent;">
+					</figure>
+				</section>-->
+				<!--Cokriging-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Cokriging</h4>
+					<figure style="text-align: center">
+						<img data-src="img/PRED_MOD_GLOBAL2.png" style="width: 45%;height: 60%;border: transparent;">
+					</figure>
+				</section>
+				<!--Varianza residual-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Varianza residual <span style="color: #e53b50">$var(Z-Z^{*})$</span></h4>
+					<figure style="text-align: center">
+						<img data-src="img/VAR_RES_MOD_GLOBAL2.png" style="width: 45%;height: 60%;border: transparent;">
+					</figure>
+				</section>
+				<!--Varianza residual 3D-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Varianza residual 3D</h4>
+					<figure style="text-align: center">
+						<img data-src="img/Var_Res_3Db.png" style="width: 80%;height: 80%;border: transparent;">
+					</figure>
+				</section>
+				<!--Validez-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Validez y estabilidad del modelo</h4>
+					<p style="font-size: 26px;"><b>10 modelos train/test aleatorios</b></p>
+					<figure style="text-align: center">
+						<img data-src="img/traintest.png" style="width: 60%;height: 60%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Validez-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Validez y estabilidad del modelo</h4>
+					<figure style="text-align: center">
+						<img data-src="img/validezmodelostent.png" style="width: 50%;height: 50%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Ejemplos-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Ejemplo 1</h4>
+					<figure style="text-align: center">
+						<img data-src="img/Prediccion_ejemplo_4.png" style="width: 80%;height: 80%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Ejemplos-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Ejemplo 2</h4>
+					<figure style="text-align: center">
+						<img data-src="img/Prediccion_restenosis_PRE.png" style="width: 80%;height: 80%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Ejemplos-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Ejemplo 3</h4>
+					<figure style="text-align: center">
+						<img data-src="img/Prediccion_PRE_POST_restenosis.png" style="width: 50%;height: 50%;border: transparent;background: transparent;">
+					</figure>
+				</section>
+				<!--Ejemplos-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">efectos post-stent</h3>
+					<h4 style="text-align:left">Valores ausentes</h4>
+					<p style="font-size: 26px;"><i>valor faltante en el follow-up</i></p>
+					<figure style="text-align: center">
+						<img data-src="img/Prediccion_valor_faltante.png" style="width: 90%;height: 90%;border: transparent;background: transparent;">
+					</figure>
+				</section>
 			</section>
 			</div>
 		</div>
@@ -1167,7 +1292,7 @@
 				// Number of pixels to move the parallax background per slide
 				// - Calculated automatically unless specified
 				// - Set to 0 to disable movement along an axis
-				parallaxBackgroundHorizontal: 12,
+				parallaxBackgroundHorizontal: 4,
 				parallaxBackgroundVertical: 2,
 				
 				math: {
@@ -1180,6 +1305,7 @@
 					{ src: 'plugin/math/math.js', async: true},
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
