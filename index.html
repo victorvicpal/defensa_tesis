@@ -895,7 +895,7 @@
 					<table>
 						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
 							<td>
-					 		$\Gamma(h)=\sum_{s=0}^{S}B_{s}g_{s}(h)$
+					 		$\Gamma(h)=\sum_{s=1}^{S}B_{s}g_{s}(h)$
 					 		</td>
 					 	</tr>
 					</table>
@@ -929,7 +929,7 @@
 							tr(A(h_{k})C(b_{ii})A(h_{k'})C(b_{jj}))
 						\end{equation}
 					</p>
-					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$C(b_{ij})=\sum_{s=0}^{S}b_{ij,s}\rho_{s}$</span> es la matriz de covarianzas entre <span style="font-size: 30px;color: #e53b50">$z_{i}$</span> y <span style="font-size: 30px;color: #e53b50">$z_{j}$</span> y <span style="font-size: 30px;color: #e53b50">$\rho_{s}$</span> es la matriz de correlación subespacial para cada variograma normalizado</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$C(b_{ij})=\sum_{s=1}^{S}b_{ij,s}\rho_{s}$</span> es la matriz de covarianzas entre <span style="font-size: 30px;color: #e53b50">$z_{i}$</span> y <span style="font-size: 30px;color: #e53b50">$z_{j}$</span> y <span style="font-size: 30px;color: #e53b50">$\rho_{s}$</span> es la matriz de correlación subespacial para cada variograma normalizado</p>
 					<table>
 						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: solid #e53b50;">
 							<td>
@@ -1019,9 +1019,14 @@
 					<p style="font-size: 24px;">donde <span style="color: #e53b50;font-size: 30px">$C(u_{\alpha}-u_{\beta})=\sum_{s=1}^{S} B_{s} \otimes \rho_{s}(u_{\alpha}-u_{\beta})$</span></p>
 					<p style="font-size: 24px;">Y por tanto</p>
 					<table>
-						<tr style="font-size: 26px;color: #e53b50;text-align: center;border: solid #e53b50;">
-							<td>
+						<tr style="font-size: 26px;color: #e53b50;text-align: center;">
+							<td style="border: solid #e53b50">
 								$Z_{i}^{*}(u_{0})= \sum_{i=1}^{P}\sum_{\alpha=1}^{N}w_{\alpha}^{i}Z_{i}(u_{\alpha})$
+							</td>
+							<td style="border:transparent;">
+							</td>
+							<td>
+								$var(Z-Z^{*})=C(0)-\sum_{s=1}^{S} c_{s}^{T} C c_{s}$
 							</td>
 						</tr>
 					</table>
@@ -1031,6 +1036,60 @@
                             Z <- cokrig(RES,xygrid)
                         </code>
                     </pre>
+				</section>
+				<!--Validación Cruzada-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Validación Cruzada</h4>
+					<p style="font-size: 24px;">Suprimimos un elemento <span style="font-size: 32px;color: #e53b50">$Z(u_{\alpha})$</span> estimando el resto <span style="font-size: 32px;color: #e53b50">$Z_{i}^{*}(u_{[\alpha]})$</span></p>
+					<table>
+						<tr style="font-size: 24px;text-align: center;border: solid #e53b50;">
+							<td>
+								Desviación del valor cuadrático medio
+							</td>
+							<td style="border: solid #e53b50;color: #e53b50;text-align: center;font-size: 32px;">
+								$\frac{1}{N}\sum_{\alpha=1}^{N}(Z_{i}(u_{\alpha})-Z_{i}^{*}(u_{[\alpha]}))^2 \cong 0$
+							</td>
+						</tr>
+						<tr style="font-size: 24px;text-align: center;border: solid #e53b50;">
+							<td>
+								Media cuadrática del error estimado
+							</td>
+							<td style="border: solid #e53b50;color: #e53b50;font-size: 32px;">
+								$\frac{1}{N}\sum_{\alpha=1}^{N}\frac{(Z_{i}(u_{\alpha})-Z_{i}^{*}(u_{[\alpha]}))^2}{\sigma^2_{[\alpha]}} \cong 1$
+							</td>
+						</tr>
+					</table>
+					<p style="font-size: 24px;">Siendo <span style="font-size: 32px;color: #e53b50">$\sigma^2_{[\alpha]}$</span> la desviación típica del error predicho en la posición <span style="font-size: 32px;color: #e53b50">$u_{\alpha}$</span></p>
+					<pre>
+						<code data-trim data-noescape>
+                            Valid <- CrossValidation(RES)
+                        </code>
+                    </pre>
+				</section>
+				<!--Predicción1-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Predicción</h4>
+						<figure style="float:right">
+							<img data-src="img/prediccion1.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
+						</figure>
+				</section>
+				<!--Predicción2-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Predicción</h4>
+						<figure style="float:right">
+							<img data-src="img/prediccion2.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
+						</figure>
+				</section>
+				<!--Predicción3-->
+				<section>
+					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
+					<h4 style="text-align:left">Predicción</h4>
+						<figure style="float:right">
+							<img data-src="img/prediccion3.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
+						</figure>
 				</section>
 			</section>
 			</div>
