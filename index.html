@@ -44,9 +44,9 @@
 				<p style="text-align: right; padding-left: 1em;font-size: 24px"> <b>Director</b><br>Santiago Vicente Tavera</p>
 				</div>
 					<aside class="notes">
-						Con la venia del tribunal procedo a defender la tesis doctoral titulada:
-						Modelo de predicción subespacial: Regresión Multivariante Gaussiana Subespacial
-						elaborada en el departamento de estadística y dirigida por el Doctor Santiago Vicente Tavera
+						Con la venia del tribunal procedo a defender la tesis doctoral titulada:<br>
+						Modelo de predicción subespacial: Regresión Multivariante Gaussiana Subespacial<br>
+						elaborada en el Departamento de Estadística y dirigida por el Doctor Santiago Vicente Tavera
 					</aside>
 				</section>
 				<section align="left">
@@ -59,6 +59,9 @@
 						<li><p class="fragment highlight-current-red">Aplicaciones</p>
 						<li><p class="fragment highlight-current-red">Software</p>
 					</ul>
+					<aside class="notes">
+						Estructura <br>
+					</aside>
 				</section>
 			</section>
 			<!--INTRODUCCION+OBJETIVOS-->
@@ -73,6 +76,10 @@
 					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar <span style="color: #e53b50;font-size: 38px">$v_{2}$</span> en función del resto?</p>
 					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #e53b50;font-size: 38px">$v_{2}=f^{'}(v_{1}$,$v_{3}$,...,$v_{n})$</span></p>
 					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #e53b50;font-size: 38px">$f \neq f^{'}$</span></p>
+					<aside class="notes">
+						los modelos de Regresión clásicos $\rightarrow$ unidireccional <br>
+						existe una función <i>f</i> <br> que se ajusta en función del resto <br>
+					</aside>
 				</section>
 				<!--INTRODUCCION-->
 				<!--Regresión multivariante-->
@@ -84,6 +91,9 @@
 					<p class="fragment fade-up" style="font-size: 28px">¿Qué sucede si quiero hallar un nuevo subconjunto <span style="color: #e53b50;font-size: 38px">$V^{'}_{1}$</span> en función de <span style="color: #e53b50;font-size: 38px">$V^{'}_{2}$</span> siendo <span style="color: #e53b50;font-size: 38px">$V = V^{'}_{1} \cup V^{'}_{2}$</span>?</p>
 					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #e53b50;font-size: 38px">$V^{'}_{1}=G^{'}(V^{'}_{2})$</span></p>
 					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #e53b50;font-size: 38px">$G \neq G^{'}$</span></p>
+					<aside class="notes">
+						Caso multivariante <br>
+					</aside>
 				</section>
 				<!--OBJETIVO-->
 				<section align="left">
@@ -92,6 +102,9 @@
 					<p style="font-size: 28px" > Tendríamos un único modelo que nos permitiría predecir cualquier subconjunto de <span style="color: #e53b50;font-size: 38px">$V$</span> en función del subconjunto complementario del mismo </p>
 					<p style="font-size: 32px" class="fragment grow"> Nuestro principal objetivo es desarrollar un modelo <span style="color: #e53b50;font-size: 42px">$M$</span> que rompa con la rigidez de los modelos clásicos de regresión</p>
 					<p style="font-size: 32px;text-align: center;color: #e53b50" class="fragment fade-up"> Supongamos que disponemos de un conjunto <span style="color: #e53b50;font-size: 38px">$V=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$</span></p>
+					<aside class="notes">
+						Objetivo $\arrowright$ Único modelo<br>
+					</aside>
 				</section>
 				<!--OBJETIVO:animacion-->
 				<section>
@@ -106,12 +119,12 @@
 							<img data-src="img/objetivo_2.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
 					</figure>
 				</section>
-				<section>
+				<!--<section>
 					<h3 style="color: #e53b50;text-align:left;"> Objetivo </h3>
 					<figure style="float:right">
 							<img data-src="img/objetivo_3.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
 					</figure>
-				</section>
+				</section>-->
 				<!--MODELO-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left;"> MODELO </h3>
@@ -140,6 +153,10 @@
 								<li>Cokriging
 							</ul>-->
 					</ul>
+					<aside class="notes">
+						Reducción dimensional + Procesos Gaussianos<br>
+						Primera parte > Algunas de las principales Técnicas de Reducción dimensional
+					</aside>
 				</section>
 				<!--REDUCCIÓN DIMENSIONAL: DEFINICIÓN-->
 				<section>
@@ -150,8 +167,8 @@
 							<li>Técnicas descriptivas
 							<li>Adaptabilidad al ojo humano
 							<li>Baja dimensionalidad
-							<li>Similaridad/Disimilaridad
 							<li>Máxima información
+							<li>Similaridad/Disimilaridad
 						</ul>
 					</div>
 					<div style="width: 45%; float: right">
@@ -159,6 +176,15 @@
 							<img data-src="img/data.png" style="width: 80%;height: 80%">
 						</figure>
 					</div>
+					<aside class="notes">
+						Más de 100 años<br>
+						Técnicas descriptivas<br>
+						Big Data > Matrices con multitud de variables <br>
+						Información interpretable para el ser humano <br>
+						Subespacios de baja dimensión <br>
+						Subespacios recogen máxima información <br>
+						Además nos permita buscar semejanzas entre elementos de nuestros datos
+					</aside>
 				</section>
 				<!--ACP-->
 				<section align="left">
@@ -182,6 +208,13 @@
 						\end{equation}
 						</span>
 					</div>
+					<aside class="notes">
+						Técnica más conocida y empleada <br>
+						Variables cuantitativas <br>
+						Matriz X y matriz S varianzas-covarianzas <br>
+						La descomposición espectral de S nos permite obtener unas nuevas variables denominadas componentes como combinaciones lineales de las originales <br>
+						Las propiedades de estas componentes son de sobra conocidas
+					</aside>
 				</section>
 				<!--ACP-->
 				<section align="left">
@@ -202,6 +235,10 @@
 						de nuestros datos de manera rápida y efectiva
 						</p>
 					</div>
+					<aside class="notes">
+						Técnica sencilla <br>
+						Ejemplo: Plano principal del conjunto de datos Iris
+					</aside>
 				</section>
 				<!--AC-->
 				<section align="left">
@@ -213,7 +250,7 @@
 							</figure>
 						</div>
 						<div>
-							<p style="font-size: 26px;color: #e53b50">J. Benzécri (1901)</p>
+							<p style="font-size: 26px;color: #e53b50">J. Benzécri (1973)</p>
 							<p style="font-size: 26px">Tablas de contingencia</p>
 							<ul style="font-size: 26px">
 								<li>Perfiles Fila
@@ -221,6 +258,12 @@
 							</ul>
 							<p style="font-size: 26px">Proyección de ambos perfiles en un subespacio común</p>
 						</div>
+					<aside class="notes">
+						Otra técnica clásica es el análisis de correspondencias <br>
+						Variables cualitativas expresadas en forma de tablas de contingencia <br>
+						El objetivo es describir los perfiles fila y columna de estas tablas de contingencia<br>
+						Podemos proyectar ambos perfiles en un mismo espacio común
+					</aside>
 				</section>
 				<!--ACM-->
 				<section align="left">
@@ -238,6 +281,12 @@
 								<li>Columnas variables
 							</ul>
 							<p style="font-size: 26px">Representación gráfica semejante al ACP para variables categóricas</p>
+					<aside class="notes">
+						Extensión del AC<br>
+						Conjunto de matrices <br>
+						Mismos individuos pero distintos conjuntos de variables cualitativas <br>
+						La representación es similar a la de ACP pero para variables categóricas
+					</aside>
 				</section>
 				<!--Análisis Factorial-->
 				<section align="left">
@@ -257,6 +306,12 @@
 								<img data-src="img/Spearman.png" style="width: 60%; height: 60%">
 							</figure>
 					</div>
+					<aside class="notes">
+					Búsqueda de variables no observables o latentes <br>
+					Partimos de las variables observables para obtener las latentes <br>
+					Las variables medidas se expresan como combinación de factores comunes o únicos <br>
+					Aplicado sobre todo en psicología o ciencias sociales... 
+					</aside>
 				</section>
 				<!--Análisis Factorial Múltiple-->
 				<section align="left">
@@ -278,6 +333,13 @@
 								<img data-src="img/MFA2.png" style="width: 55%; height: 55%;border: transparent;">
 							</figure>
 					</div>
+					<aside class="notes">
+						Extensión <br>
+						Gran ventaja > podemos trabajar con variables cuantitativas y cualitativas en el mismo subespacio<br>
+						A las matrices de variables cuantitativas > ACP y a las de variables cualitativas > AC <br>
+						Para hallar un subespacio común al conjunto de matrices de ambos tipos ponderamos éstas a través del inverso del primer valor propio de cada una <br>
+						Asumimos equilibrio entre los grupos
+					</aside>
 				</section>
 				<!--Sistemas Gifi-->
 				<section align="left">
@@ -297,6 +359,14 @@
 								<img data-src="img/Jan_de_Leeuw.png" style="width: 200%; height: 200%">
 							</figure>
 					</div>
+					<aside class="notes" style="font-size: 12px">
+						Escuela de Leiden (Holanda) <br>
+						Jan de Leeuw (foto) <br>
+						La gran ventaja de estas técnicas es que nos permite trabajar con variables cuantitativas y cualitativas <br>
+						Se basan en la minimización de la función de pérdida a través de Mínimos Cuadrados Alternados <br>
+						El objetivo de estas técnicas es explorar y modelar la relación entre dos o más conjuntos de variables <br>
+						Las técnicas más conocidas son: OVERALS HOMALS
+					</aside>
 				</section>
 				<!--Métodos Biplot-->
 				<section align="left">
