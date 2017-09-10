@@ -1390,6 +1390,11 @@
 						<li style="font-size: 30" class="fragment highlight-current-red"> Predicción de los efectos del stent en enfermos de infarto de miocardio</li>
 						<li style="font-size: 30"> Predicción de los efectos de cristalización en el envejecimiento de conglomerados silíceos</li>
 					</ul>
+					<aside class="notes">
+						Grupo Cardiología Hospital Universitario de Salamanca <br>
+						IRNASA (Instituto de recursos naturales y agrobiología de Salamanca) <br>
+						Predicción de los efectos del stent en enfermos de infarto de miocardio
+					</aside>
 				</section>
 				<!--Antecedentes-->
 				<section>
@@ -1415,6 +1420,12 @@
 							<img data-src="img/articulostent.png" style="width: 90%;height: 90%;border: transparent;">
 						</figure>
 					</div>
+					<aside class="notes">
+						Aplicación basa estudio previo <br>
+						Características ensayo <br>
+						Pacientes enfermedades coronarias se les aplica un stent <br>
+						Para explicar la intervención percutánea con implantación de stent
+					</aside>
 				</section>
 				<!--Video Stent: Cardioweb-->
 				<section data-background-video="vid/stent.mp4">
@@ -1433,6 +1444,11 @@
 						</figure>
 					</div>
 					<p style="font-size: 28px;">La incidencia de reestenosis en el ensayo fue similar en ambos tipos de stent aunque la pérdida de lumen se redujo en los grupos con recubrimiento</p>
+					<aside class="notes">
+						Uno de los problemas que surgen tras la intervención > Reestenosis <br>
+						Leer <br>
+						Conclusiones > no hay diferencias significativas
+					</aside>
 				</section>
 				<!--DESCRIPTIVO-->
 				<section>
@@ -1449,6 +1465,11 @@
 					<figure style="text-align: center">
 						<img data-src="img/descrstent.png" style="width: 70%;height: 70%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Con los mismos datos recogidos en este ensayo <br>
+						VALORES FALTANTES 346 pacientes > 180 pacientes <br>
+						Con las mediciones pre-operatorias > predecir el comportamiento futuro del lumen
+					</aside>
 				</section>
 				<!--JK-BIPLOT-->
 				<section>
@@ -1457,6 +1478,12 @@
 					<figure style="text-align: center">
 						<img data-src="img/biplot12.png" style="width: 60%;height: 60%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Primer paso > Coordenadas subespaciales > JK-Biplot <br>
+						ZOOM <br>
+						La distribución es homogénea de nuestros pacientes salvo un outlier <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--CV+LMC-->
 				<section>
@@ -1465,6 +1492,12 @@
 					<figure style="text-align: center">
 						<img data-src="img/CV_MODELO_GLOBAL.png" style="width: 70%;height: 90%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Variograma+Ajuste > Distribución cuadrática <br>
+						ZOOM <br>
+						Se aprecia un buen ajuste <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--LMC-->
 				<section>
@@ -1473,6 +1506,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/tabla_lmc_stent.png" style="width: 60%;height: 60%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Rango > 1.83 | Nugget cercano a cero <br>
+						[OPCIONAL] Nug y Pow cercanos a cero entre Seg Len PRE y Obs Diam > Mostrar en cokriging
+					</aside>
 				</section>
 				<!--Validación Cruzada
 				<section>
@@ -1489,6 +1526,11 @@
 					<figure style="text-align: center">
 						<img data-src="img/PRED_MOD_GLOBAL2.png" style="width: 45%;height: 60%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Cokriging Simple > Estructura semejante variables Biplot <br>
+						ZOOM (hablar de escala) <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Varianza residual-->
 				<section>
@@ -1497,6 +1539,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/VAR_RES_MOD_GLOBAL2.png" style="width: 45%;height: 60%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Varianza residual espacial > Distribución errores cuadráticos <br>
+						Zonas centrales y exteriores > Mayor error de predicción
+					</aside>
 				</section>
 				<!--Varianza residual 3D-->
 				<section>
@@ -1505,6 +1551,11 @@
 					<figure style="text-align: center">
 						<img data-src="img/Var_Res_3Db.png" style="width: 80%;height: 80%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						ZOOM <br>
+						Visión 3D <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Validez-->
 				<section>
@@ -1514,6 +1565,12 @@
 					<figure style="text-align: center">
 						<img data-src="img/traintest.png" style="width: 60%;height: 60%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						Aprendizaje supervisado <br>
+						Validez modelo > 10 modelos <br>
+						Extracción aleatoria 10% del total <br>
+						Con el 90% > MODELO y contrastamos con el 10% extraído
+					</aside>
 				</section>
 				<!--Validez-->
 				<section>
@@ -1522,6 +1579,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/validezmodelostent.png" style="width: 50%;height: 50%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						5 de los 10 modelos <br>
+						Media y error estándar cercanos a cero
+					</aside>
 				</section>
 				<!--Ejemplos-->
 				<section>
@@ -1530,6 +1591,13 @@
 					<figure style="text-align: center">
 						<img data-src="img/Prediccion_ejemplo_4.png" style="width: 80%;height: 80%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						Explicar resultados > 4 ejemplos <br>
+						ZOOM <br>
+						Longitud segmento obstruido 68.28 mm Diametro Ref 2.59 mm <br>
+						Explicación <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Ejemplos-->
 				<section>
@@ -1538,6 +1606,13 @@
 					<figure style="text-align: center">
 						<img data-src="img/Prediccion_restenosis_PRE.png" style="width: 80%;height: 80%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						ZOOM <br>
+						Paciente que sufrió reestenosis <br>
+						Long seg obstr 111.98 mm y Diam Ref 2.32 mm <br>
+						Explicación: Detectar pacientes con anomalías <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Ejemplos-->
 				<section>
@@ -1546,6 +1621,12 @@
 					<figure style="text-align: center">
 						<img data-src="img/Prediccion_PRE_POST_restenosis.png" style="width: 50%;height: 50%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						ZOOM <br>
+						Ejemplo de autocorrección de nuestro modelo <br>
+						Ejemplo funcion modelo <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Ejemplos-->
 				<section>
@@ -1555,6 +1636,9 @@
 					<figure style="text-align: center">
 						<img data-src="img/Prediccion_valor_faltante.png" style="width: 90%;height: 90%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						Virtud > predecir valores faltantes en nuestra muestra
+					</aside>
 				</section>
 			</section>
 			<!--COLOR-->
@@ -1566,6 +1650,9 @@
 						<li style="font-size: 30"> Predicción de los efectos del stent en enfermos de infarto de miocardio</li>
 						<li style="font-size: 30" class="fragment highlight-current-red"> Predicción de los efectos de cristalización en el envejecimiento de conglomerados silíceos</li>
 					</ul>
+					<aside class="notes">
+						Segunda aplicación del MGSR
+					</aside>
 				</section>
 				<!--Antecedentes-->
 				<section>
@@ -1586,6 +1673,12 @@
 							<img data-src="img/articulocanbip.png" style="width: 90%;height: 90%;border: transparent;">
 						</figure>
 					</div>
+					<aside class="notes">
+						Estudio previo IRNASA <br>
+						Estudio alteraciones medioambientales <br>
+						Experimento cámaras climáticas <br>
+						Objetivo: efectos del envejecimiento > cambios color
+					</aside>
 				</section>
 				<!--Catedral Zamora-->
 				<section>
@@ -1605,6 +1698,11 @@
 							<img data-src="img/Minolta.png" style="width: 70%;height: 70%;border: transparent;">
 						</figure>
 					</div>
+					<aside class="notes">
+						Catedral Zamora > Conglomerado silíceo blanco <br>
+						Muestra cantera > Ciclos en cámaras climáticas <br>
+						Medición color > Colorímetro Minolta
+					</aside>
 				</section>
 				<!--Tratamientos-->
 				<section>
@@ -1670,6 +1768,11 @@
 						</tr>
 					</table>
 					</div>
+					<aside class="notes">
+						2 tratamientos > muestras <br>
+						[OPCIONAL] Explicar pasos <br>
+						Resultado > diferencias
+					</aside>
 				</section>
 				<!--Objetivo-->
 				<section>
@@ -1689,6 +1792,11 @@
 							<img data-src="img/cielab.png" style="width: 70%;height: 70%;border: transparent;">
 						</figure>
 					</div>
+					<aside class="notes">
+						Ciclo > discretos (no sabemos que sucede entre medias y después) <br>
+						Variables cromáticas > CIELAB <br>
+						ZOOM y CONTRAZOOM
+					</aside>
 				</section>
 				<!--JK-Biplot-->
 				<section>
@@ -1712,6 +1820,9 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						JK-BIPLOT tratamientos
+					</aside>
 				</section>
 				<!--Variogramas cruzados+LMC-->
 				<section>
@@ -1735,6 +1846,11 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						Ajuste LMC <br>
+						DOBLE ZOOM con explicación T2 falta de datos <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Cokriging-->
 				<section>
@@ -1758,6 +1874,11 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						Resultado cokriging T2 menos lineal <br>
+						ZOOM solo T2 <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Varianza residual-->
 				<section>
@@ -1781,6 +1902,9 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						Zonas alejadas > peor predicción
+					</aside>
 				</section>
 				<!--Validación Cruzada-->
 				<section>
@@ -1789,6 +1913,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/crvalcolor.png" style="width: 60%;height: 60%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						Aprendizaje no supervisado > CrossValidation <br>
+						T1 valores muy buenos / Inferiores en el T2
+					</aside>
 				</section>
 				<!--Predicción-->
 				<section>
@@ -1797,6 +1925,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/T1_b7.png" style="width: 70%;height: 70%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						EXPLICACIÓN CON ZOOM <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 				<!--Predicción-->
 				<section>
@@ -1805,6 +1937,10 @@
 					<figure style="text-align: center">
 						<img data-src="img/T2_b7.png" style="width: 70%;height: 70%;border: transparent;">
 					</figure>
+					<aside class="notes">
+						EXPLICACIÓN CON ZOOM <br>
+						CONTRAZOOM
+					</aside>
 				</section>
 			</section>
 			<section data-background-image="https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Salamanca_vector_seal.svg/200px-University_of_Salamanca_vector_seal.svg.png" data-background-size="300px" data-background-repeat="no repeat">
