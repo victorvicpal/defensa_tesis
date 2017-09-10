@@ -259,10 +259,10 @@
 							<p style="font-size: 26px">Proyección de ambos perfiles en un subespacio común</p>
 						</div>
 					<aside class="notes">
-						Otra técnica clásica es el análisis de correspondencias <br>
+						Técnica clásica es el análisis de correspondencias <br>
 						Variables cualitativas expresadas en forma de tablas de contingencia <br>
-						El objetivo es describir los perfiles fila y columna de estas tablas de contingencia<br>
-						Podemos proyectar ambos perfiles en un mismo espacio común
+						Objetivo > describir los perfiles fila y columna de estas tablas de contingencia<br>
+						Proyectar ambos perfiles > subespacio común
 					</aside>
 				</section>
 				<!--ACM-->
@@ -335,8 +335,8 @@
 					</div>
 					<aside class="notes">
 						Extensión <br>
-						Gran ventaja > podemos trabajar con variables cuantitativas y cualitativas en el mismo subespacio<br>
-						A las matrices de variables cuantitativas > ACP y a las de variables cualitativas > AC <br>
+						Ventaja > variables cuantitativas y cualitativas mismo subespacio<br>
+						Matrices de variables cuantitativas > ACP y a las de variables cualitativas > AC <br>
 						Para hallar un subespacio común al conjunto de matrices de ambos tipos ponderamos éstas a través del inverso del primer valor propio de cada una <br>
 						Asumimos equilibrio entre los grupos
 					</aside>
@@ -359,12 +359,11 @@
 								<img data-src="img/Jan_de_Leeuw.png" style="width: 200%; height: 200%">
 							</figure>
 					</div>
-					<aside class="notes" style="font-size: 12px">
-						Escuela de Leiden (Holanda) <br>
-						Jan de Leeuw (foto) <br>
-						La gran ventaja de estas técnicas es que nos permite trabajar con variables cuantitativas y cualitativas <br>
-						Se basan en la minimización de la función de pérdida a través de Mínimos Cuadrados Alternados <br>
-						El objetivo de estas técnicas es explorar y modelar la relación entre dos o más conjuntos de variables <br>
+					<aside class="notes">
+						Leiden (Holanda) Jan de Leeuw <br>
+						Ventaja > permite trabajar con variables cuantitativas y cualitativas <br>
+						Minimización > función de pérdida > Mínimos Cuadrados Alternados <br>
+						Objetivo: Explorar y modelar la relación entre dos o más conjuntos de variables <br>
 						Las técnicas más conocidas son: OVERALS HOMALS
 					</aside>
 				</section>
@@ -376,8 +375,8 @@
 						<p style="font-size: 26px;color: #e53b50">K. Gabriel (1971)</p>
 						<p style="font-size: 26px">Representación de elementos (filas) y variables (columnas) en un mismo subespacio</p>
 						<ul style="font-size: 26px">
-							<li>Variables > Vectores
-							<li>Elementos > Puntos
+							<li>Variables $\rightarrow$ Vectores
+							<li>Elementos $\rightarrow$ Puntos
 						</ul>
 					</div>
 					<div style="width: 45%; float: right">
@@ -385,6 +384,12 @@
 								<img data-src="img/Gabriel.png" style="width: 100%; height: 100%">
 							</figure>
 					</div>
+					<aside class="notes">
+						Variables cuantitativas <br>
+						Representación gráfica > Mismo subespacio <br>
+						Variables Vectores <br>
+						Elementos Puntos <br>
+					</aside>
 				</section>
 				<!--Biplots-->
 				<section align="left">
@@ -397,6 +402,10 @@
 						</ul>
 					<p style="font-size: 24px">Un Biplot es una representación gráfica de <span style="color: #e53b50;font-size: 38px">$X$</span> mediante marcadores fila <span style="color: #e53b50;font-size: 38px">$r_{1},...,r_{N}$</span> y marcadores columna <span style="color: #e53b50;font-size: 38px">$c_{1},...,c_{P}$</span> tal que <span style="color: #e53b50;font-size: 38px">$x_{ij} \approx r_{i}^{'} c_{j}$</span> </p>
 					<p style="color: #e53b50;font-size: 38px;text-align: center">$X \approx R C^{'}$ </p>
+					<aside class="notes">
+						Explicamos brevemente la factorización clásica <br>
+						Sea X...
+					</aside>
 				</section>
 				<!--Biplots-->
 				<section align="left">
@@ -409,6 +418,9 @@
 						\end{equation}
 						</p>
 						<p style="font-size: 24px">donde <span style="color: #e53b50;font-size: 38px">$U$</span> es una <span style="color: #e53b50;font-size: 38px">$N \times T$</span> matriz unitaria, <span style="color: #e53b50;font-size: 38px">$\Lambda$</span> es una <span style="color: #e53b50;font-size: 38px">$T \times T$</span> matriz diagonal no negativa, y <span style="color: #e53b50;font-size: 38px">$V$</span> es una <span style="color: #e53b50;font-size: 38px">$P \times T$</span> matriz unitaria</p>
+						<aside class="notes">
+							Esta aproximación > Descomposición Valores Singulares
+						</aside>
 				</section>
 				<!--Biplots-->
 				<section align="left">
@@ -448,14 +460,19 @@
 									C = V \Lambda
 								\end{equation}
 						</p>
+						<aside class="notes">
+							Biplots Clásicos (Gabriel) <br>
+							JK-Biplot > Buena representación de los elementos fila <br>
+							GH-Biplot > Buena representación de las variables
+						</aside>
 				</section>
 				<!--Biplot: Interpretación-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
 						<h4 style="text-align:left">Interpretación</h4>
 						<div style="width: 55%;float: left">
-							<p style="font-size: 24px"> Elementos fila > Puntos </p>
-							<p style="font-size: 24px"> Elementos columna > Vectores </p>
+							<p style="font-size: 24px"> Elementos fila $\rightarrow$ Puntos </p>
+							<p style="font-size: 24px"> Elementos columna $\rightarrow$ Vectores </p>
 							<ul style="font-size: 24px">
 								<p style="font-size: 34px">Propiedades</p>
 								<li>Proyecciones $ \bot $ puntos sobre vectores $ \approx $ valor real
@@ -469,6 +486,9 @@
 								<img data-src="img/biplot_classic.svg.png" style="width: 90%; height: 90%;border: transparent;">
 							</figure>
 						</div>
+						<section class="notes">
+							Interpretación sencilla e intuitiva
+						</section>
 				</section>
 				<!--Biplot: Calidad-->
 				<section>
@@ -501,6 +521,9 @@
 							</tr>
 						</table>
 				</section>
+				<aside class="notes">
+					Medidas calidad proyecciones en el subespacio
+				</aside>
 				<!--Tipos de Biplot-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
@@ -595,6 +618,10 @@
 								</td>
 							</tr>
 						</table>
+						<aside class="notes">
+							Exiten otros biplots basados en diferentes enfoques <br>
+							Cabe destacar ...
+						</aside>
 				</section>
 				<!--Otros Biplots-->
 				<section>
@@ -608,6 +635,9 @@
 							<li><b style="color: #e53b50;font-size: 30px">Nominal</b> -- J. Hernández-Sánchez y J. Vicente-Villardón (2016)
 							<li><b style="color: #e53b50;font-size: 30px">Co-Tucker3</b> -- M. Rodríguez-Rosa (2016)
 						</ul>
+					<aside class="notes">
+						En estos últimos años se ha ampliado los tipos de biplots... <br>
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -629,6 +659,9 @@
 								<li>Cokriging
 							</ul>
 					</ul>
+					<aside class="notes">
+						Pasamos a describir los procesos gaussianos
+					</aside>
 				</section>
 				<!--Procesos Gaussianos-->
 				<section style="text-align: left">
@@ -642,9 +675,12 @@
 					</div>
 					<div style="width: 45%; float: right;border: transparent;">
 						<figure style="float:right">
-							<img data-src="img/ProcesoGaussiano.png" style="width: 80%;height: 80%">
+							<img data-src="img/ProcesoGaussiano.png" style="width: 80%;height: 80%; border: transparent">
 						</figure>
 					</div>
+					<aside class="notes">
+					Descripción breve sobre qué consiste
+					</aside>
 				</section>
 				<!--Procesos Gaussianos: Covarianza ideal-->
 				<section style="text-align: left">
@@ -658,6 +694,10 @@
 							<li> <span style="color: #e53b50;font-size: 38px">$l$</span> distancia o gradiente temporal entre <span style="color: #e53b50;font-size: 38px">$x$</span> y <span style="color: #e53b50;font-size: 38px">$x^{\prime}$</span>
 						</ul>
 						<p style="font-size: 26px">La función <span style="color: #e53b50;font-size: 38px">$k$</span> nos indica cuánto varían nuestros datos en función de la distancia o gradiente temporal en el que se encuentran</p>
+						<aside class="notes">
+							Covarianzas domino contínuo > clave <br>
+							Siguiente expresión donde...
+						</aside>
 				</section>
 				<!--Procesos Gaussianos: Covarianza-->
 				<section style="text-align: left">
@@ -668,6 +708,10 @@
 					<ul style="font-size: 22px">
 							<li> <span style="color: #e53b50;font-size: 38px">$\delta(x,x^{\prime})$</span> delta de Kronecker
 					</ul>
+					<aside class="notes">
+						PG > Ruido > distribución no ideal <br>
+						Expresión igual a la anterior + Error
+					</aside>
 				</section>
 				<!--Procesos Gaussianos: Estimación-->
 				<section style="text-align: left">
@@ -685,6 +729,11 @@
 					<p style="color: #e53b50;font-size: 38px;text-align: center">$\hat{y}_{*}=K_{*}K^{-1}y$</p>
 					<p style="font-size: 26px">Y la varianza del estimador es</p>
 					<p style="color: #e53b50;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
+					<aside class="notes">
+						y* estimación de y <br>
+						x* dominio sobre el que queremos hallar y* <br>
+						K matriz varianza-covarianza de nuestra muestra
+					</aside>
 				</section>
 				<!--Geoestadística-->
 				<section style="text-align: left">
@@ -717,6 +766,11 @@
 						</tr>
 					</table>
 					</div>
+					<aside class="notes">
+						Tesis > procesos gaussianos espaciales <br>
+						Padres de la geoestadística <br>
+						Historia	
+					</aside>
 				</section>
 				<!--Datos-->
 				<section style="text-align: left">
@@ -740,6 +794,11 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						Charlas divulgativas <br>
+						agente inmobiliario <br>
+						Ejemplo Precio Nuevas viviendas f(superficie,Años,garage...)
+					</aside>
 				</section>
 				<!--Conceptos Geoestadísticos 1-->
 				<section style="text-align: left">
@@ -755,6 +814,12 @@
 								<img data-src="img/vectorh.png" style="width: 50%; height: 50%;border: transparent;background: transparent">
 							</figure>
 					</div>
+					<aside class="notes">
+						Definimos algunos de los conceptos básicos en geoestadística <br>
+						Media y covarianza espacial <br>
+						Dos puntos de nuestra muestra <br>
+						Covarianza espacial se define como la siguiente expresión
+					</aside>
 				</section>
 				<!--Conceptos Geoestadísticos: Semivarianza-->
 				<section style="text-align: left">
@@ -764,8 +829,18 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center"> $E[Z(x_{\alpha}+h)-Z(x_{\alpha})]=0$ </p>
 					<p style="font-size: 24px;"> La varianza de los incrementos es</p>
 					<p style="font-size: 38px;color: #e53b50;text-align: center">$var(Z(x_{\alpha}+h)-Z(x_{\alpha}))=2\gamma(h)$</p>
-					<p style="font-size: 24px;"> donde <span style="color: #e53b50;font-size: 38px">$\gamma(h)$</span> es la semivarianza que es </p>
-					<p style="font-size: 38px;color: #e53b50;text-align: center">$\gamma(h)=\frac{1}{2}(Z(x_{\alpha}+h)-Z(x_{\alpha}))^2$</p>
+					<p style="font-size: 24px;"> donde <span style="color: #e53b50;font-size: 38px">$\gamma(h)$</span> es la semivarianza que se expresa como </p>
+					<table>
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+							<td>
+							$\gamma(h)=\frac{1}{2}(Z(x_{\alpha}+h)-Z(x_{\alpha}))^2$
+							</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						Se asume que la media entre alfa y beta es nula. Siendo beta = alfa + h <br>
+						La semivarianza representa lo que varía la variable aleatoria en función del dominio espacial
+					</aside>
 				</section>
 				<!--Conceptos Geoestadísticos: Variograma-->
 				<section style="text-align: left">
@@ -789,6 +864,13 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						Para representar como varia nuestra muestra en el espacio > Variograma <br>
+						Variograma general o en nube > Representa todos los posibles pares de nuestra muestra <br>
+						Variograma experimental > Hipótesis puntos cercanos se parecen <br>
+						Vector h agrupa distancias en nuestra muestra y elegimos un incremento para cada una de ellas <br>
+						Ejemplo > h elección basada experiencia investigador
+					</aside>
 				</section>
 				<!--Variograma Teórico-->
 				<section style="text-align: left">
@@ -804,6 +886,10 @@
 					<div style="width: 45%; float: right">
 						<img data-src="img/variogramateorico.png" style="width: 90%;height: 90%;border: transparent;">
 					</div>
+					<aside class="notes">
+						Buscamos una función teórica > explique la semivarianza de nuestra muestra <br>
+						Familia de funciones gaussianas
+					</aside>
 				</section>
 				<!--Covarianza espacial-->
 				<section style="text-align:left">
@@ -813,18 +899,28 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h) = C(0) - C(h) $</p>
 					<p style="font-size: 24px;"> A su vez se define la correlación espacial como </p>
 					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\rho(h) = \frac{C(h)}{C(0)} $ <span style="font-size: 24px;color: white">siendo</span> $C(0)=b$</p>
+					<aside class="notes">
+						Hallar elementos variograma teórico (nug,b,"a") <br>
+						relación variograma-covarianza espacial
+					</aside>
 				</section>
 				<!--Variograma anidado-->
 				<section style="text-align:left">
 					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma anidado</h4>
 					<p style="font-size: 24px;">La combinación lineal de variogramas se denomina variograma anidado y se define </p>
-					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=\sum_{u=0}^S\gamma_{u}(h)=\sum_{u=0}^Sb_{u}g_{u}(h)$</p>
-					<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$g_{u}(h)$</span> son variogramas normalizados y <span style="font-size: 38px;color: #e53b50">$b_{u}(h)$</span> es el sill de cada uno de ellos</p>
+					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=\sum_{u=1}^S\gamma_{u}(h)=\sum_{u=1}^Sb_{u}g_{u}(h)$</p>
+					<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$g_{u}(h)$</span> son variogramas normalizados y <span style="font-size: 38px;color: #e53b50">$b_{u}$</span> es el sill de cada uno de ellos</p>
 					<p style="font-size: 24px;">Los variogramas normalizados son funciones gaussianas (Gaussiana, Esférica, Exponencial, Cuadrática, Lineal...)</p>
 					<p style="font-size: 24px;">Por tanto la relación entre la correlación espacial <span style="font-size: 38px;color: #e53b50">$\rho(h)$</span> y el variograma teórico <span style="font-size: 38px;color: #e53b50">$\gamma(h)$</span> es</p>
 					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=b(1-\rho(h))$ </p>
 					<p style="font-size: 24px;">La estimación de variogramas normalizados se realiza a través de ajustes lineales como los mínimos cuadrados generalizados, ordinarios, ponderados...</p>
+					<aside class="notes">
+						El ajuste es combinación lineal de funciones gaussianas > Variograma Anidado <br>
+						variograma normalizado / sill <br>
+						relación correlación espacial - variograma teórico <br>
+						Ajuste funciones > ALS,OLS,WLS
+					</aside>
 				</section>
 				<!--Kriging Simple-->
 				<section style="text-align: left">
@@ -834,7 +930,7 @@
 						<p style="font-size: 24px;">La estimación espacial de los puntos <span style="font-size: 38px;color: #e53b50">$x_{0}$</span> del mallado se realiza como combinación lineal </p>
 						<p style="font-size: 38px;color: #e53b50;text-align: center"> $Z^{*}(x_{0})=m+\sum_{\alpha=1}^{n}w_{\alpha}(Z(x_{\alpha})-m)$ </p>
 						<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$Z^{*}$</span> es la <span style="font-size: 38px;color: #e53b50">$Z$</span> estimada. Finalmente el sistema de ecuaciones se reduce a</p>
-						<p style="font-size: 38px;color: #e53b50;text-align: center"> $\sum_{\beta=1}^n w_{\beta}C(x_{\alpha}-x_{\beta})=C(x_{\alpha}-x_{0}) \text{   } \alpha=1,...,n$ </p>
+						<p style="font-size: 38px;color: #e53b50;text-align: center"> $\sum_{\alpha=1}^n w_{\alpha}C(x_{\alpha}-x_{\beta})=C(x_{\alpha}-x_{0}) \text{   } \alpha=1,...,n$ </p>
 						<p style="font-size: 24px;">Existen otros tipos de kriging como el ordinario, el universal...</p>
 					</div>
 					<div style="width: 35%; float: right">
@@ -842,6 +938,11 @@
 								<img data-src="img/mallado.png" style="width: 70%; height: 70%;border: transparent;background: transparent">
 							</figure>
 					</div>
+					<aside class="notes">
+						Cokriging Simple <br>
+						Explicar imagen <br>
+						Otros tipos de kriging
+					</aside>
 				</section>
 				<!--Cokriging-->
 				<section style="text-align: left">
@@ -854,16 +955,30 @@
 						<li><b><i><span style="color: #e53b50">Heterotopia parcial:</span></i></b> Algunas variables comparten localizaciones
 						<li><b><i><span style="color: #e53b50">Isotopia:</span></i></b> Todas las variables se representan en los mismos puntos
 					</ul>
-				</section style="text-align: left">
+					<aside class="notes">
+						Extensión multivariante del kriging <br>
+						Ejemplo Contaminación?
+					</aside>
+				</section>
 				<!--Variograma Cruzado-->
 				<section style="text-align: left">
 					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma Cruzado</h4>
 						<p style="font-size: 24px;">Un variograma cruzado se define como la mitad del producto del incremento de dos variables</p>
 						<p style="font-size: 24px;">Dadas <span style="font-size: 30px;color: #e53b50">$P$</span> variables siendo <span style="font-size: 30px;color: #e53b50">$i,j=1,...,P$</span> los variogramas cruzados posibles son <span style="font-size: 30px;color: #e53b50">$\frac{P(P+1)}{2}$</span> de los cuales <span style="font-size: 30px;color: #e53b50">$P$</span> variogramas son directos <span style="font-size: 30px;color: #e53b50">$i=j$</span> y <span style="font-size: 30px;color: #e53b50">$\frac{P(P-1)}{2}$</span> </p>
-						<p style="font-size: 24px;">Como resultado del cálculo de cada variograma obtenemos una matriz <span style="font-size: 30px;color: #e53b50">$\Gamma(h)$</span> de tamaño <span style="font-size: 30px;color: #e53b50">$P \times P$</span> que es combinación lineal de <span style="font-size: 30px;color: #e53b50">$\Gamma_{u}(h)$</span> tal que <span style="font-size: 30px;color: #e53b50">$\Gamma(h)=\sum_{u=0}^{S}\Gamma_{u}(h)$</span> </p>
+						<p style="font-size: 24px;">Como resultado del cálculo de cada variograma obtenemos una matriz <span style="font-size: 30px;color: #e53b50">$\Gamma(h)$</span> de tamaño <span style="font-size: 30px;color: #e53b50">$P \times P$</span> que es combinación lineal de <span style="font-size: 30px;color: #e53b50">$\Gamma_{u}(h)$</span> tal que <span style="font-size: 30px;color: #e53b50">$\Gamma(h)=\sum_{u=1}^{S}\Gamma_{u}(h)$</span> </p>
 						<p style="font-size: 24px;">El variograma cruzado se define como</p>
-						<p style="font-size: 30px;color: #e53b50;text-align: center"> $\gamma_{ij}^{*}(h)=\dfrac{1}{2n}\sum_{\alpha=1}^N(z_{i}(x_{\beta})-z_{i}(x_{\alpha}))\cdot(z_{j}(x_{\beta})-z_{j}(x_{\alpha}))$ </p>
+						<table>
+							<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+								<td>
+							 	$\gamma_{ij}^{*}(h)=\dfrac{1}{2n}\sum_{\alpha=1}^N(z_{i}(x_{\beta})-z_{i}(x_{\alpha}))\cdot(z_{j}(x_{\beta})-z_{j}(x_{\alpha}))$
+								</td>
+							</tr>
+						</table>
+						<aside class="notes">
+							Variograma cruzado <br>
+							Gamma matriz de variogramas cruzados
+						</aside>
 				</section>
 				<!--LMC-->
 				<section style="text-align: left">
@@ -872,7 +987,7 @@
 					<div style="width: 45%; float: left">
 					<p style="font-size: 24px;">Al igual que hemos hecho para el caso univariante, hemos de ajustar un modelo a cada uno de los variogramas cruzados</p>
 					<p style="font-size: 24px;">La función de covarianza espacial es</p>
-					<p style="font-size: 30px;color: #e53b50;text-align: center">$C(h)=\sum_{u=0}^{S}B_{u}\rho_{u}(h)$</p>
+					<p style="font-size: 30px;color: #e53b50;text-align: center">$C(h)=\sum_{u=1}^{S}B_{u}\rho_{u}(h)$</p>
 					</div>
 					<div style="width: 50%; float: right;">
 						<figure style="float:right;">
@@ -880,6 +995,11 @@
 						</figure>
 					</div>
 					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$B_{u}$</span> es la matriz de corregionalización de dimensión <span style="font-size: 30px;color: #e53b50">$P \times P$</span> semidefinida positiva</p>
+					<aside class="notes">
+						Ajuste similar al univariante <br>
+						Covarianza espacial multivariante <br>
+						Hallar Bu (semidefinida positiva)	
+					</aside>
 				</section>
 				<!--Cokriging Simple-->
 				<section style="text-align: left">
@@ -889,6 +1009,9 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center">$Z_{i_{0}}^{*}(x_{0})=m_{i_{0}}+\sum_{i=1}^{P}\sum_{\alpha=1}^{n}w_{\alpha}^{i}(Z_{i}(x_{\alpha})-m_{i})$</p>
 					<p style="font-size: 28px;">donde <span style="font-size: 32px;color: #e53b50">$i_{0}$</span> es la variable a estimar e <span style="font-size: 30px;color: #e53b50">$i$</span> corresponden a las <span style="font-size: 30px;color: #e53b50">$P$</span> variables analizadas</p>
 					<p style="font-size: 28px;">Existen diferentes tipos como el Cokriging ordinario, universal, <i>colocado</i>, factorial...</p>
+					<aside class="notes">
+						Extensión kriging simple
+					</aside>
 				</section>
 			</section>
 			<!--MGSR-->
@@ -897,6 +1020,9 @@
 				<section>
 					<h2 style="color: #e53b50;text-align:center;font-size: 58px">Regresión Multivariante Gaussiana Subespacial</h2>
 					<p style="color: #e53b50;text-align:center;font-size: 58px"><b>(MGSR)</b></p>
+					<aside class="notes">
+						Pasamos a describir nuestra propuesta
+					</aside>
 				</section>
 				<!--Algoritmo Esquema-->
 				<section>
@@ -905,16 +1031,24 @@
 					<figure style="float:right">
 							<img data-src="img/esquemaalgoritmo.png" style="width: 100%;height: 100%;border: transparent;background: transparent;">
 					</figure>
+					<aside class="notes">
+						Pasamos a describir nuestra propuesta<br>
+						Datos > RD > Coordenadas <br>
+						Datos + Coordenadas > PG > Modelo > Predicción flexible
+					</aside>
 				</section>
 				<!--Coordenadas Subespaciales-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Coordenadas Subespaciales</h4>
 					<p style="font-size: 24px;">Partimos de una matriz <span style="font-size: 28px;color: #e53b50">$X_{N \times P}$</span> con <span style="font-size: 30px;color: #e53b50">$N$</span> elementos y <span style="font-size: 30px;color: #e53b50">$P$</span> variables, ninguna de ellas de dominio contínuo y estandarizada por columnas</p>
-					<p style="font-size: 24px;">Aplicando una técnica de reducción dimensional obtenemos una serie de coordenadas subespaciales <span style="font-size: 30px;color: #e53b50">$R_{N \times S}$</span> para cada uno de los <span style="font-size: 30px;color: #e53b50">$N$</span> elementos en <span style="font-size: 30px;color: #e53b50">$T$</span> subespacios</p>
+					<p style="font-size: 24px;">Aplicando una técnica de reducción dimensional obtenemos una serie de coordenadas subespaciales <span style="font-size: 30px;color: #e53b50">$R_{N \times T}$</span> para cada uno de los <span style="font-size: 30px;color: #e53b50">$N$</span> elementos en <span style="font-size: 30px;color: #e53b50">$T$</span> subespacios</p>
 					<p style="font-size: 24px;">Con <span style="font-size: 30px;color: #e53b50">$X$</span> y <span style="font-size: 30px;color: #e53b50">$R$</span> conformamos la matriz <span style="font-size: 30px;color: #e53b50">$Z(u)=[X(R)]$</span></p>
 					<p style="font-size: 24px;">donde <span style="font-size: 30px;color: #e53b50">$u$</span> son las coordenadas subespaciales intrínsecas a <span style="font-size: 30px;color: #e53b50">$Z$</span></p>
 					<p style="font-size: 24px;" class="fragment highlight-current-red"><span style="font-size: 30px;color: #e53b50">$Z$</span> es semejante a las matrices empleadas en Procesos Gaussianos</p>
+					<aside class="notes">
+						Primera parte > Obtener Coordenadas Subespaciales
+					</aside>
 				</section>
 				<!--Variogramas Cruzados Subespaciales-->
 				<section>
@@ -931,6 +1065,11 @@
 					 		</td>
 					 	</tr>
 					</table>
+					<aside class="notes">
+						Siguiendo el proceso del cokriging. Primer paso > Hallar variograma experimental <br>
+						variograma experimental > matriz de variogramas cruzados de las distinas variables <br>
+						gamma se obtiene como postmult y multiplicacion variables aleatorias z por A(hk)
+					</aside>
 				</section>
 				<!--Variogramas Cruzados Subespaciales-->
 				<section>
@@ -958,6 +1097,11 @@
   							\right.
 						\end{equation*}
 					</p>
+					<aside class="notes">
+						A es un conjunto de k matrices y se define como ... <br>
+						Defino m, defino eta <br>
+						J es el numero total de pares que se encuentra a una distancia hk
+					</aside>
 				</section>
 				<!--Variogramas Cruzados Subespaciales-->
 				<section>
@@ -981,6 +1125,11 @@
                             plot.crossvariogram(CV)
                         </code>
                     </pre>
+                    <aside class="notes">
+                    	Calculadas las distintas matrices A > Calculamos Conjunto de k matrices Gamma <br>
+                    	Hallando el conjunto P(P+1)/2 variogramas cruzados <br>
+                    	Software
+                    </aside>
 				</section>
 				<!--Modelo Lineal Corregionalizado-->
 				<section>
@@ -1003,6 +1152,12 @@
 					 		</td>
 					 	</tr>
 					</table>
+					<aside class="notes">
+						Segunda parte algoritmo <br>
+						Ajuste LMC <br>
+						Hallar Bs <br>
+						minimizar función mínimos cuadrados ponderados de B
+					</aside>
 				</section>
 				<!--LMC-->
 				<section>
@@ -1012,6 +1167,9 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center">$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$</p>
 					<p style="font-size: 24px;"><span style="font-size: 30px;color: #e53b50">$G$</span> es la matriz <span style="font-size: 30px;color: #e53b50">$K \times S$</span> correspondiente a las distintas funciones de los variogramas anidados</p> 
 					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #e53b50">$Cov(b_{ij})$</span> es la <b style="color: #e53b50">matriz de varianza-covarianza subespacial</b> que representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #e53b50">$h$</span></p>
+					<aside class="notes">
+						"leer"
+					</aside>
 				</section>
 				<!--Matriz Covarianza-->
 				<section>
@@ -1032,6 +1190,10 @@
 							</td>
 						</tr>
 					</table>
+					<aside class="notes">
+						rango fijo > traza solo se calcula una vez > ahorro computacional <br>
+						Nos centramos en hallar las distintas Bs
+					</aside>
 				</section>
 				<section>
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
@@ -1102,6 +1264,15 @@
                             plot.crossvariogram(CV,RES)
                         </code>
                     </pre>
+                    <aside class="notes">
+                    	Una vez definida las matrices Gamma y B el algoritmo LMC se desarrolla ... <br>
+                    	Paso 0 > Primera estimación de B por WSS (referencia a comparar) <br>
+                    	Paso 1 > S estructuras escogemos s0 sustraemos del variograma experimental <br>
+                    	Paso 2 > Ajuste de cada variograma individualmente > Obtenemos Bs0 tau+1 <br>
+                    	Paso 3 > Descomposición espectral de B tau+1 > semidefinida + (Lo realizamos S veces) <br>
+                    	Paso 4 > Diferencia WSS es mayor > Paso 1 si no paro <br>
+                    	Software
+                    </aside>
 				</section>
 				<!--Cokriging Simple-->
 				<section>
@@ -1131,6 +1302,12 @@
                             Z <- cokrig(RES,xygrid)
                         </code>
                     </pre>
+                    <aside class="notes">
+                    	Una vez ajustado correctamente el LMC > Cokriging simple <br>
+                    	Hallar las S matrices Ws vectores de ponderación <br>
+                    	estandarizado por columnas > media en cada variable cero <br>
+                    	Software
+                    </aside>
 				</section>
 				<!--Validación Cruzada-->
 				<section>
@@ -1161,6 +1338,11 @@
                             Valid <- CrossValidation(RES)
                         </code>
                     </pre>
+                    <aside class="notes">
+                    	Validación del ajuste con nuestra muestra <br>
+                    	Wackernagel <br>
+                    	Software
+                    </aside>
 				</section>
 				<!--Predicción1-->
 				<section>
@@ -1169,6 +1351,12 @@
 						<figure style="float:right">
 							<img data-src="img/prediccion1.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
 						</figure>
+						<aside class="notes">
+							Una vez validado y calculado el modelo > Predicción <br>
+							Ejemplo sencillo del proceso <br>
+							Izquierda > Modelo (cokriging) <br>
+							Derecha ejemplo de lo que queremos predecir (Z4 y Z5 resto)<br>
+						</aside>
 				</section>
 				<!--Predicción2-->
 				<section>
@@ -1177,6 +1365,9 @@
 						<figure style="float:right">
 							<img data-src="img/prediccion2.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
 						</figure>
+						<aside class="notes">
+							valores más cercanos a los de entrada
+						</aside>
 				</section>
 				<!--Predicción3-->
 				<section>
@@ -1185,6 +1376,9 @@
 						<figure style="float:right">
 							<img data-src="img/prediccion3.png" style="width: 100%;height: 100%;background: transparent;border: transparent;">
 						</figure>
+						<aside class="notes">
+							Valores de salida en nuestro modelo > valores salida en la predicción
+						</aside>
 				</section>
 			</section>
 			<!--Aplicaciones-->
