@@ -78,7 +78,7 @@
 					<p class="fragment fade-up" style="font-size: 28px"><span style="color: #e53b50;font-size: 38px">$v_{2}=f^{'}(v_{1}$,$v_{3}$,...,$v_{n})$</span></p>
 					<p class="fragment fade-up" style="font-size: 42px;text-align: center"><span style="color: #e53b50;font-size: 38px">$f \neq f^{'}$</span></p>
 					<aside class="notes">
-						los modelos de Regresión clásicos $\rightarrow$ unidireccional <br>
+						los modelos de Regresión clásicos > unidireccional <br>
 						existe una función <i>f</i> <br> que se ajusta en función del resto <br>
 					</aside>
 				</section>
@@ -104,7 +104,7 @@
 					<p style="font-size: 32px" class="fragment grow"> Nuestro principal objetivo es desarrollar un modelo <span style="color: #e53b50;font-size: 42px">$M$</span> que rompa con la rigidez de los modelos clásicos de regresión</p>
 					<p style="font-size: 32px;text-align: center;color: #e53b50" class="fragment fade-up"> Supongamos que disponemos de un conjunto <span style="color: #e53b50;font-size: 38px">$V=\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$</span></p>
 					<aside class="notes">
-						Objetivo $\arrowright$ Único modelo<br>
+						Objetivo > Único modelo<br>
 					</aside>
 				</section>
 				<!--OBJETIVO:animacion-->
@@ -442,6 +442,11 @@
 								\end{equation}
 						</p>
 						<p style="font-size: 24px">donde  <span style="color: #e53b50;font-size: 30px">$0 \leq \psi \leq 1$</span></p>
+						<aside class="notes">
+							Existen distintas factorizaciones <br>
+							Gabriel propuso las siguientes ecuaciones <br>
+							Psi entre 0 y 1
+						</aside>
 				</section>
 				<!--Biplots Clásicos-->
 				<section align="left">
@@ -521,10 +526,10 @@
 								</td>
 							</tr>
 						</table>
+						<aside class="notes">
+						Medidas calidad proyecciones en el subespacio
+						</aside>
 				</section>
-				<aside class="notes">
-					Medidas calidad proyecciones en el subespacio
-				</aside>
 				<!--Tipos de Biplot-->
 				<section>
 					<h3 style="color: #e53b50;text-align:left">Reducción dimensional</h3>
@@ -680,7 +685,8 @@
 						</figure>
 					</div>
 					<aside class="notes">
-					Descripción breve sobre qué consiste
+					Dominino continuo <br>
+					Extensión distribución multivariante gaussiana
 					</aside>
 				</section>
 				<!--Procesos Gaussianos: Covarianza ideal-->
@@ -696,8 +702,9 @@
 						</ul>
 						<p style="font-size: 26px">La función <span style="color: #e53b50;font-size: 38px">$k$</span> nos indica cuánto varían nuestros datos en función de la distancia o gradiente temporal en el que se encuentran</p>
 						<aside class="notes">
-							Covarianzas domino continuo > clave <br>
-							Siguiente expresión donde...
+							Covarianzas domino continuo > clave para describir la función f que perseguimos<br>
+							Se define como expresa la función <br>
+							Definir f y l
 						</aside>
 				</section>
 				<!--Procesos Gaussianos: Covarianza-->
@@ -727,13 +734,22 @@
 					K_{**} = k(x_{*},x_{*})$
 					</p>
 					<p style="font-size: 26px">El estimador se calcula tal que</p>
-					<p style="color: #e53b50;font-size: 38px;text-align: center">$\hat{y}_{*}=K_{*}K^{-1}y$</p>
+					<table>
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+							<td>
+							$\hat{y}_{*}=K_{*}K^{-1}y$
+							</td>
+						</tr>
+					</table>
 					<p style="font-size: 26px">Y la varianza del estimador es</p>
 					<p style="color: #e53b50;font-size: 38px;text-align: center">$var(y_{*})=K{**}-K_{*}K^{-1}K_{*}^{T}$</p>
 					<aside class="notes">
 						y* estimación de y <br>
 						x* dominio sobre el que queremos hallar y* <br>
-						K matriz varianza-covarianza de nuestra muestra
+						K* matriz varianza-covarianza entre dominio conocido y dominio por predecir <br>
+						K** matriz varianza-covarianza del dominio por predecir <br>
+						La estimación se expresa en la función encuadrada <br>
+						Varianza del estimador > última función
 					</aside>
 				</section>
 				<!--Geoestadística-->
@@ -770,7 +786,8 @@
 					<aside class="notes">
 						Tesis > procesos gaussianos espaciales <br>
 						Padres de la geoestadística <br>
-						Historia	
+						Danie Krige > búsqueda de minerales > muestras > buenos resultados <br>
+						Matheron > modela matemáticamente
 					</aside>
 				</section>
 				<!--Datos-->
@@ -817,7 +834,7 @@
 					</div>
 					<aside class="notes">
 						Definimos algunos de los conceptos básicos en geoestadística <br>
-						Media y covarianza espacial <br>
+						Media? y covarianza espacial <br>
 						Dos puntos de nuestra muestra <br>
 						Covarianza espacial se define como la siguiente expresión
 					</aside>
@@ -839,7 +856,7 @@
 						</tr>
 					</table>
 					<aside class="notes">
-						Se asume que la media entre alfa y beta es nula. Siendo beta = alfa + h <br>
+						Se asume que la media entre Xalfa y Xbeta es nula. Siendo beta = Xalfa + h <br>
 						La semivarianza representa lo que varía la variable aleatoria en función del dominio espacial
 					</aside>
 				</section>
@@ -902,7 +919,7 @@
 					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\rho(h) = \frac{C(h)}{C(0)} $ <span style="font-size: 24px;color: white">siendo</span> $C(0)=b$</p>
 					<aside class="notes">
 						Hallar elementos variograma teórico (nug,b,"a") <br>
-						relación variograma-covarianza espacial
+						Relación variograma-covarianza espacial
 					</aside>
 				</section>
 				<!--Variograma anidado-->
@@ -910,14 +927,27 @@
 					<h3 style="color: #e53b50;text-align:left">Procesos Gaussianos</h3>
 					<h4 style="text-align:left">Variograma anidado</h4>
 					<p style="font-size: 24px;">La combinación lineal de variogramas se denomina variograma anidado y se define </p>
-					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=\sum_{u=1}^S\gamma_{u}(h)=\sum_{u=1}^Sb_{u}g_{u}(h)$</p>
+					<table>
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+							<td>
+							 $\gamma(h)=\sum_{u=1}^S\gamma_{u}(h)=\sum_{u=1}^Sb_{u}g_{u}(h)$
+							</td>
+						</tr>
+					</table>
 					<p style="font-size: 24px;">donde <span style="font-size: 38px;color: #e53b50">$g_{u}(h)$</span> son variogramas normalizados y <span style="font-size: 38px;color: #e53b50">$b_{u}$</span> es el sill de cada uno de ellos</p>
 					<p style="font-size: 24px;">Los variogramas normalizados son funciones gaussianas (Gaussiana, Esférica, Exponencial, Cuadrática, Lineal...)</p>
 					<p style="font-size: 24px;">Por tanto la relación entre la correlación espacial <span style="font-size: 38px;color: #e53b50">$\rho(h)$</span> y el variograma teórico <span style="font-size: 38px;color: #e53b50">$\gamma(h)$</span> es</p>
-					<p style="font-size: 38px;color: #e53b50;text-align: center"> $\gamma(h)=b(1-\rho(h))$ </p>
+					<table>
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+							<td>
+							 $\gamma(h)=b(1-\rho(h))$
+							</td>
+						</tr>
+					</table>
 					<p style="font-size: 24px;">La estimación de variogramas normalizados se realiza a través de ajustes lineales como los mínimos cuadrados generalizados, ordinarios, ponderados...</p>
 					<aside class="notes">
 						El ajuste es combinación lineal de funciones gaussianas > Variograma Anidado <br>
+						S estructuras o funciones normalizadas <br>
 						variograma normalizado / sill <br>
 						relación correlación espacial - variograma teórico <br>
 						Ajuste funciones > ALS,OLS,WLS
@@ -1069,6 +1099,7 @@
 					<aside class="notes">
 						Siguiendo el proceso del cokriging. Primer paso > Hallar variograma experimental <br>
 						variograma experimental > matriz de variogramas cruzados de las distinas variables <br>
+						Imaginemos 15 lags y 5 variables > Tendremos 5x15 matrices gamma<br>
 						gamma se obtiene como postmult y multiplicacion variables aleatorias z por A(hk)
 					</aside>
 				</section>
@@ -1165,11 +1196,17 @@
 					<h3 style="color: #e53b50;text-align:left">MGSR</h3>
 					<h4 style="text-align:left">Modelo Lineal Corregionalizado</h4>
 					<p style="font-size: 24px;">La función de mínimos cuadrados ponderados para cada <i>sill</i> es</p>
-					<p style="font-size: 38px;color: #e53b50;text-align: center">$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$</p>
+					<table>
+						<tr style="font-size: 38px;color: #e53b50;text-align: center;border: solid #e53b50">
+							<td>
+							$WSS(b_{ij})=(\gamma_{ij}^{*}-Gb_{ij})^TCov(b_{ij})(\gamma_{ij}^{*}-Gb_{ij})$
+							</td>
+						</tr>
+					</table>
 					<p style="font-size: 24px;"><span style="font-size: 30px;color: #e53b50">$G$</span> es la matriz <span style="font-size: 30px;color: #e53b50">$K \times S$</span> correspondiente a las distintas funciones de los variogramas anidados</p> 
 					<p style="font-size: 24px;">La matriz <span style="font-size: 30px;color: #e53b50">$Cov(b_{ij})$</span> es la <b style="color: #e53b50">matriz de varianza-covarianza subespacial</b> que representa la variabilidad de nuestra muestra en función de las diferentes distancias <span style="font-size: 30px;color: #e53b50">$h$</span></p>
 					<aside class="notes">
-						"leer"
+						"leer resumidamente"
 					</aside>
 				</section>
 				<!--Matriz Covarianza-->
@@ -1268,10 +1305,11 @@
                     <aside class="notes">
                     	Una vez definida las matrices Gamma y B el algoritmo LMC se desarrolla ... <br>
                     	Paso 0 > Primera estimación de B por WSS (referencia a comparar) <br>
+                    	Paso 1-3 > bloque principal <br>
                     	Paso 1 > S estructuras escogemos s0 sustraemos del variograma experimental <br>
                     	Paso 2 > Ajuste de cada variograma individualmente > Obtenemos Bs0 tau+1 <br>
                     	Paso 3 > Descomposición espectral de B tau+1 > semidefinida + (Lo realizamos S veces) <br>
-                    	Paso 4 > Diferencia WSS es mayor > Paso 1 si no paro <br>
+                    	Paso 4 > Diferencia WSS es mayor tolerancia > Paso 1 hasta que converja <br>
                     	Software
                     </aside>
 				</section>
@@ -1304,8 +1342,9 @@
                         </code>
                     </pre>
                     <aside class="notes">
-                    	Una vez ajustado correctamente el LMC > Cokriging simple <br>
-                    	Hallar las S matrices Ws vectores de ponderación <br>
+                    	Una vez ajustado correctamente el LMC > Hallar Ws (vectores ponderación) <br>
+                    	Misma función que en el kriging > Cokriging (Kronecker) <br>
+                    	Hallar las S matrices Ws <br>
                     	estandarizado por columnas > media en cada variable cero <br>
                     	Software
                     </aside>
@@ -1975,13 +2014,13 @@
 				parallaxBackgroundImage: "img/FondoTesis.png", // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
 
 				// Parallax background size
-				//parallaxBackgroundSize: "2100px 900px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+				parallaxBackgroundSize: "2304px 1296px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
 				// Number of pixels to move the parallax background per slide
 				// - Calculated automatically unless specified
 				// - Set to 0 to disable movement along an axis
-				parallaxBackgroundHorizontal: 4,
-				parallaxBackgroundVertical: 2,
+				parallaxBackgroundHorizontal: 20,
+				parallaxBackgroundVertical: 10,
 				
 				math: {
 					mathjax:
